@@ -76,9 +76,3 @@ Nosso objetivo é contribuir para a disseminação da cultura de acessibilidade,
         <b>Yasmim Santos</b>
       </a>
     </td>
-
----
-
-## Licença
-
-Este projeto foi desenvolvido para fins acadêmicos na disciplina de Interação Humano-Computador (IHC) da Universidade de Brasília (UnB).
