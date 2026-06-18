@@ -35,35 +35,44 @@ Nosso objetivo é contribuir para a disseminação da cultura de acessibilidade,
 <table>
   <tr>
     <td align="center">
-      <img src="https://github.com/ArturFGaldino.png" width="120"><br>
-      <b>Artur Galdino</b>
+      <a href="https://github.com/nicolejovita">
+        <img src="https://github.com/nicolejovita.png" width="120"><br>
+        <b>Nicole Jovita</b>
+      </a>
     </td>
     <td align="center">
-      <img src="https://github.com/Fabiovieira05.png" width="120"><br>
-      <b>Fábio Vieira</b>
+      <a href="https://github.com/ArturFGaldino">
+        <img src="https://github.com/ArturFGaldino.png" width="120"><br>
+        <b>Artur Galdino</b>
+      </a>
     </td>
     <td align="center">
-      <img src="https://github.com/ianpedersoli.png" width="120"><br>
-      <b>Ian Pedersoli</b>
+      <a href="https://github.com/Fabiovieira05">
+        <img src="https://github.com/Fabiovieira05.png" width="120"><br>
+        <b>Fábio Vieira</b>
+      </a>
     </td>
     <td align="center">
-      <img src="https://github.com/KaioAmouryUnB.png" width="120"><br>
-      <b>Kaio Amoury</b>
+      <a href="https://github.com/ianpedersoli">
+        <img src="https://github.com/ianpedersoli.png" width="120"><br>
+        <b>Ian Pedersoli</b>
+      </a>
     </td>
     <td align="center">
-      <img src="https://github.com/nicolejovita.png" width="120"><br>
-      <b>Nicole Jovita</b>
+      <a href="https://github.com/KaioAmouryUnB">
+        <img src="https://github.com/KaioAmouryUnB.png" width="120"><br>
+        <b>Kaio Amoury</b>
+      </a>
     </td>
     <td align="center">
-      <img src="https://github.com/pedrorfb.png" width="120"><br>
-      <b>Pedro Bessa</b>
+      <a href="https://github.com/pedrorfb">
+        <img src="https://github.com/pedrorfb.png" width="120"><br>
+        <b>Pedro Bessa</b>
+      </a>
     </td>
     <td align="center">
-      <img src="https://github.com/eii-yahs.png" width="120"><br>
-      <b>Yasmim Santos</b>
-    </td>
-  </tr>
-</table>
+      <a href="https://github.com/eii-yahs">
+        <img src="https://github.com/eii-yahs.png" width="
 ---
 
 ## Licença
