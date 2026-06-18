@@ -72,7 +72,10 @@ Nosso objetivo é contribuir para a disseminação da cultura de acessibilidade,
     </td>
     <td align="center">
       <a href="https://github.com/eii-yahs">
-        <img src="https://github.com/eii-yahs.png" width="
+        <img src="https://github.com/eii-yahs.png" width="120"><br>
+        <b>Yasmim Santos</b>
+      </a>
+    </td>
 ---
 
 ## Licença
