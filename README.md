@@ -40,12 +40,28 @@ Nosso objetivo é contribuir para a disseminação da cultura de acessibilidade,
       <b>Nicole Jovita</b>
     </td>
     <td align="center">
-      <img src="https://github.com/usuario2.png" width="120"><br>
-      <b>Nome Integrante</b>
+      <img src="https://github.com/Fabiovieira.png" width="120"><br>
+      <b>Fábio Vieira</b>
     </td>
     <td align="center">
-      <img src="https://github.com/usuario3.png" width="120"><br>
-      <b>Nome Integrante</b>
+      <img src="https://github.com/eii-yahs.png" width="120"><br>
+      <b>Yasmim Santos</b>
+    </td>
+    <td align="center">
+      <img src="https://github.com/pedrorfb.png" width="120"><br>
+      <b>Pedro Bessa</b>
+    </td>
+    <td align="center">
+      <img src="https://github.com/ArturFGaldino.png" width="120"><br>
+      <b>Artur Galdino</b>
+    </td>
+    <td align="center">
+      <img src="https://github.com/KaioAmouryUnB.png" width="120"><br>
+      <b>Kaio Amoury</b>
+    </td>
+    <td align="center">
+      <img src="https://github.com/ianpedersoli.png" width="120"><br>
+      <b>Ian Pedersoli</b>
     </td>
   </tr>
 </table>
