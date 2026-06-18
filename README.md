@@ -6,7 +6,7 @@ O **A11y Pocket** nasce no contexto da disciplina de Interação Humano-Computad
 
 Desenvolvido pelo Grupo 10, este projeto tem como objetivo reunir orientações essenciais sobre acessibilidade digital em um formato prático, direto e de fácil consulta. A proposta é disponibilizar um material que possa apoiar estudantes, desenvolvedores, designers, produtores de conteúdo e demais profissionais envolvidos na criação de produtos digitais.
 
-A construção do A11y Pocket foi baseada em referências reconhecidas da área de acessibilidade, incluindo as Diretrizes WCAG 2.2 (Web Content Accessibility Guidelines), a norma ABNT NBR 17225 e guias de boas práticas para acessibilidade digital. A partir dessas referências, organizamos recomendações que auxiliam na identificação e prevenção de barreiras que podem dificultar o acesso e a utilização de sistemas por diferentes perfis de usuários.
+A construção do A11y Pocket foi baseada em referências reconhecidas da área de acessibilidade, incluindo as Diretrizes WCAG 2.2 (Web Content Accessibility Guidelines), a norma ABNT NBR 17225 e guias de boas práticas para acessibilidade digital.
 
 Nosso objetivo é contribuir para a disseminação da cultura de acessibilidade, incentivando a criação de experiências digitais mais inclusivas, usáveis e acessíveis para todos.
 
@@ -17,7 +17,6 @@ Nosso objetivo é contribuir para a disseminação da cultura de acessibilidade,
 * Promover a conscientização sobre a importância da acessibilidade digital;
 * Facilitar a aplicação de boas práticas de acessibilidade em projetos digitais;
 * Disponibilizar recomendações objetivas para consulta rápida;
-* Apoiar equipes de desenvolvimento, design e conteúdo na criação de soluções inclusivas;
 * Contribuir para a redução de barreiras de acesso em ambientes digitais.
 
 ---
@@ -36,32 +35,32 @@ Nosso objetivo é contribuir para a disseminação da cultura de acessibilidade,
 <table>
   <tr>
     <td align="center">
-      <img src="https://github.com/nicolejovita.png" width="120"><br>
-      <b>Nicole Jovita</b>
+      <img src="https://github.com/ArturFGaldino.png" width="120"><br>
+      <b>Artur Galdino</b>
     </td>
     <td align="center">
       <img src="https://github.com/Fabiovieira.png" width="120"><br>
       <b>Fábio Vieira</b>
     </td>
     <td align="center">
-      <img src="https://github.com/eii-yahs.png" width="120"><br>
-      <b>Yasmim Santos</b>
-    </td>
-    <td align="center">
-      <img src="https://github.com/pedrorfb.png" width="120"><br>
-      <b>Pedro Bessa</b>
-    </td>
-    <td align="center">
-      <img src="https://github.com/ArturFGaldino.png" width="120"><br>
-      <b>Artur Galdino</b>
+      <img src="https://github.com/ianpedersoli.png" width="120"><br>
+      <b>Ian Pedersoli</b>
     </td>
     <td align="center">
       <img src="https://github.com/KaioAmouryUnB.png" width="120"><br>
       <b>Kaio Amoury</b>
     </td>
     <td align="center">
-      <img src="https://github.com/ianpedersoli.png" width="120"><br>
-      <b>Ian Pedersoli</b>
+      <img src="https://github.com/nicolejovita.png" width="120"><br>
+      <b>Nicole Jovita</b>
+    </td>
+    <td align="center">
+      <img src="https://github.com/pedrorfb.png" width="120"><br>
+      <b>Pedro Bessa</b>
+    </td>
+    <td align="center">
+      <img src="https://github.com/eii-yahs.png" width="120"><br>
+      <b>Yasmim Santos</b>
     </td>
   </tr>
 </table>
