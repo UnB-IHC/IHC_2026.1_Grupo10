@@ -39,7 +39,7 @@ Nosso objetivo é contribuir para a disseminação da cultura de acessibilidade,
       <b>Artur Galdino</b>
     </td>
     <td align="center">
-      <img src="https://github.com/Fabiovieira.png" width="120"><br>
+      <img src="https://github.com/Fabiovieira05.png" width="120"><br>
       <b>Fábio Vieira</b>
     </td>
     <td align="center">
