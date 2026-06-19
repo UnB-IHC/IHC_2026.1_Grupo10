@@ -1,540 +1,281 @@
-:root{
-
-    --primary:#4BB6E5;
-    --primary-dark:#2596D6;
-    --primary-light:#EAF8FF;
-
-    --background:#EAF8FF
-;
-
-    --text:#111827;
-
-    --surface:#EAF8FF;
+:root {
+    --primaria: #4BB6E5;
+    --primaria-escura: #2596D6;
+    --fundo: #EAF8FF;
+    --texto: #111827;
+    --superficie: #ffffff;
+    --borda: #0ea5e9;
+    --superficie-clara: #F0F9FF;
+    --discreto: #6B7280;
 }
 
-*{
-
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-body{
-
-    font-family:'Outfit', sans-serif;
-
-    background:var(--background);
-
-    color:var(--text);
-
-    padding-top: 80px;
-}
-
-/* NAVBAR */
-
-.navbar{
-
-    height:80px;
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-
-    padding:0 60px;
-
-    background:white;
-
-    border-bottom:1px solid #e5e7eb;
-
-    top: 0;
-
-    z-index: 1000;
-
-    position: fixed;
-
-    left: 0;
-
+html {
     width: 100%;
-}
-
-.logo-nav{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:15px;
-}
-
-.logo-nav img{
-
-    width:42px;
-}
-
-.logo-nav span{
-
-    font-size:1.4rem;
-
-    font-weight:700;
-}
-
-.navbar nav{
-
-    display:flex;
-
-    gap:40px;
-}
-
-.navbar a{
-
-    text-decoration:none;
-
-    color:#111827;
-
-    font-weight:500;
-
-    transition:.3s;
-}
-
-.navbar a:hover{
-
-    color:var(--primary-dark);
-}
-
-/* HERO */
-
-.hero{
-
-    min-height:calc(100vh - 80px);
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-
-    padding:80px 10%;
-
-    background: linear-gradient(180deg, #EAF8FF 0%, #c5eafc 100%);
-}
-
-.hero-text{
-
-    max-width:700px;
-}
-
-.hero-title{
-
-    font-size:4rem;
-
-    font-weight:800;
-
-    line-height:1;
-
-    background: linear-gradient(
-        135deg,
-        #4BB6E5,
-        #2596D6
-    );
-
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-   
-    display: inline-block;
-
-}
-
-.hero-title span{
-
-    color:var(--primary);
-}
-
-.hero-description{
-
-    margin-top:35px;
-
-    font-size:1.3rem;
-
-    line-height:1.8;
-
-    color:#374151;
-}
-
-.hero-buttons{
-
-    margin-top:40px;
-
-    display:flex;
-
-    gap:20px;
-}
-
-.btn-primary{
-
-    background:var(--primary);
-
-    color:white;
-
-    text-decoration:none;
-
-    padding:16px 34px;
-
-    border-radius:50px;
-
-    font-weight:600;
-
-    transition:.3s;
-}
-
-.btn-primary:hover{
-
-    background:var(--primary-dark);
-
-    transform:translateY(-2px);
-}
-
-.btn-secondary{
-
-    text-decoration:none;
-
-    color:#111827;
-
-    padding:16px 10px;
-
-    font-weight:600;
-
-    transition:.3s;
-}
-
-.btn-secondary:hover{
-
-    color:var(--primary-dark);
-
-    transform:translateY(-2px);
-}
-
-.hero-image img{
-
-    width: 350px;
-}
-
-footer{
-
-    text-align:center;
-
-    padding:30px;
-
-    border-top:1px solid #e5e7eb;
-}
-
-/* DOCUMENTAÇÃO */
-
-.docs-layout{
-
-    display:flex;
-
-    min-height:calc(100vh - 80px);
-}
-
-.sidebar{
-
-    width:330px;
-
-    background:#ffffff;
-
-    color:#111827;
-
-    padding: 35px;
-    
-    overflow-y:auto;
-
-    height: calc(100vh - 80px); 
-
-    position: sticky;
-
-    top: 80px; 
-}
-
-.sidebar-logo{
-
-    width: 0px;
-
-    margin-bottom:20px;
-}
-
-.sidebar h2{
-
-    margin: bottom 15px;
-}
-
-.sidebar ul{
-
-    list-style:none;
-}
-
-.sidebar li{
-
-    margin-bottom:14px;
-
-    cursor:pointer;
-}
-
-.sidebar a {
-    display: block;
-    padding: 10px 16px; 
-    border-radius: 10px;
-    color: #111827;
-    text-decoration: none;
-    transition: 0.2s;
-}
-
-.sidebar a:hover {
-    background: #F3F4F6;
-}
-
-.sidebar a.active {
-    background: #E5E7EB;
-    color: #4BB6E5;
-    font-weight: 600;
-    border-left: 3px solid #4BB6E5;
-}
-
-.sidebar a:hover,
-.sidebar a.active {
-    border-radius: 10px;
-}
-
-.content{
-
-    flex:1;
-
-    padding:60px 80px;
-
-    background:#EAF8FF;
-
-    background: linear-gradient(180deg, #EAF8FF 0%, #c5eafc 100%);
-}
-
-.content h1{
-
-    font-size:3rem;
-
-    color:#111827;
-
-    margin-bottom:25px;
-}
-
-.content p{
-
-    font-size:1.15rem;
-
-    line-height:1.9;
-
-    max-width:900px;
-}
-
-#scroll-bar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 4px;
-    width: 0%;
-    background: #4BB6E5;
-    z-index: 9999;
-}
-
-html, body {
     height: 100%;
 }
 
-.sub-menu {
-    margin-left: 18px;
-    margin-top: 10px;
-    margin-bottom: 15px;
+body {
+    width: 400px;
+    max-width: 100%;
+    min-height: 500px;
+    margin: 0 auto;
+    font-family: 'Outfit', sans-serif;
+    background: var(--fundo);
+    color: var(--texto);
+    font-size: 14px;
+    line-height: 1.6;
+    overflow-x: hidden;
 }
 
-.sub-menu li {
-    color: #4b5563;   
-    font-size: 0.95rem;
-    margin-bottom: 10px;
-    cursor: pointer;
-    transition: 0.2s;
+#barra-rolagem {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    width: 0%;
+    background: var(--primaria);
+    z-index: 9999;
 }
 
-.sub-menu li:hover {
-    color: #4BB6E5;
-}
-
-.sidebar-header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 25px;
-    text-align: center;
-}
-
-.sidebar-logo {
-    width: 90px;
-    margin-bottom: 10px;
-}
-
-.sidebar-logo {
-    width: 90px;
-    margin-bottom: 10px;
-}
-
-
-.sidebar a {
-    display: block;
-    padding: 12px 20px; 
-    border-radius: 10px;
-    color: #111827;
-    text-decoration: none;
-    transition: 0.2s;
-    line-height: 1.4;
-}
-
-.sidebar a:hover {
-    color: #4BB6E5;
-}
-
-.sub-menu a {
-    color: #5a5c5f;
-    margin-left: 10px;
-}
-
-.submenu a:hover {
-    color: #4BB6E5;
-}
-
-.breadcrumb {
+header[role="banner"] {
     display: flex;
     align-items: center;
-    gap: 8px;
-    margin-bottom: 15px;
-    font-size: 0.95rem;
+    gap: 10px;
+    background: var(--superficie);
+    border-bottom: 1px solid #e5e7eb;
+    padding: 12px 14px;
 }
 
-/* ícone casa */
-.breadcrumb .home {
-    color: #111827;          
-    text-decoration: none;
-    padding: 3px 10px;
-    border-radius: 15px;
-    transition: 0.2s;
+header[role="banner"] img {
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
 }
 
-/* hover na casa */
-.breadcrumb .home:hover {
-    background: #E5E7EB;
-    color: #4BB6E5;
-}
-
-/* nome da página atual */
-.breadcrumb .current {
-    background: #E5E7EB;
-    color: #4BB6E5;
-    padding: 3px 10px;
-    border-radius: 15px;
-    font-weight: 200;
-}
-
-/* separador */
-.breadcrumb .sep {
-    color: #9CA3AF;
-}
-
-.breadcrumb a {
-    display: block;
-    padding: 3px 10px; 
-    border-radius: 15px;
-    color: #111827;
-    text-decoration: none;
-    transition: 0.2s;
-}
-
-.logo-text {
-    font-size: 1.25rem;
+.texto-logo {
+    font-size: 1.3rem;
     font-weight: 800;
     letter-spacing: -0.02em;
-
-    background: linear-gradient(
-        135deg,
-        #4BB6E5,
-        #2596D6
-    );
-
+    background: linear-gradient(135deg, #4BB6E5, #2596D6);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-
     display: inline-block;
+    line-height: 1;
 }
 
-.logo-nav {
+main[role="main"] {
+    padding: 16px 14px 14px;
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
     gap: 12px;
 }
 
-/* =========================================
-   CHECKLIST E BARRA DE PROGRESSO
-========================================= */
-
-.progress-container {
-    background-color: #F0F9FF;
-    border: 2px solid #0ea5e9;
-    padding: 25px;
-    border-radius: 8px;
-    margin-bottom: 35px;
-    box-shadow: 0 4px 12px rgba(14, 165, 233, 0.1);
+section h2 {
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--primaria-escura);
 }
 
-.progress-header {
+section p {
+    font-size: 0.88rem;
+    color: var(--discreto);
+    line-height: 1.65;
+}
+
+.container-progresso {
+    background-color: var(--superficie-clara);
+    border: 2px solid var(--borda);
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 4px 12px rgba(14, 165, 233, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.cabecalho-progresso {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 15px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--texto);
 }
 
-.checklist-list {
+progress {
+    width: 100%;
+    height: 6px;
+    border-radius: 999px;
+    overflow: hidden;
+    appearance: none;
+    -webkit-appearance: none;
+    background: #D1EDF9;
+}
+
+progress::-webkit-progress-bar {
+    background: #D1EDF9;
+    border-radius: 999px;
+}
+
+progress::-webkit-progress-value {
+    background: linear-gradient(90deg, var(--primaria), var(--primaria-escura));
+    border-radius: 999px;
+}
+
+progress::-moz-progress-bar {
+    background: linear-gradient(90deg, var(--primaria), var(--primaria-escura));
+    border-radius: 999px;
+}
+
+.lista-verificacao {
     list-style: none;
-    padding: 0;
-    margin-top: 30px;
-    margin-bottom: 30px;
-}
-
-/* Retiradas as bordas, fundos e paddings */
-.checklist-item {
     display: flex;
-    align-items: center; /* Isso garante o alinhamento vertical perfeito */
-    gap: 15px;           /* Espaçamento entre o checkbox e o texto */
-    margin-bottom: 15px;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.item-verificacao {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 8px 10px;
+    border-radius: 8px;
     cursor: pointer;
-    font-size: 1.1rem;
-    line-height: 1.4;    /* Ajustado para alinhar melhor com o checkbox */
+    font-size: 0.9rem;
     color: #374151;
-    transition: color 0.2s ease;
+    transition: color 0.2s ease, background 0.2s ease;
 }
 
-.checklist-item:hover {
-    color: #111827; /* Apenas escurece um pouco o texto ao passar o rato */
+.item-verificacao:hover {
+    color: var(--texto);
+    background: rgba(75, 182, 229, 0.08);
 }
 
-.checklist-item input[type="checkbox"] {
-    transform: scale(1.8); /* O tamanho que escolheu */
+.item-verificacao input[type="checkbox"] {
+    flex-shrink: 0;
+    transform: scale(1.3);
+    accent-color: var(--borda);
     cursor: pointer;
-    accent-color: #0ea5e9;
-    /* Removemos o margin-top que estava a empurrar o checkbox para baixo */
-    margin: 0; 
+    margin: 0;
+    margin-top: 2px;
 }
 
-.content hr {
-    border: 0;
-    height: 2px;
-    background-color: #E5E7EB;
-    margin: 40px 0;
+.item-verificacao label {
+    cursor: pointer;
+    line-height: 1.4;
+    font-size: 0.9rem;
+    word-break: break-word;
+    min-width: 0;
+}
+
+.botao-primario {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--primaria);
+    color: #ffffff;
+    border: none;
+    border-radius: 50px;
+    padding: 10px 24px;
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    align-self: flex-start;
+}
+
+.botao-primario:hover {
+    background: var(--primaria-escura);
+    transform: translateY(-1px);
+}
+
+.botao-primario:focus-visible {
+    outline: 3px solid var(--primaria-escura);
+    outline-offset: 3px;
+}
+
+#placeholder-resultados {
+    background: var(--superficie);
+    border: 1px dashed #CBD5E1;
+    border-radius: 8px;
+    padding: 16px;
+    text-align: center;
+    color: #9CA3AF;
+    font-size: 0.85rem;
+}
+
+footer[role="contentinfo"] {
+    border-top: 1px solid #e5e7eb;
+    padding: 10px 14px;
+    text-align: center;
+}
+
+footer small {
+    font-size: 0.72rem;
+    color: var(--discreto);
+}
+
+@media (max-width: 350px) {
+    body {
+        font-size: 13px;
+    }
+
+    header[role="banner"] {
+        padding: 10px 12px;
+        gap: 8px;
+    }
+
+    header[role="banner"] img {
+        width: 28px;
+        height: 28px;
+    }
+
+    .texto-logo {
+        font-size: 1.15rem;
+    }
+
+    main[role="main"] {
+        padding: 12px 10px;
+        gap: 16px;
+    }
+
+    .container-progresso {
+        padding: 12px;
+        gap: 8px;
+    }
+
+    .item-verificacao {
+        padding: 6px 8px;
+        gap: 8px;
+        font-size: 0.85rem;
+    }
+
+    .item-verificacao input[type="checkbox"] {
+        transform: scale(1.1);
+    }
+
+    .item-verificacao label {
+        font-size: 0.85rem;
+    }
+
+    .botao-primario {
+        padding: 9px 20px;
+        font-size: 0.85rem;
+    }
 }
