@@ -479,3 +479,62 @@ html, body {
     align-items: center;
     gap: 12px;
 }
+
+/* =========================================
+   CHECKLIST E BARRA DE PROGRESSO
+========================================= */
+
+.progress-container {
+    background-color: #F0F9FF;
+    border: 2px solid #0ea5e9;
+    padding: 25px;
+    border-radius: 8px;
+    margin-bottom: 35px;
+    box-shadow: 0 4px 12px rgba(14, 165, 233, 0.1);
+}
+
+.progress-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.checklist-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+/* Retiradas as bordas, fundos e paddings */
+.checklist-item {
+    display: flex;
+    align-items: center; /* Isso garante o alinhamento vertical perfeito */
+    gap: 15px;           /* Espaçamento entre o checkbox e o texto */
+    margin-bottom: 15px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    line-height: 1.4;    /* Ajustado para alinhar melhor com o checkbox */
+    color: #374151;
+    transition: color 0.2s ease;
+}
+
+.checklist-item:hover {
+    color: #111827; /* Apenas escurece um pouco o texto ao passar o rato */
+}
+
+.checklist-item input[type="checkbox"] {
+    transform: scale(1.8); /* O tamanho que escolheu */
+    cursor: pointer;
+    accent-color: #0ea5e9;
+    /* Removemos o margin-top que estava a empurrar o checkbox para baixo */
+    margin: 0; 
+}
+
+.content hr {
+    border: 0;
+    height: 2px;
+    background-color: #E5E7EB;
+    margin: 40px 0;
+}

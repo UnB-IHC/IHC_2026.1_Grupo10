@@ -2,40 +2,38 @@
 <html lang="pt-BR">
 
 <head>
-
-<meta charset="UTF-8">
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>A11y Pocket G10</title>
-
-<link rel="stylesheet" href="../css/style.css">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A11y Pocket G10 - Gestão de Projetos</title>
+    
+    <link rel="stylesheet" href="../css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 
+<<<<<<< Updated upstream
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
+=======
+>>>>>>> Stashed changes
 <body>
 
 <header class="navbar">
     <div class="logo-nav">
-            <img src="../assets/logo.png" alt="Logo A11y Pocket">
-            <span class="logo-text">A11y Pocket G10 </span>
+        <img src="../assets/logo.png" alt="Logo A11y Pocket">
+        <span class="logo-text">A11y Pocket G10 </span>
     </div>
 
- <nav>
-    <a href="../../index.html">Início</a>
-    <a href="../pages/intro.html">Documentação </a>
-    <a href="https://github.com/UnB-IHC/IHC_2026.1_Grupo10" target="_blank"> GitHub ↗ </a>
-</nav>
+    <nav>
+        <a href="../../index.html">Início</a>
+        <a href="../pages/intro.html">Documentação </a>
+        <a href="https://github.com/UnB-IHC/IHC_2026.1_Grupo10" target="_blank"> GitHub ↗ </a>
+    </nav>
 </header>
 
 <div class="docs-layout">
 
     <aside class="sidebar">
-
         <ul>
-
             <li><a href="../pages/intro.html">Introdução</a></li>
             <li><a href="../pages/metodos-design.html">Métodos de Design</a></li>
             <li><a href="../pages/personas.html">Personas</a></li>
@@ -45,9 +43,8 @@
             <li><a href="../pages/boas-praticas.html"> Boas Práticas UI/UX</a></li>
 
             <ul>
-            <li><a href="../pages/analise.html">Análise Prática</a></li>
-
-                <ul class = "sub-menu"> 
+                <li><a href="../pages/analise.html">Análise Prática</a></li>
+                <ul class="sub-menu"> 
                     <li><a href="../pages/analise-intro.html">Introdução</a></li>
                     <li><a href="../pages/gestao.html" class="active">Gestão de Projetos</a></li>
                     <li><a href="../pages/web.html">Desenvolvimento Web</a></li>
@@ -64,11 +61,10 @@
 
             <li><a href="../pages/referencias.html">Referências Bibliográficas</a></li>
         </ul>
-
     </aside>
 
     <main class="content">
-
+        
         <div class="breadcrumb">
             <a href="../../index.html" class="home">
                 <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
@@ -76,10 +72,11 @@
                 </svg>
             </a>
             <span class="sep">→</span>
-            <a class="breadcrumb-text" href="../pages/analise.html">Análise Prática</a>
+            <span class="sep">Análise Prática</span>
             <span class="sep">→</span>
             <span class="current">Gestão de Projetos</span>
         </div>
+<<<<<<< Updated upstream
         
         <h1>Gestão de Projetos</h1>
 
@@ -88,11 +85,219 @@
             Página a ser desenvolvida.
 
         </p>
+=======
+
+        <h1>A. Gestão de Projetos</h1>
+
+        <div class="progress-container">
+            <div class="progress-header">
+                <strong style="color: #0369a1; font-size: 1.2rem;">Progresso da Seção</strong>
+                <strong id="percentual" style="color: #0ea5e9; font-size: 1.4rem; font-weight: 800;">0%</strong>
+            </div>
+            <div style="width: 100%; background-color: #E5E7EB; border-radius: 10px; height: 14px; overflow: hidden;">
+                <div id="barra-progresso" style="width: 0%; background-color: #0ea5e9; height: 100%; transition: width 0.4s ease;"></div>
+            </div>
+        </div>
+
+        <h2>A.1. Cultura de Acessibilidade e Inclusão</h2>
+        
+        <ul class="checklist-list">
+            <li>
+                <label class="checklist-item">
+                    <input type="checkbox"> 
+                    <span>A acessibilidade foi definida como requisito obrigatório do projeto desde seu início.</span>
+                </label>
+            </li>
+            <li>
+                <label class="checklist-item">
+                    <input type="checkbox"> 
+                    <span>Os objetivos de acessibilidade foram documentados e compartilhados com toda a equipe.</span>
+                </label>
+            </li>
+            <li>
+                <label class="checklist-item">
+                    <input type="checkbox"> 
+                    <span>A equipe recebeu orientação ou capacitação sobre acessibilidade digital.</span>
+                </label>
+            </li>
+            <li>
+                <label class="checklist-item">
+                    <input type="checkbox"> 
+                    <span>A acessibilidade é considerada em todas as etapas do ciclo de desenvolvimento.</span>
+                </label>
+            </li>
+            <li>
+                <label class="checklist-item">
+                    <input type="checkbox"> 
+                    <span>O projeto prevê orçamento e tempo para implementação e validação da acessibilidade.</span>
+                </label>
+            </li>
+            <li>
+                <label class="checklist-item">
+                    <input type="checkbox"> 
+                    <span>A equipe compreende que a acessibilidade beneficia todas as pessoas, não apenas pessoas com deficiência.</span>
+                </label>
+            </li>
+        </ul>
+
+        <hr>
+
+        <h2>A.2. Personas</h2>
+        
+        <ul class="checklist-list">
+            <li>
+                <label class="checklist-item">
+                    <input type="checkbox"> 
+                    <span>Pessoas com Deficiência Visual (cegueira, baixa visão, daltonismo ou deficiência cromática)</span>
+                </label>
+            </li>
+            <li>
+                <label class="checklist-item">
+                    <input type="checkbox"> 
+                    <span>Pessoas com Deficiência Física (fraqueza, tremores, movimentos involuntários, paralisia, limitações da sensação, dor que impede movimento, ausência de membros)</span>
+                </label>
+            </li>
+            <li>
+                <label class="checklist-item">
+                    <input type="checkbox"> 
+                    <span>Pessoas com Deficiência Auditiva (surdez, baixa audição, surdocegueira)</span>
+                </label>
+            </li>
+            <li>
+                <label class="checklist-item">
+                    <input type="checkbox"> 
+                    <span>Pessoas com Deficiência na Fala (dificuldade para falar, volume insuficiente, gagueira, mudez)</span>
+                </label>
+            </li>
+            <li>
+                <label class="checklist-item">
+                    <input type="checkbox"> 
+                    <span>Pessoas Neurodiversas (dificuldades de diferentes graus para ver, escutar, falar, compreender e interagir socialmente)</span>
+                </label>
+            </li>
+            <li>
+                <label class="checklist-item">
+                    <input type="checkbox"> 
+                    <span>Pessoas com Múltiplas Deficiências (combinação de duas ou mais deficiências anteriores)</span>
+                </label>
+            </li>
+            <li>
+                <label class="checklist-item">
+                    <input type="checkbox"> 
+                    <span>Possíveis limitações decorrentes do envelhecimento (que podem ser de um ou mais grupos de deficiências)</span>
+                </label>
+            </li>
+            <li>
+                <label class="checklist-item">
+                    <input type="checkbox"> 
+                    <span>Pessoas com analfabetismo (analfabetismo digital e funcional níveis 1, 2 e 3)</span>
+                </label>
+            </li>
+            <li>
+                <label class="checklist-item">
+                    <input type="checkbox"> 
+                    <span>Pessoas com Baixa Conectividade ou Uso de Dados Limitado (usuários com acesso precário à internet, planos limitados ou instabilidade de conexão)</span>
+                </label>
+            </li>
+            <li>
+                <label class="checklist-item">
+                    <input type="checkbox"> 
+                    <span>Usuários com Dispositivos Antigos ou de Baixo Desempenho (pessoas com smartphones ou computadores mais antigos, pouco armazenamento ou memória limitada)</span>
+                </label>
+            </li>
+            <li>
+                <label class="checklist-item">
+                    <input type="checkbox"> 
+                    <span>Pessoas com Baixo Letramento Digital (usuários com pouca familiaridade com tecnologia, interfaces ou navegação digital)</span>
+                </label>
+            </li>
+            <li>
+                <label class="checklist-item">
+                    <input type="checkbox"> 
+                    <span>Pessoas Idosas, mesmo sem deficiência diagnosticada (usuários com possíveis limitações leves de visão, audição, cognição ou motricidade fina)</span>
+                </label>
+            </li>
+            <li>
+                <label class="checklist-item">
+                    <input type="checkbox"> 
+                    <span>Cuidadores ou Acompanhantes (usuários que acessam o sistema em nome de outras pessoas - idosos, PCDs, crianças)</span>
+                </label>
+            </li>
+            <li>
+                <label class="checklist-item">
+                    <input type="checkbox"> 
+                    <span>Pessoas em Situações de Estresse ou Urgência (usuários que acessam o sistema em momentos críticos ou sob pressão)</span>
+                </label>
+            </li>
+            <li>
+                <label class="checklist-item">
+                    <input type="checkbox"> 
+                    <span>Pessoas com Barreiras Linguísticas (pessoas não fluentes na língua do sistema)</span>
+                </label>
+            </li>
+            <li>
+                <label class="checklist-item">
+                    <input type="checkbox"> 
+                    <span>Usuários de Diferentes Contextos Culturais (diferenças em símbolos)</span>
+                </label>
+            </li>
+            <li>
+                <label class="checklist-item">
+                    <input type="checkbox"> 
+                    <span>Pessoas com Restrições Temporárias (usuários afetados por condições transitórias, ex: braço imobilizado, ambiente escuro, sem óculos)</span>
+                </label>
+            </li>
+        </ul>
+>>>>>>> Stashed changes
 
     </main>
 
 </div>
 
-</body>
+<script>
+  function atualizarProgresso() {
+    const checkboxes = document.querySelectorAll('.checklist-item input[type="checkbox"]');
+    if (checkboxes.length === 0) return;
+    
+    let marcados = 0;
+    checkboxes.forEach(box => {
+      if (box.checked) marcados++;
+    });
 
+    const porcentagem = Math.round((marcados / checkboxes.length) * 100);
+    
+    const barra = document.getElementById('barra-progresso');
+    const texto = document.getElementById('percentual');
+    
+    if(barra && texto) {
+      barra.style.width = porcentagem + '%';
+      texto.innerText = porcentagem + '%';
+    }
+  }
+
+  // Monitora alterações nos checkboxes
+  document.addEventListener('change', function(e) {
+    if(e.target && e.target.type === 'checkbox') {
+      atualizarProgresso();
+      
+      // Apenas deixa o texto ligeiramente mais escuro para destacar, 
+      // mas sem mexer no fundo (background)!
+      const label = e.target.closest('.checklist-item');
+      if(label) {
+          if(e.target.checked) {
+              label.style.color = '#0369a1';
+              label.style.fontWeight = '500';
+          } else {
+              label.style.color = '#374151';
+              label.style.fontWeight = '400';
+          }
+      }
+    }
+  });
+  
+  // Atualiza assim que a página é carregada
+  document.addEventListener('DOMContentLoaded', atualizarProgresso);
+</script>
+
+</body>
 </html>
