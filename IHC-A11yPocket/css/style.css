@@ -45,6 +45,16 @@ body{
     background:white;
 
     border-bottom:1px solid #e5e7eb;
+
+    top: 0;
+
+    z-index: 1000;
+
+    position: fixed;
+
+    left: 0;
+
+    width: 100%;
 }
 
 .logo-nav{
