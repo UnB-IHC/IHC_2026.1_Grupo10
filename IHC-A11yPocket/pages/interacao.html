@@ -11,6 +11,7 @@
 
 <link rel="stylesheet" href="../css/style.css">
 
+    <link rel="icon" href="../assets/logo.png" type="image/png">
 </head>
 
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -83,10 +84,144 @@
             <span class="sep">→</span>
             <span class="current">Interação, Tempo e Animações</span>
         </div>
-        <zero-md src="../../docs/interacao.md"></zero-md>
-    </main>
+        <h1>F. Interação, Tempo e Animações</h1>
+
+        <div class="progress-container">
+            <div class="progress-header">
+                <strong style="color: #0369a1; font-size: 1.2rem;">Progresso da Seção</strong>
+                <strong id="percentual" style="color: #0ea5e9; font-size: 1.4rem; font-weight: 800;">0%</strong>
+            </div>
+            <div style="width: 100%; background-color: #E5E7EB; border-radius: 10px; height: 14px; overflow: hidden;">
+                <div id="barra-progresso" style="width: 0%; background-color: #0ea5e9; height: 100%; transition: width 0.4s ease;"></div>
+            </div>
+        </div>
+
+        <h2>F.1. Exemplo de Subseção 1</h2>
+        
+        <ul class="checklist-list">
+            <li>
+                <label class="checklist-item">
+                    <input type="checkbox"> 
+                    <span>Exemplo 1</span>
+                </label>
+            </li>
+            <li>
+                <label class="checklist-item">
+                    <input type="checkbox"> 
+                    <span>Exemplo 2</span>
+                </label>
+            </li>
+            <li>
+                <label class="checklist-item">
+                    <input type="checkbox"> 
+                    <span>Exemplo 3</span>
+                </label>
+            </li>
+        </ul>
+
+        <hr>
+
+        <h2>F.2. Exemplo de Subseção 2</h2>
+        
+        <ul class="checklist-list">
+            <li>
+                <label class="checklist-item">
+                    <input type="checkbox"> 
+                    <span>Exemplo 4</span>
+                </label>
+            </li>
+            <li>
+                <label class="checklist-item">
+                    <input type="checkbox"> 
+                    <span>Exemplo 5</span>
+                </label>
+            </li>
+            <li>
+                <label class="checklist-item">
+                    <input type="checkbox"> 
+                    <span>Exemplo 6</span>
+                </label>
+            </li>
+        </ul>
+</main>
 
 </div>
+
+<script>
+  const pageKey = 'a11y_pocket_' + window.location.pathname.split('/').pop().replace('.html', '');
+
+  function salvarProgresso() {
+    const checkboxes = document.querySelectorAll('.checklist-item input[type="checkbox"]');
+    const state = {};
+    checkboxes.forEach((box, index) => {
+      state[index] = box.checked;
+    });
+    localStorage.setItem(pageKey, JSON.stringify(state));
+  }
+
+  function carregarProgresso() {
+    const savedState = JSON.parse(localStorage.getItem(pageKey) || '{}');
+    const checkboxes = document.querySelectorAll('.checklist-item input[type="checkbox"]');
+    checkboxes.forEach((box, index) => {
+      if (savedState[index] !== undefined) {
+        box.checked = savedState[index];
+        const label = box.closest('.checklist-item');
+        if (label) {
+          if (box.checked) {
+            label.style.color = '#0369a1';
+            label.style.fontWeight = '500';
+          } else {
+            label.style.color = '#374151';
+            label.style.fontWeight = '400';
+          }
+        }
+      }
+    });
+    atualizarProgresso();
+  }
+
+  function atualizarProgresso() {
+    const checkboxes = document.querySelectorAll('.checklist-item input[type="checkbox"]');
+    if (checkboxes.length === 0) return;
+    
+    let marcados = 0;
+    checkboxes.forEach(box => {
+      if (box.checked) marcados++;
+    });
+
+    const porcentagem = Math.round((marcados / checkboxes.length) * 100);
+    
+    const barra = document.getElementById('barra-progresso');
+    const texto = document.getElementById('percentual');
+    
+    if(barra && texto) {
+      barra.style.width = porcentagem + '%';
+      texto.innerText = porcentagem + '%';
+    }
+  }
+
+  // Monitora alterações nos checkboxes
+  document.addEventListener('change', function(e) {
+    if(e.target && e.target.type === 'checkbox') {
+      salvarProgresso();
+      atualizarProgresso();
+      
+      const label = e.target.closest('.checklist-item');
+      if(label) {
+          if(e.target.checked) {
+              label.style.color = '#0369a1';
+              label.style.fontWeight = '500';
+          } else {
+              label.style.color = '#374151';
+              label.style.fontWeight = '400';
+          }
+      }
+    }
+  });
+  
+  // Carrega progresso
+  carregarProgresso();
+</script>
 
 </body>
 
