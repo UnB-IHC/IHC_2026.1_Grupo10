@@ -26,6 +26,8 @@ body{
     background:var(--background);
 
     color:var(--text);
+
+    padding-top: 80px;
 }
 
 /* NAVBAR */
