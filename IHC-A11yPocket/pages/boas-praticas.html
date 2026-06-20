@@ -3,13 +3,13 @@
 
 <head>
 
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>A11y Pocket G10</title>
+    <title>A11y Pocket G10</title>
 
-<link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
 
     <link rel="icon" href="../assets/logo.png" type="image/png">
 </head>
@@ -20,554 +20,572 @@
 
 <body>
 
-<header class="navbar">
-    <div class="logo-nav">
+    <header class="navbar">
+        <div class="logo-nav">
             <img src="../assets/logo.png" alt="Logo A11y Pocket">
             <span class="logo-text">A11y Pocket G10 </span>
-    </div>
-
- <nav>
-    <a href="../../index.html">Início</a>
-    <a href="../pages/intro.html">Documentação </a>
-    <a href="https://github.com/UnB-IHC/IHC_2026.1_Grupo10" target="_blank"> GitHub ↗ </a>
-</nav>
-</header>
-
-<div class="docs-layout">
-
-    <aside class="sidebar">
-
-        <ul>
-
-            <li><a href="../pages/intro.html">Introdução</a></li>
-            <li><a href="../pages/metodos-design.html">Métodos de Design</a></li>
-            <li><a href="../pages/personas.html">Personas</a></li>
-            <li><a href="../pages/fluxo-jornada.html">Fluxo vs. Jornada</a></li>
-            <li><a href="../pages/service-blueprint.html">Service Blueprint</a></li>
-            <li><a href="../pages/nielsen.html">Heurísticas de Nielsen</a></li>
-            <li><a href="../pages/boas-praticas.html" class="active"> Boas Práticas UI/UX</a></li>
-
-            <ul>
-            <li><a href="../pages/analise.html">Análise Prática</a></li>
-
-                <ul class = "sub-menu"> 
-                    <li><a href="../pages/analise-intro.html">Introdução</a></li>
-                    <li><a href="../pages/gestao.html">Gestão de Projetos</a></li>
-                    <li><a href="../pages/web.html">Desenvolvimento Web</a></li>
-                    <li><a href="../pages/design.html">Design</a></li>
-                    <li><a href="../pages/conteudo.html">Conteúdo</a></li>
-                    <li><a href="../pages/multimidia.html">Áudio, Vídeo e Multimídia</a></li>
-                    <li><a href="../pages/interacao.html">Interação, Tempo e Animações</a></li>
-                    <li><a href="../pages/validacao.html">Validação e Testes</a></li>
-                    <li><a href="../pages/analise-nielsen.html">Heurísticas de Nielsen</a></li>
-                    <li><a href="../pages/ferramentas.html">Ferramentas de Acessibilidade</a></li>
-                    <li><a href="../pages/progresso.html">Visão Geral do Progresso</a></li>
-                </ul>
-            </ul>
-
-            <li><a href="../pages/referencias.html">Referências Bibliográficas</a></li>
-            
-        </ul>
-
-    </aside>
-
-    <main class="content">
-
-        <div class="breadcrumb">
-            <a href="../../index.html" class="home">
-                <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
-                </svg>
-            </a>
-            <span class="sep">→</span>
-            <span class="current">Boas Práticas UI/UX</span>
         </div>
 
-        <h1>Boas Práticas de UI/UX</h1>
+        <nav>
+            <a href="../../index.html">Início</a>
+            <a href="../pages/intro.html">Documentação </a>
+            <a href="https://github.com/UnB-IHC/IHC_2026.1_Grupo10" target="_blank"> GitHub ↗ </a>
+        </nav>
+    </header>
 
-        <p>
-            Este Pocket Guide reúne, de forma objetiva, os principais conceitos, diretrizes e heurísticas
-            relacionados ao Design de Interface (UI) e à Experiência do Usuário (UX), com ênfase na sua
-            relação direta com a acessibilidade digital. O conteúdo destina-se a estudantes e
-            desenvolvedores que buscam consolidar conhecimentos fundamentais de Interação
-            Humano-Computador (IHC) aplicáveis ao desenvolvimento de produtos digitais.
-        </p>
+    <div class="docs-layout">
 
-        <hr>
+        <aside class="sidebar">
 
-        <section id="introducao">
-            <h2>1. Introdução às Boas Práticas de UI/UX</h2>
+            <ul>
 
-            <article>
-                <div class="card">
-                    <h3>Conceito de UI</h3>
-                    <p>
-                        A Interface do Usuário (User Interface — UI) corresponde ao conjunto de elementos
-                        visuais e interativos por meio dos quais o usuário se comunica com um sistema
-                        computacional. Botões, ícones, tipografia, cores, espaçamentos e componentes de
-                        navegação são exemplos de elementos constitutivos da UI, cuja função é viabilizar a
-                        interação de forma clara e eficiente.
-                    </p>
-                </div>
+                <li><a href="../pages/intro.html">Introdução</a></li>
+                <li><a href="../pages/metodos-design.html">Métodos de Design</a></li>
+                <li><a href="../pages/personas.html">Personas</a></li>
+                <li><a href="../pages/fluxo-jornada.html">Fluxo vs. Jornada</a></li>
+                <li><a href="../pages/service-blueprint.html">Service Blueprint</a></li>
+                <li><a href="../pages/nielsen.html">Heurísticas de Nielsen</a></li>
+                <li><a href="../pages/boas-praticas.html" class="active"> Boas Práticas UI/UX</a></li>
 
-                <div class="card">
-                    <h3>Conceito de UX</h3>
-                    <p>
-                        A Experiência do Usuário (User Experience — UX) refere-se ao conjunto de percepções
-                        e respostas resultantes do uso de um produto, sistema ou serviço, abrangendo
-                        aspectos como utilidade, eficiência, satisfação e emoção. Enquanto a UI trata da
-                        superfície de interação, a UX engloba a totalidade da jornada do usuário, incluindo
-                        fatores cognitivos, contextuais e funcionais.
-                    </p>
-                </div>
+                <ul>
+                    <li><a href="../pages/analise.html">Análise Prática</a></li>
 
-                <div class="card">
-                    <h3>Relação entre Usabilidade e Acessibilidade</h3>
-                    <p>
-                        A usabilidade refere-se à facilidade com que um usuário consegue utilizar um sistema
-                        para atingir seus objetivos com eficácia, eficiência e satisfação. A acessibilidade,
-                        por sua vez, garante que esse mesmo sistema possa ser utilizado por pessoas com
-                        diferentes capacidades sensoriais, motoras, cognitivas e situacionais. Embora sejam
-                        conceitos distintos, usabilidade e acessibilidade são complementares: um sistema
-                        acessível tende a ser mais usável para todos os usuários, princípio conhecido como
-                        Design Universal.
-                    </p>
-                </div>
-            </article>
-        </section>
+                    <ul class="sub-menu">
+                        <li><a href="../pages/analise-intro.html">Introdução</a></li>
+                        <li><a href="../pages/gestao.html">Gestão de Projetos</a></li>
+                        <li><a href="../pages/web.html">Desenvolvimento Web</a></li>
+                        <li><a href="../pages/design.html">Design</a></li>
+                        <li><a href="../pages/conteudo.html">Conteúdo</a></li>
+                        <li><a href="../pages/multimidia.html">Áudio, Vídeo e Multimídia</a></li>
+                        <li><a href="../pages/interacao.html">Interação, Tempo e Animações</a></li>
+                        <li><a href="../pages/validacao.html">Validação e Testes</a></li>
+                        <li><a href="../pages/analise-nielsen.html">Heurísticas de Nielsen</a></li>
+                        <li><a href="../pages/ferramentas.html">Ferramentas de Acessibilidade</a></li>
+                        <li><a href="../pages/progresso.html">Visão Geral do Progresso</a></li>
+                    </ul>
+                </ul>
 
-        <hr>
+                <li><a href="../pages/referencias.html">Referências Bibliográficas</a></li>
 
-        <section id="usabilidade">
-            <h2>2. Usabilidade</h2>
+            </ul>
+
+        </aside>
+
+        <main class="content">
+
+            <div class="breadcrumb">
+                <a href="../../index.html" class="home">
+                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+                    </svg>
+                </a>
+                <span class="sep">→</span>
+                <span class="current">Boas Práticas UI/UX</span>
+            </div>
+
+            <h1>Boas Práticas de UI/UX</h1>
+
             <p>
-                A usabilidade é composta por atributos que, em conjunto, determinam a qualidade da interação
-                entre o usuário e o sistema. Destacam-se os seguintes princípios:
+                Este Pocket Guide reúne, de forma objetiva, os principais conceitos, diretrizes e heurísticas
+                relacionados ao Design de Interface (UI) e à Experiência do Usuário (UX), com ênfase na sua
+                relação direta com a acessibilidade digital. O conteúdo destina-se a estudantes e
+                desenvolvedores que buscam consolidar conhecimentos fundamentais de Interação
+                Humano-Computador (IHC) aplicáveis ao desenvolvimento de produtos digitais.
             </p>
 
-            <article>
-                <h3>Clareza Visual</h3>
-                <ul>
-                    <li>Hierarquia tipográfica bem definida, priorizando informações essenciais.</li>
-                    <li>Uso consistente de espaçamento em branco (whitespace) para reduzir poluição visual.</li>
-                    <li>Elementos interativos visualmente distintos de elementos estáticos.</li>
-                </ul>
+            <hr>
 
-                <h3>Consistência</h3>
-                <ul>
-                    <li>Padronização de cores, ícones, tipografia e terminologia em todo o sistema.</li>
-                    <li>Comportamento previsível de componentes recorrentes (botões, menus, formulários).</li>
-                    <li>Aderência a convenções já consolidadas pelo uso comum da plataforma.</li>
-                </ul>
+            <section id="introducao">
+                <h2>1. Introdução às Boas Práticas de UI/UX</h2>
 
-                <h3>Redução da Carga Cognitiva</h3>
-                <ul>
-                    <li>Limitação do número de opções apresentadas simultaneamente ao usuário.</li>
-                    <li>Agrupamento lógico de informações relacionadas (Lei de Proximidade da Gestalt).</li>
-                    <li>Eliminação de etapas ou informações desnecessárias ao fluxo principal.</li>
-                </ul>
-
-                <h3>Feedback Imediato</h3>
-                <ul>
-                    <li>Confirmação visual ou textual após ações do usuário (cliques, envios, erros).</li>
-                    <li>Indicadores de carregamento em operações com tempo de resposta perceptível.</li>
-                    <li>Mensagens de status claras sobre o resultado de uma ação (sucesso, erro, pendência).</li>
-                </ul>
-            </article>
-
-            <div class="boa-pratica">
-                <strong class="selo">✔ Boa Prática:</strong>
-                <span>Exibir uma mensagem de confirmação visível após o envio bem-sucedido de um formulário, informando claramente o próximo passo ao usuário.</span>
-            </div>
-
-            <div class="evite">
-                <strong class="selo">✘ Evite:</strong>
-                <span>Realizar ações críticas (como exclusão de dados) sem qualquer retorno visual ou confirmação, deixando o usuário incerto sobre o resultado da operação.</span>
-            </div>
-        </section>
-
-        <hr>
-
-        <section id="acessibilidade">
-            <h2>3. Acessibilidade</h2>
-            <p>
-                A acessibilidade digital assegura que produtos e serviços possam ser percebidos, operados e
-                compreendidos por todas as pessoas, independentemente de suas condições físicas, sensoriais
-                ou cognitivas. As diretrizes a seguir constituem requisitos fundamentais nesse processo.
-            </p>
-
-            <article>
-                <h3>Contraste de Cores</h3>
-                <ul>
-                    <li>Relação mínima de contraste de 4.5:1 entre texto e plano de fundo, conforme WCAG nível AA.</li>
-                    <li>Relação mínima de 3:1 para textos em tamanho ampliado (a partir de 18pt ou 14pt em negrito).</li>
-                    <li>Informações não devem depender exclusivamente da cor para serem compreendidas.</li>
-                </ul>
-
-                <h3>Textos Alternativos</h3>
-                <ul>
-                    <li>Atributo <code>alt</code> descritivo em todas as imagens com valor informativo.</li>
-                    <li>Imagens puramente decorativas devem possuir <code>alt=""</code> para serem ignoradas por leitores de tela.</li>
-                    <li>Descrições objetivas, evitando redundâncias como "imagem de" ou "foto de".</li>
-                </ul>
-
-                <h3>Navegação por Teclado</h3>
-                <ul>
-                    <li>Todos os elementos interativos devem ser acessíveis via tecla Tab.</li>
-                    <li>Indicador visual de foco (focus outline) sempre visível e perceptível.</li>
-                    <li>Ordem de tabulação lógica, correspondente à sequência visual do conteúdo.</li>
-                </ul>
-
-                <h3>Compatibilidade com Leitores de Tela</h3>
-                <ul>
-                    <li>Uso correto de marcação semântica HTML (landmarks, headings, listas).</li>
-                    <li>Aplicação de atributos ARIA apenas quando estritamente necessário.</li>
-                    <li>Testes periódicos com leitores de tela como NVDA, JAWS e VoiceOver.</li>
-                </ul>
-
-                <h3>WCAG (Web Content Accessibility Guidelines)</h3>
-                <p>
-                    As WCAG constituem o conjunto normativo internacional, mantido pelo W3C, que estabelece
-                    critérios de acessibilidade para conteúdos web. As diretrizes são organizadas em torno de
-                    quatro princípios fundamentais, conhecidos pelo acrônimo POUR: conteúdo
-                    <strong>Perceptível</strong>, <strong>Operável</strong>, <strong>Compreensível</strong> e
-                    <strong>Robusto</strong>. A conformidade é classificada em três níveis — A, AA e AAA —
-                    sendo o nível AA o padrão de referência adotado pela maioria das legislações e
-                    organizações.
-                </p>
-            </article>
-
-            <div class="boa-pratica">
-                <strong class="selo">✔ Boa Prática:</strong>
-                <span>Garantir que toda funcionalidade disponível via mouse também seja executável exclusivamente pelo teclado.</span>
-            </div>
-
-            <div class="evite">
-                <strong class="selo">✘ Evite:</strong>
-                <span>Utilizar exclusivamente a cor vermelha para indicar campos obrigatórios ou mensagens de erro, sem texto ou ícone complementar.</span>
-            </div>
-        </section>
-
-        <hr>
-
-        <section id="navegacao">
-            <h2>4. Navegação</h2>
-
-            <article>
-                <h3>Menus Intuitivos</h3>
-                <ul>
-                    <li>Rotulagem clara e objetiva, com termos de fácil reconhecimento pelo usuário.</li>
-                    <li>Quantidade limitada de itens de primeiro nível, evitando sobrecarga cognitiva.</li>
-                </ul>
-
-                <h3>Hierarquia de Informação</h3>
-                <ul>
-                    <li>Organização do conteúdo em níveis lógicos, do mais geral ao mais específico.</li>
-                    <li>Uso consistente de cabeçalhos (<code>h1</code> a <code>h6</code>) para estruturar a página.</li>
-                </ul>
-
-                <h3>Breadcrumbs</h3>
-                <ul>
-                    <li>Indicação do caminho percorrido pelo usuário dentro da arquitetura do site.</li>
-                    <li>Permite o retorno rápido a níveis superiores sem o uso do botão "voltar" do navegador.</li>
-                </ul>
-
-                <h3>Busca Eficiente</h3>
-                <ul>
-                    <li>Campo de busca visível e de fácil localização nas páginas principais.</li>
-                    <li>Tolerância a variações ortográficas e sugestões de correção automática.</li>
-                    <li>Resultados organizados por relevância, com filtros complementares quando aplicável.</li>
-                </ul>
-            </article>
-        </section>
-
-        <hr>
-
-        <section id="formularios">
-            <h2>5. Formulários</h2>
-
-            <article>
-                <h3>Labels Associadas</h3>
-                <ul>
-                    <li>Todo campo de formulário deve possuir um rótulo (<code>&lt;label&gt;</code>) associado de forma programática.</li>
-                    <li>Labels permanentemente visíveis, evitando o uso exclusivo de placeholders como rótulo.</li>
-                </ul>
-
-                <h3>Mensagens de Erro Claras</h3>
-                <ul>
-                    <li>Identificação precisa do campo com erro e da natureza do problema.</li>
-                    <li>Mensagens posicionadas próximas ao campo correspondente, com linguagem objetiva.</li>
-                    <li>Erros anunciados de forma compatível com tecnologias assistivas.</li>
-                </ul>
-
-                <h3>Campos Obrigatórios Identificados</h3>
-                <ul>
-                    <li>Indicação explícita e textual de campos de preenchimento obrigatório.</li>
-                    <li>Uso do atributo <code>required</code> em conjunto com sinalização visual e textual.</li>
-                </ul>
-            </article>
-
-            <div class="boa-pratica">
-                <strong class="selo">✔ Boa Prática:</strong>
-                <span>Associar cada campo de formulário a uma mensagem de erro específica, descrevendo o motivo da invalidação e a forma de corrigi-la.</span>
-            </div>
-
-            <div class="evite">
-                <strong class="selo">✘ Evite:</strong>
-                <span>Exibir mensagens genéricas como "Erro no formulário" sem indicar qual campo específico requer correção.</span>
-            </div>
-        </section>
-
-        <hr>
-
-        <section id="responsividade">
-            <h2>6. Responsividade</h2>
-
-            <article>
-                <h3>Mobile First</h3>
-                <ul>
-                    <li>Concepção do design priorizando inicialmente telas de menor dimensão.</li>
-                    <li>Progressão incremental de recursos e complexidade para telas maiores (progressive enhancement).</li>
-                </ul>
-
-                <h3>Adaptação para Diferentes Resoluções</h3>
-                <ul>
-                    <li>Uso de unidades relativas e grids flexíveis no lugar de dimensões fixas.</li>
-                    <li>Testes em múltiplos dispositivos e orientações (retrato e paisagem).</li>
-                </ul>
-
-                <h3>Tamanho Adequado de Botões</h3>
-                <ul>
-                    <li>Área de toque mínima recomendada de 44x44 pixels, conforme diretrizes WCAG.</li>
-                    <li>Espaçamento suficiente entre elementos interativos para evitar toques acidentais.</li>
-                </ul>
-            </article>
-        </section>
-
-        <hr>
-
-        <section id="leis-principios">
-            <h2>7. Leis e Princípios de UX</h2>
-
-            <article>
-                <h3>Lei de Hick</h3>
-                <p>
-                    Estabelece que o tempo necessário para a tomada de decisão aumenta de forma
-                    proporcional ao número e à complexidade das opções apresentadas. Recomenda-se, portanto,
-                    a simplificação de menus e a redução de escolhas simultâneas.
-                </p>
-
-                <h3>Lei de Fitts</h3>
-                <p>
-                    Determina que o tempo necessário para atingir um alvo está relacionado à distância até
-                    ele e ao seu tamanho. Elementos interativos frequentemente utilizados devem ser maiores
-                    e posicionados em locais de fácil alcance.
-                </p>
-
-                <h3>Design Centrado no Usuário</h3>
-                <p>
-                    Abordagem de desenvolvimento orientada pelas necessidades, expectativas e limitações dos
-                    usuários reais, fundamentada em pesquisa, prototipação e avaliação iterativa ao longo de
-                    todo o ciclo de design.
-                </p>
-
-                <h3>Heurísticas de Nielsen</h3>
-                <p>
-                    Conjunto de dez princípios amplamente adotados para avaliação heurística de
-                    usabilidade, incluindo visibilidade do status do sistema, controle e liberdade do
-                    usuário, consistência, prevenção de erros e reconhecimento em vez de memorização.
-                    Para um detalhamento completo, consulte a seção dedicada às
-                    <a href="../pages/nielsen.html">Heurísticas de Nielsen</a>.
-                </p>
-            </article>
-        </section>
-
-        <hr>
-
-        <section id="exemplos-praticos">
-            <h2>8. Exemplos Práticos</h2>
-            <p>
-                Esta seção apresenta comparações diretas entre implementações que seguem as boas práticas
-                descritas neste guia e implementações que as violam, incluindo representações visuais
-                simplificadas dos componentes discutidos.
-            </p>
-
-            <article>
-                <h3>Exemplo Visual 1 — Botão de Ação</h3>
-                <div class="visual-comparison">
-                    <div class="visual-example is-correct">
-                        <div class="visual-example-label">✔ Correto</div>
-                        <div class="visual-example-stage">
-                            <button class="mock-btn mock-btn-good" type="button">Enviar Cadastro</button>
-                        </div>
-                        <p class="visual-example-caption">
-                            Rótulo textual claro, contraste adequado entre texto e fundo, área de toque
-                            ampla e formato facilmente reconhecível como elemento interativo.
+                <article>
+                    <div class="card">
+                        <h3>Conceito de UI</h3>
+                        <p>
+                            A Interface do Usuário (User Interface — UI) corresponde ao conjunto de elementos
+                            visuais e interativos por meio dos quais o usuário se comunica com um sistema
+                            computacional. Botões, ícones, tipografia, cores, espaçamentos e componentes de
+                            navegação são exemplos de elementos constitutivos da UI, cuja função é viabilizar a
+                            interação de forma clara e eficiente.
                         </p>
                     </div>
-                    <div class="visual-example is-incorrect">
-                        <div class="visual-example-label">✘ Incorreto</div>
-                        <div class="visual-example-stage">
-                            <button class="mock-btn mock-btn-bad" type="button">ok</button>
-                        </div>
-                        <p class="visual-example-caption">
-                            Botão minúsculo, sem destaque visual em relação ao fundo, com rótulo pouco
-                            descritivo e contraste insuficiente entre texto e plano de fundo.
+
+                    <div class="card">
+                        <h3>Conceito de UX</h3>
+                        <p>
+                            A Experiência do Usuário (User Experience — UX) refere-se ao conjunto de percepções
+                            e respostas resultantes do uso de um produto, sistema ou serviço, abrangendo
+                            aspectos como utilidade, eficiência, satisfação e emoção. Enquanto a UI trata da
+                            superfície de interação, a UX engloba a totalidade da jornada do usuário, incluindo
+                            fatores cognitivos, contextuais e funcionais.
                         </p>
                     </div>
+
+                    <div class="card">
+                        <h3>Relação entre Usabilidade e Acessibilidade</h3>
+                        <p>
+                            A usabilidade refere-se à facilidade com que um usuário consegue utilizar um sistema
+                            para atingir seus objetivos com eficácia, eficiência e satisfação. A acessibilidade,
+                            por sua vez, garante que esse mesmo sistema possa ser utilizado por pessoas com
+                            diferentes capacidades sensoriais, motoras, cognitivas e situacionais. Embora sejam
+                            conceitos distintos, usabilidade e acessibilidade são complementares: um sistema
+                            acessível tende a ser mais usável para todos os usuários, princípio conhecido como
+                            Design Universal.
+                        </p>
+                    </div>
+                </article>
+            </section>
+
+            <hr>
+
+            <section id="usabilidade">
+                <h2>2. Usabilidade</h2>
+                <p>
+                    A usabilidade é composta por atributos que, em conjunto, determinam a qualidade da interação
+                    entre o usuário e o sistema. Destacam-se os seguintes princípios:
+                </p>
+
+                <article>
+                    <h3>Clareza Visual</h3>
+                    <ul>
+                        <li>Hierarquia tipográfica bem definida, priorizando informações essenciais.</li>
+                        <li>Uso consistente de espaçamento em branco (whitespace) para reduzir poluição visual.</li>
+                        <li>Elementos interativos visualmente distintos de elementos estáticos.</li>
+                    </ul>
+
+                    <h3>Consistência</h3>
+                    <ul>
+                        <li>Padronização de cores, ícones, tipografia e terminologia em todo o sistema.</li>
+                        <li>Comportamento previsível de componentes recorrentes (botões, menus, formulários).</li>
+                        <li>Aderência a convenções já consolidadas pelo uso comum da plataforma.</li>
+                    </ul>
+
+                    <h3>Redução da Carga Cognitiva</h3>
+                    <ul>
+                        <li>Limitação do número de opções apresentadas simultaneamente ao usuário.</li>
+                        <li>Agrupamento lógico de informações relacionadas (Lei de Proximidade da Gestalt).</li>
+                        <li>Eliminação de etapas ou informações desnecessárias ao fluxo principal.</li>
+                    </ul>
+
+                    <h3>Feedback Imediato</h3>
+                    <ul>
+                        <li>Confirmação visual ou textual após ações do usuário (cliques, envios, erros).</li>
+                        <li>Indicadores de carregamento em operações com tempo de resposta perceptível.</li>
+                        <li>Mensagens de status claras sobre o resultado de uma ação (sucesso, erro, pendência).</li>
+                    </ul>
+                </article>
+
+                <div class="boa-pratica">
+                    <strong class="selo">✔ Boa Prática:</strong>
+                    <span>Exibir uma mensagem de confirmação visível após o envio bem-sucedido de um
+                        formulário,informando claramente o próximo passo ao usuário.</span>
                 </div>
 
-                <br>
-
-                <h3>Exemplo Visual 2 — Contraste de Texto</h3>
-                <div class="visual-comparison">
-                    <div class="visual-example is-correct">
-                        <div class="visual-example-label">✔ Correto</div>
-                        <div class="visual-example-stage">
-                            <div class="mock-contrast-good">Texto com contraste 7.2:1</div>
-                        </div>
-                        <p class="visual-example-caption">
-                            Relação de contraste superior à exigida pelo nível AA da WCAG, garantindo
-                            legibilidade inclusive para usuários com baixa visão.
-                        </p>
-                    </div>
-                    <div class="visual-example is-incorrect">
-                        <div class="visual-example-label">✘ Incorreto</div>
-                        <div class="visual-example-stage">
-                            <div class="mock-contrast-bad">Texto com contraste 1.6:1</div>
-                        </div>
-                        <p class="visual-example-caption">
-                            Relação de contraste abaixo do mínimo exigido, tornando o texto praticamente
-                            ilegível para grande parte dos usuários.
-                        </p>
-                    </div>
+                <div class="evite">
+                    <strong class="selo">✘ Evite:</strong>
+                    <span>Realizar ações críticas (como exclusão de dados) sem qualquer retorno visual ou confirmação,
+                        deixando o usuário incerto sobre o resultado da operação.</span>
                 </div>
+            </section>
 
-                <br>
+            <hr>
 
-                <h3>Exemplo Visual 3 — Indicador de Foco (Navegação por Teclado)</h3>
-                <div class="visual-comparison">
-                    <div class="visual-example is-correct">
-                        <div class="visual-example-label">✔ Correto</div>
-                        <div class="visual-example-stage">
-                            <div class="mock-focus-row">
-                                <span class="mock-focus-good">Próximo</span>
-                            </div>
-                        </div>
-                        <p class="visual-example-caption">
-                            O elemento em foco exibe um contorno (outline) nítido e contrastante, permitindo
-                            que o usuário identifique sua posição atual durante a navegação por teclado.
-                        </p>
-                    </div>
-                    <div class="visual-example is-incorrect">
-                        <div class="visual-example-label">✘ Incorreto</div>
-                        <div class="visual-example-stage">
-                            <div class="mock-focus-row">
-                                <span class="mock-focus-bad">Próximo</span>
-                            </div>
-                        </div>
-                        <p class="visual-example-caption">
-                            A propriedade <code>outline: none</code> foi aplicada sem alternativa visual,
-                            eliminando qualquer indicação de foco para quem navega via teclado.
-                        </p>
-                    </div>
-                </div>
+            <section id="acessibilidade">
+                <h2>3. Acessibilidade</h2>
+                <p>
+                    A acessibilidade digital assegura que produtos e serviços possam ser percebidos, operados e
+                    compreendidos por todas as pessoas, independentemente de suas condições físicas, sensoriais
+                    ou cognitivas. As diretrizes a seguir constituem requisitos fundamentais nesse processo.
+                </p>
 
-                <br>
+                <article>
+                    <h3>Contraste de Cores</h3>
+                    <ul>
+                        <li>Relação mínima de contraste de 4.5:1 entre texto e plano de fundo, conforme WCAG nível AA.
+                        </li>
+                        <li>Relação mínima de 3:1 para textos em tamanho ampliado (a partir de 18pt ou 14pt em negrito).
+                        </li>
+                        <li>Informações não devem depender exclusivamente da cor para serem compreendidas.</li>
+                    </ul>
 
-                <h3>Exemplo Visual 4 — Label de Formulário</h3>
-                <div class="visual-comparison">
-                    <div class="visual-example is-correct">
-                        <div class="visual-example-label">✔ Correto</div>
-                        <div class="visual-example-stage">
-                            <div class="mock-form">
-                                <span class="mock-form-label">E-mail</span>
-                                <span class="mock-form-input">nome@exemplo.com</span>
-                            </div>
-                        </div>
-                        <p class="visual-example-caption">
-                            O campo possui uma <code>&lt;label&gt;</code> visível e permanente, associada
-                            programaticamente ao campo de entrada por meio do atributo <code>for</code>.
-                        </p>
-                    </div>
-                    <div class="visual-example is-incorrect">
-                        <div class="visual-example-label">✘ Incorreto</div>
-                        <div class="visual-example-stage">
-                            <div class="mock-form">
-                                <span class="mock-form-input is-placeholder-only">E-mail</span>
-                            </div>
-                        </div>
-                        <p class="visual-example-caption">
-                            O texto "E-mail" existe apenas como <code>placeholder</code> e desaparece ao
-                            digitar, deixando o campo sem identificação para leitores de tela.
-                        </p>
-                    </div>
-                </div>
+                    <h3>Textos Alternativos</h3>
+                    <ul>
+                        <li>Atributo <code>alt</code> descritivo em todas as imagens com valor informativo.</li>
+                        <li>Imagens puramente decorativas devem possuir <code>alt=""</code> para serem ignoradas por
+                            leitores de tela.</li>
+                        <li>Descrições objetivas, evitando redundâncias como "imagem de" ou "foto de".</li>
+                    </ul>
 
-                <br>
+                    <h3>Navegação por Teclado</h3>
+                    <ul>
+                        <li>Todos os elementos interativos devem ser acessíveis via tecla Tab.</li>
+                        <li>Indicador visual de foco (focus outline) sempre visível e perceptível.</li>
+                        <li>Ordem de tabulação lógica, correspondente à sequência visual do conteúdo.</li>
+                    </ul>
 
-                <h3>Exemplo 5 — Mensagens de Erro em Formulário</h3>
-                <div class="card boa-pratica">
-                    <h3>✔ Exemplo Correto</h3>
+                    <h3>Compatibilidade com Leitores de Tela</h3>
+                    <ul>
+                        <li>Uso correto de marcação semântica HTML (landmarks, headings, listas).</li>
+                        <li>Aplicação de atributos ARIA apenas quando estritamente necessário.</li>
+                        <li>Testes periódicos com leitores de tela como NVDA, JAWS e VoiceOver.</li>
+                    </ul>
+
+                    <h3>WCAG (Web Content Accessibility Guidelines)</h3>
                     <p>
-                        Ao submeter um formulário com o campo "E-mail" inválido, o sistema exibe a mensagem
-                        "Informe um e-mail válido, no formato nome@dominio.com" diretamente abaixo do campo,
-                        associada a ele via <code>aria-describedby</code> e anunciada automaticamente por
-                        leitores de tela.
+                        As WCAG constituem o conjunto normativo internacional, mantido pelo W3C, que estabelece
+                        critérios de acessibilidade para conteúdos web. As diretrizes são organizadas em torno de
+                        quatro princípios fundamentais, conhecidos pelo acrônimo POUR: conteúdo
+                        <strong>Perceptível</strong>, <strong>Operável</strong>, <strong>Compreensível</strong> e
+                        <strong>Robusto</strong>. A conformidade é classificada em três níveis — A, AA e AAA —
+                        sendo o nível AA o padrão de referência adotado pela maioria das legislações e
+                        organizações.
                     </p>
+                </article>
+
+                <div class="boa-pratica">
+                    <strong class="selo">✔ Boa Prática:</strong>
+                    <span>Garantir que toda funcionalidade disponível via mouse também seja executável exclusivamente
+                        pelo teclado.</span>
                 </div>
-                <div class="card evite">
-                    <h3>✘ Exemplo Incorreto</h3>
+
+                <div class="evite">
+                    <strong class="selo">✘ Evite:</strong>
+                    <span>Utilizar exclusivamente a cor vermelha para indicar campos obrigatórios ou mensagens de erro,
+                        sem texto ou ícone complementar.</span>
+                </div>
+            </section>
+
+            <hr>
+
+            <section id="navegacao">
+                <h2>4. Navegação</h2>
+
+                <article>
+                    <h3>Menus Intuitivos</h3>
+                    <ul>
+                        <li>Rotulagem clara e objetiva, com termos de fácil reconhecimento pelo usuário.</li>
+                        <li>Quantidade limitada de itens de primeiro nível, evitando sobrecarga cognitiva.</li>
+                    </ul>
+
+                    <h3>Hierarquia de Informação</h3>
+                    <ul>
+                        <li>Organização do conteúdo em níveis lógicos, do mais geral ao mais específico.</li>
+                        <li>Uso consistente de cabeçalhos (<code>h1</code> a <code>h6</code>) para estruturar a página.
+                        </li>
+                    </ul>
+
+                    <h3>Breadcrumbs</h3>
+                    <ul>
+                        <li>Indicação do caminho percorrido pelo usuário dentro da arquitetura do site.</li>
+                        <li>Permite o retorno rápido a níveis superiores sem o uso do botão "voltar" do navegador.</li>
+                    </ul>
+
+                    <h3>Busca Eficiente</h3>
+                    <ul>
+                        <li>Campo de busca visível e de fácil localização nas páginas principais.</li>
+                        <li>Tolerância a variações ortográficas e sugestões de correção automática.</li>
+                        <li>Resultados organizados por relevância, com filtros complementares quando aplicável.</li>
+                    </ul>
+                </article>
+            </section>
+
+            <hr>
+
+            <section id="formularios">
+                <h2>5. Formulários</h2>
+
+                <article>
+                    <h3>Labels Associadas</h3>
+                    <ul>
+                        <li>Todo campo de formulário deve possuir um rótulo (<code>&lt;label&gt;</code>) associado de
+                            forma programática.</li>
+                        <li>Labels permanentemente visíveis, evitando o uso exclusivo de placeholders como rótulo.</li>
+                    </ul>
+
+                    <h3>Mensagens de Erro Claras</h3>
+                    <ul>
+                        <li>Identificação precisa do campo com erro e da natureza do problema.</li>
+                        <li>Mensagens posicionadas próximas ao campo correspondente, com linguagem objetiva.</li>
+                        <li>Erros anunciados de forma compatível com tecnologias assistivas.</li>
+                    </ul>
+
+                    <h3>Campos Obrigatórios Identificados</h3>
+                    <ul>
+                        <li>Indicação explícita e textual de campos de preenchimento obrigatório.</li>
+                        <li>Uso do atributo <code>required</code> em conjunto com sinalização visual e textual.</li>
+                    </ul>
+                </article>
+
+                <div class="boa-pratica">
+                    <strong class="selo">✔ Boa Prática:</strong>
+                    <span>Associar cada campo de formulário a uma mensagem de erro específica, descrevendo o motivo da
+                        invalidação e a forma de corrigi-la.</span>
+                </div>
+
+                <div class="evite">
+                    <strong class="selo">✘ Evite:</strong>
+                    <span>Exibir mensagens genéricas como "Erro no formulário" sem indicar qual campo específico requer
+                        correção.</span>
+                </div>
+            </section>
+
+            <hr>
+
+            <section id="responsividade">
+                <h2>6. Responsividade</h2>
+
+                <article>
+                    <h3>Mobile First</h3>
+                    <ul>
+                        <li>Concepção do design priorizando inicialmente telas de menor dimensão.</li>
+                        <li>Progressão incremental de recursos e complexidade para telas maiores (progressive
+                            enhancement).</li>
+                    </ul>
+
+                    <h3>Adaptação para Diferentes Resoluções</h3>
+                    <ul>
+                        <li>Uso de unidades relativas e grids flexíveis no lugar de dimensões fixas.</li>
+                        <li>Testes em múltiplos dispositivos e orientações (retrato e paisagem).</li>
+                    </ul>
+
+                    <h3>Tamanho Adequado de Botões</h3>
+                    <ul>
+                        <li>Área de toque mínima recomendada de 44x44 pixels, conforme diretrizes WCAG.</li>
+                        <li>Espaçamento suficiente entre elementos interativos para evitar toques acidentais.</li>
+                    </ul>
+                </article>
+            </section>
+
+            <hr>
+
+            <section id="leis-principios">
+                <h2>7. Leis e Princípios de UX</h2>
+
+                <article>
+                    <h3>Lei de Hick</h3>
                     <p>
-                        O sistema exibe apenas um ícone vermelho genérico ao lado do botão de envio, sem
-                        texto explicativo e sem indicar qual campo específico contém o erro, exigindo que o
-                        usuário identifique o problema por tentativa e erro.
+                        Estabelece que o tempo necessário para a tomada de decisão aumenta de forma
+                        proporcional ao número e à complexidade das opções apresentadas. Recomenda-se, portanto,
+                        a simplificação de menus e a redução de escolhas simultâneas.
                     </p>
-                </div>
 
-                <br>
-
-                <h3>Exemplo 6 — Conteúdo de Imagem</h3>
-                <div class="card boa-pratica">
-                    <h3>✔ Exemplo Correto</h3>
+                    <h3>Lei de Fitts</h3>
                     <p>
-                        Um gráfico de barras representando vendas trimestrais utiliza
-                        <code>alt="Gráfico de barras: vendas cresceram de R$ 10 mil em janeiro para R$ 25
+                        Determina que o tempo necessário para atingir um alvo está relacionado à distância até
+                        ele e ao seu tamanho. Elementos interativos frequentemente utilizados devem ser maiores
+                        e posicionados em locais de fácil alcance.
+                    </p>
+
+                    <h3>Design Centrado no Usuário</h3>
+                    <p>
+                        Abordagem de desenvolvimento orientada pelas necessidades, expectativas e limitações dos
+                        usuários reais, fundamentada em pesquisa, prototipação e avaliação iterativa ao longo de
+                        todo o ciclo de design.
+                    </p>
+
+                    <h3>Heurísticas de Nielsen</h3>
+                    <p>
+                        Conjunto de dez princípios amplamente adotados para avaliação heurística de
+                        usabilidade, incluindo visibilidade do status do sistema, controle e liberdade do
+                        usuário, consistência, prevenção de erros e reconhecimento em vez de memorização.
+                        Para um detalhamento completo, consulte a seção dedicada às
+                        <a href="../pages/nielsen.html">Heurísticas de Nielsen</a>.
+                    </p>
+                </article>
+            </section>
+
+            <hr>
+
+            <section id="exemplos-praticos">
+                <h2>8. Exemplos Práticos</h2>
+                <p>
+                    Esta seção apresenta comparações diretas entre implementações que seguem as boas práticas
+                    descritas neste guia e implementações que as violam, incluindo representações visuais
+                    simplificadas dos componentes discutidos.
+                </p>
+
+                <article>
+                    <h3>Exemplo Visual 1 — Botão de Ação</h3>
+                    <div class="comparacao-visual">
+                        <div class="exemplo-visual correto">
+                            <div class="exemplo-visual-label">✔ Correto</div>
+                            <div class="exemplo-visual-stage">
+                                <button class="mock-btn mock-btn-correto" type="button">Enviar Cadastro</button>
+                            </div>
+                            <p class="exemplo-descricao">
+                                Rótulo textual claro, contraste adequado entre texto e fundo, área de toque
+                                ampla e formato facilmente reconhecível como elemento interativo.
+                            </p>
+                        </div>
+                        <div class="exemplo-visual incorreto">
+                            <div class="exemplo-visual-label">✘ Incorreto</div>
+                            <div class="exemplo-visual-stage">
+                                <button class="mock-btn mock-btn-errado" type="button">ok</button>
+                            </div>
+                            <p class="exemplo-descricao">
+                                Botão minúsculo, sem destaque visual em relação ao fundo, com rótulo pouco
+                                descritivo e contraste insuficiente entre texto e plano de fundo.
+                            </p>
+                        </div>
+                    </div>
+
+                    <br>
+
+                    <h3>Exemplo Visual 2 — Contraste de Texto</h3>
+                    <div class="comparacao-visual">
+                        <div class="exemplo-visual correto">
+                            <div class="exemplo-visual-label">✔ Correto</div>
+                            <div class="exemplo-visual-stage">
+                                <div class="mock-contrast-correto">Texto com contraste 7.2:1</div>
+                            </div>
+                            <p class="exemplo-descricao">
+                                Relação de contraste superior à exigida pelo nível AA da WCAG, garantindo
+                                legibilidade inclusive para usuários com baixa visão.
+                            </p>
+                        </div>
+                        <div class="exemplo-visual incorreto">
+                            <div class="exemplo-visual-label">✘ Incorreto</div>
+                            <div class="exemplo-visual-stage">
+                                <div class="mock-contrast-errado">Texto com contraste 1.6:1</div>
+                            </div>
+                            <p class="exemplo-descricao">
+                                Relação de contraste abaixo do mínimo exigido, tornando o texto praticamente
+                                ilegível para grande parte dos usuários.
+                            </p>
+                        </div>
+                    </div>
+
+                    <br>
+
+                    <h3>Exemplo Visual 3 — Indicador de Foco (Navegação por Teclado)</h3>
+                    <div class="comparacao-visual">
+                        <div class="exemplo-visual correto">
+                            <div class="exemplo-visual-label">✔ Correto</div>
+                            <div class="exemplo-visual-stage">
+                                <div class="mock-focus-row">
+                                    <span class="mock-focus-correto">Próximo</span>
+                                </div>
+                            </div>
+                            <p class="exemplo-descricao">
+                                O elemento em foco exibe um contorno (outline) nítido e contrastante, permitindo
+                                que o usuário identifique sua posição atual durante a navegação por teclado.
+                            </p>
+                        </div>
+                        <div class="exemplo-visual incorreto">
+                            <div class="exemplo-visual-label">✘ Incorreto</div>
+                            <div class="exemplo-visual-stage">
+                                <div class="mock-focus-row">
+                                    <span class="mock-focus-errado">Próximo</span>
+                                </div>
+                            </div>
+                            <p class="exemplo-descricao">
+                                A propriedade <code>outline: none</code> foi aplicada sem alternativa visual,
+                                eliminando qualquer indicação de foco para quem navega via teclado.
+                            </p>
+                        </div>
+                    </div>
+
+                    <br>
+
+                    <h3>Exemplo Visual 4 — Label de Formulário</h3>
+                    <div class="comparacao-visual">
+                        <div class="exemplo-visual correto">
+                            <div class="exemplo-visual-label">✔ Correto</div>
+                            <div class="exemplo-visual-stage">
+                                <div class="mock-form">
+                                    <span class="mock-form-label">E-mail</span>
+                                    <span class="mock-form-input">nome@exemplo.com</span>
+                                </div>
+                            </div>
+                            <p class="exemplo-descricao">
+                                O campo possui uma <code>&lt;label&gt;</code> visível e permanente, associada
+                                programaticamente ao campo de entrada por meio do atributo <code>for</code>.
+                            </p>
+                        </div>
+                        <div class="exemplo-visual incorreto">
+                            <div class="exemplo-visual-label">✘ Incorreto</div>
+                            <div class="exemplo-visual-stage">
+                                <div class="mock-form">
+                                    <span class="mock-form-input is-placeholder-only">E-mail</span>
+                                </div>
+                            </div>
+                            <p class="exemplo-descricao">
+                                O texto "E-mail" existe apenas como <code>placeholder</code> e desaparece ao
+                                digitar, deixando o campo sem identificação para leitores de tela.
+                            </p>
+                        </div>
+                    </div>
+
+                    <br>
+
+                    <h3>Exemplo 5 — Mensagens de Erro em Formulário</h3>
+                    <div class="comparacao-visual">
+                        <div class="card boa-pratica">
+                            <h3>✔ Exemplo Correto</h3>
+                            <p>
+                                Ao submeter um formulário com o campo "E-mail" inválido, o sistema exibe a mensagem
+                                "Informe um e-mail válido, no formato nome@dominio.com" diretamente abaixo do campo,
+                                associada a ele via <code>aria-describedby</code> e anunciada automaticamente por
+                                leitores de tela.
+                            </p>
+                        </div>
+                        <div class="card evite">
+                            <h3>✘ Exemplo Incorreto</h3>
+                            <p>
+                                O sistema exibe apenas um ícone vermelho genérico ao lado do botão de envio, sem
+                                texto explicativo e sem indicar qual campo específico contém o erro, exigindo que o
+                                usuário identifique o problema por tentativa e erro.
+                            </p>
+                        </div>
+                    </div>
+
+                    <br>
+
+                    <h3>Exemplo 6 — Conteúdo de Imagem</h3>
+                    <div class="comparacao-visual">
+                        <div class="card boa-pratica">
+                            <h3>✔ Exemplo Correto</h3>
+                            <p>
+                                Um gráfico de barras representando vendas trimestrais utiliza
+                                <code>alt="Gráfico de barras: vendas cresceram de R$ 10 mil em janeiro para R$ 25
                         mil em março"</code>, descrevendo a informação relevante transmitida pela imagem.
-                    </p>
-                </div>
-                <div class="card evite">
-                    <h3>✘ Exemplo Incorreto</h3>
-                    <p>
-                        O mesmo gráfico utiliza <code>alt="imagem1.png"</code> ou é publicado sem o atributo
-                        <code>alt</code>, impedindo que usuários de leitores de tela compreendam a
-                        informação apresentada visualmente.
-                    </p>
-                </div>
+                            </p>
+                        </div>
+                        <div class="card evite">
+                            <h3>✘ Exemplo Incorreto</h3>
+                            <p>
+                                O mesmo gráfico utiliza <code>alt="imagem1.png"</code> ou é publicado sem o atributo
+                                <code>alt</code>, impedindo que usuários de leitores de tela compreendam a
+                                informação apresentada visualmente.
+                            </p>
+                        </div>
+                    </div>
 
-                <br>
+                    <br>
 
-                <h3>Exemplo 7 — Hierarquia de Cabeçalhos</h3>
-                <div class="card boa-pratica">
-                    <h3>✔ Exemplo Correto</h3>
-                    <p>
-                        A página utiliza um único <code>&lt;h1&gt;</code> como título principal, seguido por
-                        <code>&lt;h2&gt;</code> para seções e <code>&lt;h3&gt;</code> para subseções, sem
-                        saltos na hierarquia, permitindo navegação estrutural por leitores de tela.
-                    </p>
-                </div>
-                <div class="card evite">
-                    <h3>✘ Exemplo Incorreto</h3>
-                    <p>
-                        A página utiliza múltiplos <code>&lt;h1&gt;</code> e seleciona o nível do cabeçalho
-                        conforme o tamanho de fonte desejado, e não conforme a hierarquia real do conteúdo.
-                    </p>
-                </div>
-            </article>
-        </section>
-    </main>
+                    <h3>Exemplo 7 — Hierarquia de Cabeçalhos</h3>
+                    <div class="comparacao-visual">
+                        <div class="card boa-pratica">
+                            <h3>✔ Exemplo Correto</h3>
+                            <p>
+                                A página utiliza um único <code>&lt;h1&gt;</code> como título principal, seguido por
+                                <code>&lt;h2&gt;</code> para seções e <code>&lt;h3&gt;</code> para subseções, sem
+                                saltos na hierarquia, permitindo navegação estrutural por leitores de tela.
+                            </p>
+                        </div>
+                        <div class="card evite">
+                            <h3>✘ Exemplo Incorreto</h3>
+                            <p>
+                                A página utiliza múltiplos <code>&lt;h1&gt;</code> e seleciona o nível do cabeçalho
+                                conforme o tamanho de fonte desejado, e não conforme a hierarquia real do conteúdo.
+                            </p>
+                        </div>
+                    </div>
+                </article>
+            </section>
+        </main>
 
-</div>
+    </div>
 
 </body>
 
