@@ -152,12 +152,19 @@
   function salvarProgresso() {
     const checkboxes = document.querySelectorAll('.checklist-item input[type="checkbox"]');
     const state = {};
+    let marcados = 0;
     checkboxes.forEach((box, index) => {
       state[index] = box.checked;
+      if (box.checked) marcados++;
     });
     localStorage.setItem(pageKey, JSON.stringify(state));
+    localStorage.setItem(pageKey + '_info', JSON.stringify({
+      checked: marcados,
+      total: checkboxes.length
+    }));
   }
 
+  // Mantemos compatibilidade com a função global que pode ser chamada de fora
   function carregarProgresso() {
     const savedState = JSON.parse(localStorage.getItem(pageKey) || '{}');
     const checkboxes = document.querySelectorAll('.checklist-item input[type="checkbox"]');
@@ -197,6 +204,12 @@
       barra.style.width = porcentagem + '%';
       texto.innerText = porcentagem + '%';
     }
+
+    // Salva o info atualizado
+    localStorage.setItem(pageKey + '_info', JSON.stringify({
+      checked: marcados,
+      total: checkboxes.length
+    }));
   }
 
   // Monitora alterações nos checkboxes

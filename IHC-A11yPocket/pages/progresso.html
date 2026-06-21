@@ -2,43 +2,160 @@
 <html lang="pt-BR">
 
 <head>
-
-<meta charset="UTF-8">
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>A11y Pocket G10</title>
-
-<link rel="stylesheet" href="../css/style.css">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A11y Pocket G10 - Visão Geral do Progresso</title>
+    
+    <link rel="stylesheet" href="../css/style.css">
     <link rel="icon" href="../assets/logo.png" type="image/png">
+    <style>
+        .dashboard-section {
+            margin-top: 30px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #111827;
+            margin-bottom: 25px;
+        }
+        .main-progress-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+            justify-content: center;
+        }
+        @media (min-width: 768px) {
+            .categories-grid {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                max-width: 1000px;
+                gap: 20px;
+            }
+            .category-card {
+                width: 100%;
+                margin: 0;
+            }
+        }
+        @media (min-width: 1024px) {
+            .categories-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+        .category-card {
+            background: #ffffff;
+            border: 1px solid #E5E7EB;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .category-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .progress-circle {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .progress-circle.large {
+            width: 160px;
+            height: 160px;
+        }
+        .progress-circle:not(.large) {
+            width: 120px;
+            height: 120px;
+        }
+        .progress-circle svg {
+            transform: rotate(-90deg);
+        }
+        .progress-circle circle {
+            fill: none;
+            stroke-width: 8;
+        }
+        .progress-circle.large circle {
+            stroke-width: 12;
+        }
+        .progress-circle .bg-circle {
+            stroke: #E5E7EB;
+        }
+        .progress-circle .fg-circle {
+            stroke: #0ea5e9;
+            stroke-linecap: round;
+            transition: stroke-dashoffset 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        /* Large Circle */
+        .progress-circle.large .fg-circle {
+            stroke-dasharray: 439.82; /* 2 * PI * 70 */
+            stroke-dashoffset: 439.82;
+        }
+        /* Small Circle */
+        .progress-circle:not(.large) .fg-circle {
+            stroke-dasharray: 314.16; /* 2 * PI * 50 */
+            stroke-dashoffset: 314.16;
+        }
+        .progress-circle .percentage-text {
+            position: absolute;
+            font-weight: 800;
+            color: #0ea5e9;
+        }
+        .progress-circle.large .percentage-text {
+            font-size: 2.2rem;
+        }
+        .progress-circle:not(.large) .percentage-text {
+            font-size: 1.5rem;
+        }
+        .progress-label {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #374151;
+            text-align: center;
+        }
+        .dashboard-divider {
+            border: 0;
+            height: 1px;
+            background-color: #E5E7EB;
+            margin: 40px 0;
+        }
+    </style>
 </head>
 
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-<script type="module" src="https://cdn.jsdelivr.net/gh/zerodevx/zero-md@2/dist/zero-md.min.js"></script>
 
 <body>
 
 <header class="navbar">
     <div class="logo-nav">
-            <img src="../assets/logo.png" alt="Logo A11y Pocket">
-            <span class="logo-text">A11y Pocket G10 </span>
+        <img src="../assets/logo.png" alt="Logo A11y Pocket">
+        <span class="logo-text">A11y Pocket G10 </span>
     </div>
 
- <nav>
-    <a href="../../index.html">Início</a>
-    <a href="../pages/intro.html">Documentação </a>
-    <a href="https://github.com/UnB-IHC/IHC_2026.1_Grupo10" target="_blank"> GitHub ↗ </a>
-</nav>
+    <nav>
+        <a href="../../index.html">Início</a>
+        <a href="../pages/intro.html">Documentação </a>
+        <a href="https://github.com/UnB-IHC/IHC_2026.1_Grupo10" target="_blank"> GitHub ↗ </a>
+    </nav>
 </header>
 
 <div class="docs-layout">
 
     <aside class="sidebar">
-
         <ul>
-
             <li><a href="../pages/intro.html">Introdução</a></li>
             <li><a href="../pages/metodos-design.html">Métodos de Design</a></li>
             <li><a href="../pages/personas.html">Personas</a></li>
@@ -48,9 +165,8 @@
             <li><a href="../pages/boas-praticas.html"> Boas Práticas UI/UX</a></li>
 
             <ul>
-            <li><a href="../pages/analise.html">Análise Prática</a></li>
-
-                <ul class = "sub-menu"> 
+                <li><a href="../pages/analise.html">Análise Prática</a></li>
+                <ul class="sub-menu"> 
                     <li><a href="../pages/analise-intro.html">Introdução</a></li>
                     <li><a href="../pages/gestao.html">Gestão de Projetos</a></li>
                     <li><a href="../pages/web.html">Desenvolvimento Web</a></li>
@@ -65,17 +181,15 @@
                 </ul>
             </ul>
 
-                <li><a href="../pages/referencias.html">Referências Bibliográficas</a></li>
+            <li><a href="../pages/referencias.html">Referências Bibliográficas</a></li>
         </ul>
-
     </aside>
 
     <main class="content">
-
         <div class="breadcrumb">
             <a href="../../index.html" class="home">
                 <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+                    <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
                 </svg>
             </a>
             <span class="sep">→</span>
@@ -83,125 +197,6 @@
             <span class="sep">→</span>
             <span class="current">Visão Geral do Progresso</span>
         </div>
-        <style>
-            .dashboard-section {
-                margin-top: 30px;
-                margin-bottom: 40px;
-                text-align: center;
-            }
-            .section-title {
-                font-size: 1.8rem;
-                font-weight: 700;
-                color: #111827;
-                margin-bottom: 25px;
-            }
-            .main-progress-wrapper {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                gap: 15px;
-            }
-            .categories-grid {
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-                gap: 30px;
-                max-width: 950px;
-                margin: 0 auto;
-                justify-content: center;
-            }
-            @media (min-width: 768px) {
-                .categories-grid {
-                    display: flex;
-                    flex-wrap: wrap;
-                    justify-content: center;
-                }
-                .category-card {
-                    width: calc(33% - 20px);
-                    margin: 10px;
-                }
-            }
-            .category-card {
-                background: #ffffff;
-                border: 1px solid #E5E7EB;
-                padding: 25px;
-                border-radius: 12px;
-                box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                gap: 15px;
-                transition: transform 0.2s ease, box-shadow 0.2s ease;
-            }
-            .category-card:hover {
-                transform: translateY(-2px);
-                box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-            }
-            .progress-circle {
-                position: relative;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
-            .progress-circle.large {
-                width: 160px;
-                height: 160px;
-            }
-            .progress-circle:not(.large) {
-                width: 120px;
-                height: 120px;
-            }
-            .progress-circle svg {
-                transform: rotate(-90deg);
-            }
-            .progress-circle circle {
-                fill: none;
-                stroke-width: 8;
-            }
-            .progress-circle.large circle {
-                stroke-width: 12;
-            }
-            .progress-circle .bg-circle {
-                stroke: #E5E7EB;
-            }
-            .progress-circle .fg-circle {
-                stroke: #0ea5e9;
-                stroke-linecap: round;
-                transition: stroke-dashoffset 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-            }
-            /* Large Circle */
-            .progress-circle.large .fg-circle {
-                stroke-dasharray: 439.82; /* 2 * PI * 70 */
-                stroke-dashoffset: 439.82;
-            }
-            /* Small Circle */
-            .progress-circle:not(.large) .fg-circle {
-                stroke-dasharray: 314.16; /* 2 * PI * 50 */
-                stroke-dashoffset: 314.16;
-            }
-            .progress-circle .percentage-text {
-                position: absolute;
-                font-weight: 800;
-                color: #0ea5e9;
-            }
-            .progress-circle.large .percentage-text {
-                font-size: 2.2rem;
-            }
-            .progress-circle:not(.large) .percentage-text {
-                font-size: 1.5rem;
-            }
-            .progress-label {
-                font-size: 1.05rem;
-                font-weight: 600;
-                color: #374151;
-                text-align: center;
-            }
-            .dashboard-divider {
-                border: 0;
-                height: 1px;
-                background-color: #E5E7EB;
-                margin: 40px 0;
-            }
-        </style>
 
         <h1>Visão Geral do Progresso</h1>
 
@@ -248,25 +243,58 @@
                 </div>
 
                 <div class="category-card">
-                    <div class="progress-circle" id="circle-design_conteudo">
+                    <div class="progress-circle" id="circle-design">
                         <svg width="120" height="120" viewBox="0 0 120 120">
                             <circle cx="60" cy="60" r="50" class="bg-circle" />
                             <circle cx="60" cy="60" r="50" class="fg-circle" />
                         </svg>
                         <div class="percentage-text">0%</div>
                     </div>
-                    <div class="progress-label" id="label-design_conteudo" data-base-text="Design e Conteúdo">Design e Conteúdo (0 / 12)</div>
+                    <div class="progress-label" id="label-design" data-base-text="Design">Design (0 / 6)</div>
                 </div>
 
                 <div class="category-card">
-                    <div class="progress-circle" id="circle-geracao_conteudo">
+                    <div class="progress-circle" id="circle-conteudo">
                         <svg width="120" height="120" viewBox="0 0 120 120">
                             <circle cx="60" cy="60" r="50" class="bg-circle" />
                             <circle cx="60" cy="60" r="50" class="fg-circle" />
                         </svg>
                         <div class="percentage-text">0%</div>
                     </div>
-                    <div class="progress-label" id="label-geracao_conteudo" data-base-text="Geração de Conteúdo">Geração de Conteúdo (0 / 18)</div>
+                    <div class="progress-label" id="label-conteudo" data-base-text="Conteúdo">Conteúdo (0 / 6)</div>
+                </div>
+
+                <div class="category-card">
+                    <div class="progress-circle" id="circle-multimidia">
+                        <svg width="120" height="120" viewBox="0 0 120 120">
+                            <circle cx="60" cy="60" r="50" class="bg-circle" />
+                            <circle cx="60" cy="60" r="50" class="fg-circle" />
+                        </svg>
+                        <div class="percentage-text">0%</div>
+                    </div>
+                    <div class="progress-label" id="label-multimidia" data-base-text="Áudio, Vídeo e Multimídia">Áudio, Vídeo e Multimídia (0 / 6)</div>
+                </div>
+
+                <div class="category-card">
+                    <div class="progress-circle" id="circle-interacao">
+                        <svg width="120" height="120" viewBox="0 0 120 120">
+                            <circle cx="60" cy="60" r="50" class="bg-circle" />
+                            <circle cx="60" cy="60" r="50" class="fg-circle" />
+                        </svg>
+                        <div class="percentage-text">0%</div>
+                    </div>
+                    <div class="progress-label" id="label-interacao" data-base-text="Interação, Tempo e Animações">Interação, Tempo e Animações (0 / 6)</div>
+                </div>
+
+                <div class="category-card">
+                    <div class="progress-circle" id="circle-validacao">
+                        <svg width="120" height="120" viewBox="0 0 120 120">
+                            <circle cx="60" cy="60" r="50" class="bg-circle" />
+                            <circle cx="60" cy="60" r="50" class="fg-circle" />
+                        </svg>
+                        <div class="percentage-text">0%</div>
+                    </div>
+                    <div class="progress-label" id="label-validacao" data-base-text="Validação e Testes">Validação e Testes (0 / 6)</div>
                 </div>
 
                 <div class="category-card">
@@ -282,16 +310,18 @@
 
             </div>
         </div>
-</main>
-
+    </main>
 </div>
 
 <script>
   const pages = {
     gestao: { files: ['gestao'], total: 23 },
     web: { files: ['web'], total: 6 },
-    design_conteudo: { files: ['design', 'conteudo'], total: 12 },
-    geracao_conteudo: { files: ['multimidia', 'interacao', 'validacao'], total: 18 },
+    design: { files: ['design'], total: 6 },
+    conteudo: { files: ['conteudo'], total: 6 },
+    multimidia: { files: ['multimidia'], total: 6 },
+    interacao: { files: ['interacao'], total: 6 },
+    validacao: { files: ['validacao'], total: 6 },
     heurísticas: { files: ['analise-nielsen'], total: 6 }
   };
 
@@ -321,19 +351,21 @@
 
     for (const [catKey, catInfo] of Object.entries(pages)) {
       let catChecked = 0;
+      let catTotal = 0;
+      
       catInfo.files.forEach(file => {
-        const savedState = JSON.parse(localStorage.getItem('a11y_pocket_' + file) || '{}');
-        Object.values(savedState).forEach(val => {
-          if (val === true) catChecked++;
-        });
+        const defaultTotal = (file === 'gestao') ? 23 : 6;
+        const savedInfo = JSON.parse(localStorage.getItem('a11y_pocket_' + file + '_info') || `{"checked":0,"total":${defaultTotal}}`);
+        
+        catChecked += savedInfo.checked;
+        catTotal += savedInfo.total;
       });
       
-      catChecked = Math.min(catChecked, catInfo.total);
       totalChecked += catChecked;
-      totalCount += catInfo.total;
+      totalCount += catTotal;
 
-      const catPercent = catInfo.total > 0 ? Math.round((catChecked / catInfo.total) * 100) : 0;
-      updateCircle(catKey, catPercent, catChecked, catInfo.total);
+      const catPercent = catTotal > 0 ? Math.round((catChecked / catTotal) * 100) : 0;
+      updateCircle(catKey, catPercent, catChecked, catTotal);
     }
 
     const overallPercent = totalCount > 0 ? Math.round((totalChecked / totalCount) * 100) : 0;
