@@ -2,90 +2,1475 @@
 <html lang="pt-BR">
 
 <head>
-
-<meta charset="UTF-8">
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>A11y G10</title>
-
-<link rel="stylesheet" href="../css/style.css">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A11y G10</title>
+    <link rel="stylesheet" href="../css/style.css">
     <link rel="icon" href="../assets/logo.png" type="image/png">
 </head>
 
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-<script type="module" src="https://cdn.jsdelivr.net/gh/zerodevx/zero-md@2/dist/zero-md.min.js"></script>
-
 <body>
 
-<header class="navbar">
-    <div class="logo-nav">
+    <header class="navbar">
+        <div class="logo-nav">
             <img src="../assets/logo.png" alt="Logo A11y Pocket">
             <span class="logo-text">A11y G10 </span>
+        </div>
+        <nav>
+            <a href="../../index.html">Início</a>
+            <a href="../pages/intro.html">Documentação</a>
+            <a href="https://github.com/UnB-IHC/IHC_2026.1_Grupo10" target="_blank"> GitHub ↗ </a>
+        </nav>
+    </header>
+
+    <div class="docs-layout">
+
+        <aside class="sidebar">
+            <ul>
+                <li><a href="../pages/intro.html">Introdução</a></li>
+                <li><a href="../pages/metodos-design.html">Métodos de Design</a></li>
+                <li><a href="../pages/personas.html">Personas</a></li>
+                <li><a href="../pages/fluxo-jornada.html">Fluxo vs. Jornada</a></li>
+                <li><a href="../pages/service-blueprint.html">Service Blueprint</a></li>
+                <li><a href="../pages/nielsen.html" class="active">Heurísticas de Nielsen</a></li>
+                <li><a href="../pages/boas-praticas.html">Boas Práticas UI/UX</a></li>
+                <ul>
+                    <li><a href="../pages/analise.html">Análise Prática</a></li>
+                    <ul class="sub-menu">
+                        <li><a href="../pages/analise-intro.html">Introdução</a></li>
+                        <li><a href="../pages/gestao.html">Gestão de Projetos</a></li>
+                        <li><a href="../pages/web.html">Desenvolvimento Web</a></li>
+                        <li><a href="../pages/design.html">Design</a></li>
+                        <li><a href="../pages/conteudo.html">Conteúdo</a></li>
+                        <li><a href="../pages/multimidia.html">Áudio, Vídeo e Multimídia</a></li>
+                        <li><a href="../pages/interacao.html">Interação, Tempo e Animações</a></li>
+                        <li><a href="../pages/validacao.html">Validação e Testes</a></li>
+                        <li><a href="../pages/analise-nielsen.html">Heurísticas de Nielsen</a></li>
+                        <li><a href="../pages/ferramentas.html">Ferramentas de Acessibilidade</a></li>
+                        <li><a href="../pages/progresso.html">Visão Geral do Progresso</a></li>
+                    </ul>
+                </ul>
+                <li><a href="../pages/referencias.html">Referências Bibliográficas</a></li>
+            </ul>
+        </aside>
+
+        <main class="content">
+
+            <div class="breadcrumb">
+                <a href="../../index.html" class="home">
+                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+                    </svg>
+                </a>
+                <span class="sep">→</span>
+                <span class="current">Heurísticas de Nielsen</span>
+            </div>
+
+            <h1>Heurísticas de Nielsen</h1>
+
+            <p>
+                As Heurísticas de Nielsen são dez princípios gerais para o design de interfaces, propostos
+                por Jakob Nielsen em 1994. Amplamente adotados na avaliação heurística de usabilidade, esses
+                princípios orientam a identificação de problemas de interação e guiam decisões de projeto
+                centradas no usuário. Cada seção abaixo apresenta o conceito, contexto de aplicação e um
+                exemplo prático comparativo.
+            </p>
+
+            <hr>
+
+            <!-- ═══════════════════════════════════════════
+                 H1 — Visibilidade do status
+            ════════════════════════════════════════════ -->
+            <section id="h1">
+                <h2>1. Visibilidade do Status do Sistema</h2>
+                <p>
+                    O sistema deve sempre manter os usuários informados sobre o que está acontecendo,
+                    fornecendo feedback adequado dentro de um tempo razoável. O usuário nunca deve ficar
+                    sem saber se sua ação foi registrada, processada ou concluída.
+                </p>
+
+                <h3>Exemplo prático — Upload de arquivo</h3>
+                <p>
+                    Imagine um usuário enviando um arquivo grande em uma plataforma de nuvem. O comportamento
+                    da interface após o clique em "Enviar" faz toda a diferença:
+                </p>
+
+                <div class="nielsen-exemplo-bloco">
+                    <div class="nielsen-coluna">
+                        <div class="nielsen-tag nielsen-tag-ruim">Sem feedback</div>
+                        <div class="nielsen-mockup">
+                            <div class="mock-topbar">
+                                <span class="mock-dot"></span><span class="mock-dot"></span><span class="mock-dot"></span>
+                            </div>
+                            <div class="mock-body">
+                                <div class="mock-titulo">Enviar documento</div>
+                                <div class="mock-arquivo-box">
+                                    <span class="mock-icone-arquivo">📄</span>
+                                    <span class="mock-arquivo-nome">relatorio_final.pdf</span>
+                                </div>
+                                <button class="mock-btn-enviado-ruim" disabled>Enviar</button>
+                                <div class="mock-silencio"><!-- nada acontece --></div>
+                            </div>
+                        </div>
+                        <p class="nielsen-descricao">
+                            Após o clique, o botão some ou trava. Nenhum indicador de atividade é exibido.
+                            O usuário não sabe se o arquivo está sendo enviado, se ocorreu um erro ou se
+                            deve clicar novamente.
+                        </p>
+                    </div>
+
+                    <div class="nielsen-coluna">
+                        <div class="nielsen-tag nielsen-tag-bom">Com feedback adequado</div>
+                        <div class="nielsen-mockup">
+                            <div class="mock-topbar">
+                                <span class="mock-dot"></span><span class="mock-dot"></span><span class="mock-dot"></span>
+                            </div>
+                            <div class="mock-body">
+                                <div class="mock-titulo">Enviar documento</div>
+                                <div class="mock-arquivo-box">
+                                    <span class="mock-icone-arquivo">📄</span>
+                                    <span class="mock-arquivo-nome">relatorio_final.pdf</span>
+                                </div>
+                                <div class="mock-progress-label">Enviando… <strong>68%</strong></div>
+                                <div class="mock-progress-track">
+                                    <div class="mock-progress-fill" style="width: 68%;"></div>
+                                </div>
+                                <div class="mock-status-ok">✔ Concluído assim que atingir 100%</div>
+                            </div>
+                        </div>
+                        <p class="nielsen-descricao">
+                            Uma barra de progresso informa o percentual atual. O usuário sabe que a operação
+                            está em curso e tem expectativa clara de quando será concluída.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <hr>
+
+            <!-- ═══════════════════════════════════════════
+                 H2 — Correspondência com o mundo real
+            ════════════════════════════════════════════ -->
+            <section id="h2">
+                <h2>2. Correspondência entre o Sistema e o Mundo Real</h2>
+                <p>
+                    O sistema deve utilizar a linguagem do usuário — palavras, frases e conceitos familiares
+                    ao público-alvo — em vez de termos técnicos orientados ao sistema. Convenções do mundo
+                    real devem ser seguidas, fazendo com que as informações apareçam em ordem natural e lógica.
+                </p>
+
+                <h3>Exemplo prático — Mensagem de erro de autenticação</h3>
+                <p>
+                    Ao errar a senha em um sistema interno corporativo, dois comportamentos completamente
+                    diferentes podem ocorrer:
+                </p>
+
+                <div class="nielsen-exemplo-bloco">
+                    <div class="nielsen-coluna">
+                        <div class="nielsen-tag nielsen-tag-ruim">Linguagem técnica</div>
+                        <div class="nielsen-mockup">
+                            <div class="mock-topbar">
+                                <span class="mock-dot"></span><span class="mock-dot"></span><span class="mock-dot"></span>
+                            </div>
+                            <div class="mock-body">
+                                <div class="mock-titulo">Login</div>
+                                <div class="mock-campo">
+                                    <div class="mock-label">Usuário</div>
+                                    <div class="mock-input mock-input-filled">joao.silva</div>
+                                </div>
+                                <div class="mock-campo">
+                                    <div class="mock-label">Senha</div>
+                                    <div class="mock-input mock-input-filled">••••••••</div>
+                                </div>
+                                <div class="mock-erro-tecnico">
+                                    ERR_AUTH_0x403: LDAP bind failed — invalid credentials token
+                                </div>
+                            </div>
+                        </div>
+                        <p class="nielsen-descricao">
+                            A mensagem exibe código de erro e termos técnicos que o usuário comum não compreende,
+                            gerando confusão e insegurança.
+                        </p>
+                    </div>
+
+                    <div class="nielsen-coluna">
+                        <div class="nielsen-tag nielsen-tag-bom">Linguagem do usuário</div>
+                        <div class="nielsen-mockup">
+                            <div class="mock-topbar">
+                                <span class="mock-dot"></span><span class="mock-dot"></span><span class="mock-dot"></span>
+                            </div>
+                            <div class="mock-body">
+                                <div class="mock-titulo">Login</div>
+                                <div class="mock-campo">
+                                    <div class="mock-label">Usuário</div>
+                                    <div class="mock-input mock-input-filled">joao.silva</div>
+                                </div>
+                                <div class="mock-campo">
+                                    <div class="mock-label">Senha</div>
+                                    <div class="mock-input mock-input-erro">••••••••</div>
+                                </div>
+                                <div class="mock-erro-amigavel">
+                                    Senha incorreta. Verifique o Caps Lock e tente novamente, ou
+                                    <span class="mock-link">redefina sua senha</span>.
+                                </div>
+                            </div>
+                        </div>
+                        <p class="nielsen-descricao">
+                            A mensagem usa linguagem simples, indica o problema de forma clara e oferece
+                            uma ação concreta para resolução.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <hr>
+
+            <!-- ═══════════════════════════════════════════
+                 H3 — Controle e liberdade do usuário
+            ════════════════════════════════════════════ -->
+            <section id="h3">
+                <h2>3. Controle e Liberdade do Usuário</h2>
+                <p>
+                    Usuários frequentemente acionam funções por engano e precisam de uma "saída de emergência"
+                    claramente sinalizada. Ações de desfazer (<em>undo</em>) e cancelar devem estar sempre
+                    disponíveis, sem exigir percursos longos.
+                </p>
+
+                <h3>Exemplo prático — Exclusão de item em lista de tarefas</h3>
+                <p>
+                    Um usuário arrasta e exclui uma tarefa sem querer. O que acontece a seguir define se ele
+                    se sentirá no controle ou preso:
+                </p>
+
+                <div class="nielsen-exemplo-bloco">
+                    <div class="nielsen-coluna">
+                        <div class="nielsen-tag nielsen-tag-ruim">Sem saída de emergência</div>
+                        <div class="nielsen-mockup">
+                            <div class="mock-topbar">
+                                <span class="mock-dot"></span><span class="mock-dot"></span><span class="mock-dot"></span>
+                            </div>
+                            <div class="mock-body">
+                                <div class="mock-titulo">Minhas tarefas</div>
+                                <div class="mock-task mock-task-riscada">✔ Revisar proposta comercial</div>
+                                <div class="mock-task">◻ Enviar relatório semanal</div>
+                                <div class="mock-task">◻ Agendar reunião com cliente</div>
+                                <div class="mock-aviso-ruim">Tarefa excluída.</div>
+                            </div>
+                        </div>
+                        <p class="nielsen-descricao">
+                            A tarefa some sem aviso prévio ou opção de recuperação. O usuário perde o
+                            trabalho sem nenhuma chance de desfazer a ação.
+                        </p>
+                    </div>
+
+                    <div class="nielsen-coluna">
+                        <div class="nielsen-tag nielsen-tag-bom">Com desfazer disponível</div>
+                        <div class="nielsen-mockup">
+                            <div class="mock-topbar">
+                                <span class="mock-dot"></span><span class="mock-dot"></span><span class="mock-dot"></span>
+                            </div>
+                            <div class="mock-body">
+                                <div class="mock-titulo">Minhas tarefas</div>
+                                <div class="mock-task mock-task-riscada">✔ Revisar proposta comercial</div>
+                                <div class="mock-task">◻ Enviar relatório semanal</div>
+                                <div class="mock-task">◻ Agendar reunião com cliente</div>
+                                <div class="mock-toast">
+                                    Tarefa excluída. &nbsp;
+                                    <span class="mock-toast-acao">Desfazer</span>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="nielsen-descricao">
+                            Uma notificação temporária aparece com a opção "Desfazer", dando ao usuário
+                            segundos para reverter a ação caso tenha sido acidental.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <hr>
+
+            <!-- ═══════════════════════════════════════════
+                 H4 — Consistência e padrões
+            ════════════════════════════════════════════ -->
+            <section id="h4">
+                <h2>4. Consistência e Padrões</h2>
+                <p>
+                    Os usuários não devem ter dúvidas sobre se palavras, situações ou ações diferentes
+                    significam a mesma coisa. Siga as convenções da plataforma e mantenha padronização
+                    interna entre componentes semelhantes.
+                </p>
+
+                <h3>Exemplo prático — Botões de ação em modais</h3>
+                <p>
+                    Em um sistema com múltiplos modais de confirmação, a posição e nomenclatura dos botões
+                    deve ser sempre a mesma:
+                </p>
+
+                <div class="nielsen-exemplo-bloco">
+                    <div class="nielsen-coluna">
+                        <div class="nielsen-tag nielsen-tag-ruim">Inconsistente</div>
+                        <div class="nielsen-mockup">
+                            <div class="mock-topbar">
+                                <span class="mock-dot"></span><span class="mock-dot"></span><span class="mock-dot"></span>
+                            </div>
+                            <div class="mock-body">
+                                <div class="mock-modal">
+                                    <div class="mock-modal-titulo">Salvar alterações?</div>
+                                    <div class="mock-modal-texto">Você tem mudanças não salvas.</div>
+                                    <div class="mock-modal-btns">
+                                        <button class="mock-modal-btn-ok">Sim</button>
+                                        <button class="mock-modal-btn-cancel">Não salvar</button>
+                                    </div>
+                                </div>
+                                <div class="mock-modal mock-modal-segundo">
+                                    <div class="mock-modal-titulo">Excluir arquivo?</div>
+                                    <div class="mock-modal-texto">Esta ação não pode ser desfeita.</div>
+                                    <div class="mock-modal-btns">
+                                        <button class="mock-modal-btn-cancel">Cancelar</button>
+                                        <button class="mock-modal-btn-ok mock-btn-vermelho">OK</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="nielsen-descricao">
+                            Modais diferentes usam termos e ordens de botão distintos ("Sim/Não salvar"
+                            vs "Cancelar/OK"), exigindo que o usuário releia cada diálogo com atenção.
+                        </p>
+                    </div>
+
+                    <div class="nielsen-coluna">
+                        <div class="nielsen-tag nielsen-tag-bom">Consistente</div>
+                        <div class="nielsen-mockup">
+                            <div class="mock-topbar">
+                                <span class="mock-dot"></span><span class="mock-dot"></span><span class="mock-dot"></span>
+                            </div>
+                            <div class="mock-body">
+                                <div class="mock-modal">
+                                    <div class="mock-modal-titulo">Salvar alterações?</div>
+                                    <div class="mock-modal-texto">Você tem mudanças não salvas.</div>
+                                    <div class="mock-modal-btns">
+                                        <button class="mock-modal-btn-cancel">Cancelar</button>
+                                        <button class="mock-modal-btn-ok">Confirmar</button>
+                                    </div>
+                                </div>
+                                <div class="mock-modal mock-modal-segundo">
+                                    <div class="mock-modal-titulo">Excluir arquivo?</div>
+                                    <div class="mock-modal-texto">Esta ação não pode ser desfeita.</div>
+                                    <div class="mock-modal-btns">
+                                        <button class="mock-modal-btn-cancel">Cancelar</button>
+                                        <button class="mock-modal-btn-ok">Confirmar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="nielsen-descricao">
+                            Todos os modais seguem o mesmo padrão: botão neutro à esquerda, ação principal
+                            à direita, com o mesmo rótulo "Confirmar" — tornando o comportamento previsível.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <hr>
+
+            <!-- ═══════════════════════════════════════════
+                 H5 — Prevenção de erros
+            ════════════════════════════════════════════ -->
+            <section id="h5">
+                <h2>5. Prevenção de Erros</h2>
+                <p>
+                    Melhor do que boas mensagens de erro é um design que previne a ocorrência de problemas.
+                    Elimine condições propensas a erros ou ofereça confirmações antes de ações destrutivas.
+                    Existem dois tipos de erros: <em>deslizes</em> (ações automáticas incorretas) e
+                    <em>enganos</em> (decisões equivocadas). O design deve minimizar ambos.
+                </p>
+
+                <h3>Exemplo prático — Campo de data</h3>
+                <p>
+                    Um formulário de agendamento solicita uma data de nascimento. A escolha do componente
+                    de entrada pode eliminar ou multiplicar os erros de preenchimento:
+                </p>
+
+                <div class="nielsen-exemplo-bloco">
+                    <div class="nielsen-coluna">
+                        <div class="nielsen-tag nielsen-tag-ruim">Propenso a erros</div>
+                        <div class="nielsen-mockup">
+                            <div class="mock-topbar">
+                                <span class="mock-dot"></span><span class="mock-dot"></span><span class="mock-dot"></span>
+                            </div>
+                            <div class="mock-body">
+                                <div class="mock-titulo">Agendamento</div>
+                                <div class="mock-campo">
+                                    <div class="mock-label">Data de nascimento</div>
+                                    <div class="mock-input mock-input-erro">13/32/1990</div>
+                                    <div class="mock-field-error">Data inválida.</div>
+                                </div>
+                                <div class="mock-campo">
+                                    <div class="mock-label">Horário preferencial</div>
+                                    <div class="mock-input mock-input-erro">25:00</div>
+                                    <div class="mock-field-error">Horário inválido.</div>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="nielsen-descricao">
+                            Campos de texto livre permitem qualquer entrada, gerando erros de formato que
+                            só são detectados após o envio do formulário.
+                        </p>
+                    </div>
+
+                    <div class="nielsen-coluna">
+                        <div class="nielsen-tag nielsen-tag-bom">Prevenção integrada</div>
+                        <div class="nielsen-mockup">
+                            <div class="mock-topbar">
+                                <span class="mock-dot"></span><span class="mock-dot"></span><span class="mock-dot"></span>
+                            </div>
+                            <div class="mock-body">
+                                <div class="mock-titulo">Agendamento</div>
+                                <div class="mock-campo">
+                                    <div class="mock-label">Data de nascimento</div>
+                                    <div class="mock-calendario-mini">
+                                        <div class="mock-cal-header">◀ &nbsp; Março 1990 &nbsp; ▶</div>
+                                        <div class="mock-cal-grid">
+                                            <span>D</span><span>S</span><span>T</span><span>Q</span><span>Q</span><span>S</span><span>S</span>
+                                            <span></span><span></span><span></span><span></span><span>1</span><span>2</span><span>3</span>
+                                            <span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span>
+                                            <span>11</span><span>12</span><span class="mock-cal-sel">13</span><span>14</span><span>15</span><span>16</span><span>17</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="nielsen-descricao">
+                            Um seletor de calendário restringe as entradas a valores válidos, tornando
+                            fisicamente impossível inserir datas inexistentes como "32/13".
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <hr>
+
+            <!-- ═══════════════════════════════════════════
+                 H6 — Reconhecimento em vez de memorização
+            ════════════════════════════════════════════ -->
+            <section id="h6">
+                <h2>6. Reconhecimento em vez de Memorização</h2>
+                <p>
+                    Minimize a carga de memória do usuário tornando objetos, ações e opções visíveis no
+                    contexto em que são necessários. O usuário não deve precisar lembrar informações de
+                    uma parte da interface para usá-las em outra.
+                </p>
+
+                <h3>Exemplo prático — Editor de texto</h3>
+                <p>
+                    Um editor de documentos pode disponibilizar suas funções de formatação de maneiras
+                    muito diferentes entre si:
+                </p>
+
+                <div class="nielsen-exemplo-bloco">
+                    <div class="nielsen-coluna">
+                        <div class="nielsen-tag nielsen-tag-ruim">Baseado em memorização</div>
+                        <div class="nielsen-mockup">
+                            <div class="mock-topbar">
+                                <span class="mock-dot"></span><span class="mock-dot"></span><span class="mock-dot"></span>
+                            </div>
+                            <div class="mock-body">
+                                <div class="mock-titulo">Editor de Texto</div>
+                                <div class="mock-editor-area mock-editor-sem-toolbar">
+                                    <p style="font-family:monospace; font-size:0.78rem; color:#888; margin:0;">
+                                        Ctrl+B = negrito<br>
+                                        Ctrl+I = itálico<br>
+                                        Ctrl+U = sublinhado<br>
+                                        Ctrl+K = link<br>
+                                        …
+                                    </p>
+                                    <div class="mock-editor-cursor">|</div>
+                                </div>
+                                <div style="font-size:0.75rem; color:#aaa; text-align:center; margin-top:4px;">somente atalhos de teclado</div>
+                            </div>
+                        </div>
+                        <p class="nielsen-descricao">
+                            O usuário precisa memorizar todos os atalhos para formatar texto. Não há
+                            nenhuma indicação visual das funções disponíveis durante a edição.
+                        </p>
+                    </div>
+
+                    <div class="nielsen-coluna">
+                        <div class="nielsen-tag nielsen-tag-bom">Baseado em reconhecimento</div>
+                        <div class="nielsen-mockup">
+                            <div class="mock-topbar">
+                                <span class="mock-dot"></span><span class="mock-dot"></span><span class="mock-dot"></span>
+                            </div>
+                            <div class="mock-body">
+                                <div class="mock-titulo">Editor de Texto</div>
+                                <div class="mock-toolbar">
+                                    <span class="mock-tool-btn mock-tool-ativo"><b>N</b></span>
+                                    <span class="mock-tool-btn"><i>I</i></span>
+                                    <span class="mock-tool-btn"><u>S</u></span>
+                                    <span class="mock-tool-sep"></span>
+                                    <span class="mock-tool-btn">H1</span>
+                                    <span class="mock-tool-btn">H2</span>
+                                    <span class="mock-tool-sep"></span>
+                                    <span class="mock-tool-btn">🔗</span>
+                                    <span class="mock-tool-btn">☰</span>
+                                </div>
+                                <div class="mock-editor-area">
+                                    <span style="font-weight:700;">Relatório</span> de desempenho<div class="mock-editor-cursor">|</div>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="nielsen-descricao">
+                            Uma barra de ferramentas sempre visível exibe as opções de formatação com
+                            ícones reconhecíveis, dispensando memorização de atalhos.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <hr>
+
+            <!-- ═══════════════════════════════════════════
+                 H7 — Flexibilidade e eficiência
+            ════════════════════════════════════════════ -->
+            <section id="h7">
+                <h2>7. Flexibilidade e Eficiência de Uso</h2>
+                <p>
+                    O sistema deve atender tanto a usuários inexperientes quanto a experientes.
+                    Aceleradores — invisíveis para o novato — permitem que usuários avançados realizem
+                    tarefas frequentes de forma mais rápida, sem remover o caminho guiado para iniciantes.
+                </p>
+
+                <h3>Exemplo prático — Plataforma de e-commerce para lojistas</h3>
+                <p>
+                    Um lojista que cadastra produtos diariamente tem necessidades muito diferentes de
+                    alguém que cadastra o primeiro produto da vida:
+                </p>
+
+                <div class="nielsen-exemplo-bloco">
+                    <div class="nielsen-coluna">
+                        <div class="nielsen-tag nielsen-tag-ruim">Único fluxo para todos</div>
+                        <div class="nielsen-mockup">
+                            <div class="mock-topbar">
+                                <span class="mock-dot"></span><span class="mock-dot"></span><span class="mock-dot"></span>
+                            </div>
+                            <div class="mock-body">
+                                <div class="mock-titulo">Cadastrar produto</div>
+                                <div class="mock-wizard">
+                                    <div class="mock-step mock-step-done">① Informações básicas</div>
+                                    <div class="mock-step mock-step-done">② Preços e estoque</div>
+                                    <div class="mock-step mock-step-active">③ Fotos</div>
+                                    <div class="mock-step">④ Frete e dimensões</div>
+                                    <div class="mock-step">⑤ SEO e categorias</div>
+                                </div>
+                                <div style="font-size:0.78rem; color:#aaa; margin-top:8px;">
+                                    Todos os 47 campos obrigatórios
+                                </div>
+                            </div>
+                        </div>
+                        <p class="nielsen-descricao">
+                            Um wizard linear com dezenas de campos obriga até o usuário experiente a
+                            percorrer todos os passos toda vez, sem nenhum atalho.
+                        </p>
+                    </div>
+
+                    <div class="nielsen-coluna">
+                        <div class="nielsen-tag nielsen-tag-bom">Caminhos para cada perfil</div>
+                        <div class="nielsen-mockup">
+                            <div class="mock-topbar">
+                                <span class="mock-dot"></span><span class="mock-dot"></span><span class="mock-dot"></span>
+                            </div>
+                            <div class="mock-body">
+                                <div class="mock-titulo">Cadastrar produto</div>
+                                <div class="mock-opcao-card mock-opcao-destaque">
+                                    <div class="mock-opcao-titulo">⚡ Cadastro rápido</div>
+                                    <div class="mock-opcao-desc">Nome, preço e foto — 3 campos</div>
+                                </div>
+                                <div class="mock-opcao-card">
+                                    <div class="mock-opcao-titulo">📋 Cadastro completo</div>
+                                    <div class="mock-opcao-desc">Todos os atributos e variações</div>
+                                </div>
+                                <div class="mock-opcao-card">
+                                    <div class="mock-opcao-titulo">📂 Importar planilha</div>
+                                    <div class="mock-opcao-desc">Cadastro em massa via CSV/Excel</div>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="nielsen-descricao">
+                            Três fluxos distintos atendem ao novato, ao usuário intermediário e ao
+                            avançado que processa centenas de produtos por vez.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <hr>
+
+            <!-- ═══════════════════════════════════════════
+                 H8 — Estética e design minimalista
+            ════════════════════════════════════════════ -->
+            <section id="h8">
+                <h2>8. Estética e Design Minimalista</h2>
+                <p>
+                    Os diálogos não devem conter informações irrelevantes ou raramente necessárias.
+                    Cada unidade extra de informação compete com as relevantes e diminui sua visibilidade.
+                    Minimalismo não é ausência de elementos, mas presença apenas do necessário.
+                </p>
+
+                <h3>Exemplo prático — Tela de checkout</h3>
+                <p>
+                    O momento de finalização de compra exige foco total do usuário. Elementos
+                    desnecessários nessa etapa aumentam as chances de abandono:
+                </p>
+
+                <div class="nielsen-exemplo-bloco">
+                    <div class="nielsen-coluna">
+                        <div class="nielsen-tag nielsen-tag-ruim">Com ruído visual</div>
+                        <div class="nielsen-mockup">
+                            <div class="mock-topbar">
+                                <span class="mock-dot"></span><span class="mock-dot"></span><span class="mock-dot"></span>
+                            </div>
+                            <div class="mock-body mock-body-cheio">
+                                <div class="mock-banner-promo">🔥 FRETE GRÁTIS ACIMA DE R$ 200!</div>
+                                <div class="mock-titulo">Finalizar compra</div>
+                                <div class="mock-nav-lateral">
+                                    <span>Início</span> | <span>Categorias</span> | <span>Promoções</span> | <span>Blog</span>
+                                </div>
+                                <div class="mock-campo"><div class="mock-input">Número do cartão</div></div>
+                                <div class="mock-lateral-sugestao">
+                                    <div style="font-size:0.72rem; color:#888;">Você também pode gostar:</div>
+                                    <div class="mock-sugestao-item">📦 Produto relacionado</div>
+                                    <div class="mock-sugestao-item">📦 Outro produto</div>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="nielsen-descricao">
+                            A página de pagamento exibe banners promocionais, menu de navegação completo e
+                            sugestões de produtos — tudo competindo pela atenção do usuário no momento
+                            mais crítico da jornada.
+                        </p>
+                    </div>
+
+                    <div class="nielsen-coluna">
+                        <div class="nielsen-tag nielsen-tag-bom">Focado na tarefa</div>
+                        <div class="nielsen-mockup">
+                            <div class="mock-topbar">
+                                <span class="mock-dot"></span><span class="mock-dot"></span><span class="mock-dot"></span>
+                            </div>
+                            <div class="mock-body">
+                                <div class="mock-checkout-header">
+                                    <span class="mock-checkout-passo mock-checkout-ok">✔ Carrinho</span>
+                                    <span class="mock-checkout-seta">›</span>
+                                    <span class="mock-checkout-passo mock-checkout-ativo">Pagamento</span>
+                                    <span class="mock-checkout-seta">›</span>
+                                    <span class="mock-checkout-passo">Confirmação</span>
+                                </div>
+                                <div class="mock-titulo" style="margin-top:10px;">Dados de pagamento</div>
+                                <div class="mock-campo"><div class="mock-label">Número do cartão</div><div class="mock-input">•••• •••• •••• ••••</div></div>
+                                <div class="mock-campo-row">
+                                    <div class="mock-campo" style="flex:1"><div class="mock-label">Validade</div><div class="mock-input">MM/AA</div></div>
+                                    <div class="mock-campo" style="flex:1"><div class="mock-label">CVV</div><div class="mock-input">•••</div></div>
+                                </div>
+                                <button class="mock-btn-primary-full">Finalizar pedido</button>
+                            </div>
+                        </div>
+                        <p class="nielsen-descricao">
+                            Apenas os campos essenciais e um indicador de etapa são exibidos. Nenhum
+                            elemento distrai o usuário do objetivo: concluir a compra.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <hr>
+
+            <!-- ═══════════════════════════════════════════
+                 H9 — Reconhecimento e recuperação de erros
+            ════════════════════════════════════════════ -->
+            <section id="h9">
+                <h2>9. Ajude os Usuários a Reconhecer, Diagnosticar e Recuperar Erros</h2>
+                <p>
+                    Mensagens de erro devem ser expressas em linguagem simples, indicar precisamente o
+                    problema e sugerir uma solução de forma construtiva. Uma boa mensagem de erro identifica
+                    o que ocorreu, explica a causa e orienta a próxima ação.
+                </p>
+
+                <h3>Exemplo prático — Formulário de cadastro com validação</h3>
+                <p>
+                    Um usuário tenta se cadastrar, mas comete erros no preenchimento. A forma como o sistema
+                    responde define se ele conseguirá corrigir sozinho:
+                </p>
+
+                <div class="nielsen-exemplo-bloco">
+                    <div class="nielsen-coluna">
+                        <div class="nielsen-tag nielsen-tag-ruim">Mensagem genérica</div>
+                        <div class="nielsen-mockup">
+                            <div class="mock-topbar">
+                                <span class="mock-dot"></span><span class="mock-dot"></span><span class="mock-dot"></span>
+                            </div>
+                            <div class="mock-body">
+                                <div class="mock-titulo">Criar conta</div>
+                                <div class="mock-campo">
+                                    <div class="mock-label">E-mail</div>
+                                    <div class="mock-input mock-input-filled">usuario@</div>
+                                </div>
+                                <div class="mock-campo">
+                                    <div class="mock-label">Senha</div>
+                                    <div class="mock-input mock-input-filled">123</div>
+                                </div>
+                                <div class="mock-erro-generico">
+                                    ❌ Erro ao criar conta. Verifique os campos e tente novamente.
+                                </div>
+                            </div>
+                        </div>
+                        <p class="nielsen-descricao">
+                            O sistema aponta que "algo está errado" sem indicar qual campo, qual o problema
+                            específico ou como corrigi-lo. O usuário precisa adivinhar.
+                        </p>
+                    </div>
+
+                    <div class="nielsen-coluna">
+                        <div class="nielsen-tag nielsen-tag-bom">Diagnóstico claro</div>
+                        <div class="nielsen-mockup">
+                            <div class="mock-topbar">
+                                <span class="mock-dot"></span><span class="mock-dot"></span><span class="mock-dot"></span>
+                            </div>
+                            <div class="mock-body">
+                                <div class="mock-titulo">Criar conta</div>
+                                <div class="mock-campo">
+                                    <div class="mock-label">E-mail</div>
+                                    <div class="mock-input mock-input-erro">usuario@</div>
+                                    <div class="mock-field-error">Informe um e-mail completo, ex: nome@dominio.com</div>
+                                </div>
+                                <div class="mock-campo">
+                                    <div class="mock-label">Senha</div>
+                                    <div class="mock-input mock-input-erro">123</div>
+                                    <div class="mock-field-error">Mínimo de 8 caracteres com letras e números</div>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="nielsen-descricao">
+                            Cada campo inválido recebe sua própria mensagem descritiva, posicionada
+                            diretamente abaixo dele, com instruções claras sobre como corrigir.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <hr>
+
+            <!-- ═══════════════════════════════════════════
+                 H10 — Ajuda e documentação
+            ════════════════════════════════════════════ -->
+            <section id="h10">
+                <h2>10. Ajuda e Documentação</h2>
+                <p>
+                    Embora seja ideal que o sistema não precise de documentação, ela deve estar disponível
+                    quando necessário. A ajuda deve ser fácil de pesquisar, focada na tarefa do usuário,
+                    e orientada a passos concretos — não apenas descrições.
+                </p>
+
+                <h3>Exemplo prático — Painel de configurações avançadas</h3>
+                <p>
+                    Um usuário acessa pela primeira vez uma tela de configurações técnicas. O suporte
+                    disponível determinará se ele consegue concluir a tarefa sem recorrer a atendimento:
+                </p>
+
+                <div class="nielsen-exemplo-bloco">
+                    <div class="nielsen-coluna">
+                        <div class="nielsen-tag nielsen-tag-ruim">Sem suporte contextual</div>
+                        <div class="nielsen-mockup">
+                            <div class="mock-topbar">
+                                <span class="mock-dot"></span><span class="mock-dot"></span><span class="mock-dot"></span>
+                            </div>
+                            <div class="mock-body">
+                                <div class="mock-titulo">Configurações de DNS</div>
+                                <div class="mock-campo">
+                                    <div class="mock-label">Registro A</div>
+                                    <div class="mock-input">192.168.0.1</div>
+                                </div>
+                                <div class="mock-campo">
+                                    <div class="mock-label">TTL (segundos)</div>
+                                    <div class="mock-input">3600</div>
+                                </div>
+                                <div class="mock-campo">
+                                    <div class="mock-label">CNAME</div>
+                                    <div class="mock-input">alias.dominio.com</div>
+                                </div>
+                                <div style="font-size:0.75rem;color:#bbb;margin-top:8px;">Para ajuda, consulte o manual.</div>
+                            </div>
+                        </div>
+                        <p class="nielsen-descricao">
+                            Campos técnicos sem nenhuma explicação. A única orientação remete a um manual
+                            externo genérico, sem indicar onde encontrá-lo.
+                        </p>
+                    </div>
+
+                    <div class="nielsen-coluna">
+                        <div class="nielsen-tag nielsen-tag-bom">Com ajuda contextual</div>
+                        <div class="nielsen-mockup">
+                            <div class="mock-topbar">
+                                <span class="mock-dot"></span><span class="mock-dot"></span><span class="mock-dot"></span>
+                            </div>
+                            <div class="mock-body">
+                                <div class="mock-titulo">Configurações de DNS</div>
+                                <div class="mock-campo">
+                                    <div class="mock-label-row">
+                                        <span class="mock-label">Registro A</span>
+                                        <span class="mock-help-badge" title="O registro A aponta seu domínio para um endereço IP">?</span>
+                                    </div>
+                                    <div class="mock-input">192.168.0.1</div>
+                                    <div class="mock-hint">Endereço IPv4 do servidor de destino</div>
+                                </div>
+                                <div class="mock-campo">
+                                    <div class="mock-label-row">
+                                        <span class="mock-label">TTL (segundos)</span>
+                                        <span class="mock-help-badge" title="Tempo em segundos que os servidores armazenam este registro em cache">?</span>
+                                    </div>
+                                    <div class="mock-input">3600</div>
+                                    <div class="mock-hint">Recomendado: 3600 (1 hora) para a maioria dos casos</div>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="nielsen-descricao">
+                            Cada campo possui uma dica textual permanente e um ícone de ajuda com
+                            explicação ao passar o cursor, tornando o contexto sempre acessível.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <hr>
+
+            <!-- Tabela-resumo -->
+            <section id="resumo">
+                <h2>Resumo das 10 Heurísticas</h2>
+                <p>
+                    A tabela abaixo sintetiza os dez princípios e a pergunta que cada um responde
+                    durante uma avaliação heurística.
+                </p>
+
+                <article>
+                    <div class="card tabela-card">
+                        <div class="tabela-responsiva">
+                            <table class="tabela-comparacao">
+                                <caption>As 10 Heurísticas de Nielsen e suas perguntas-guia</caption>
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Heurística</th>
+                                        <th>Pergunta-guia</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>1</td><td>Visibilidade do status do sistema</td><td>O usuário sabe o que está acontecendo?</td></tr>
+                                    <tr><td>2</td><td>Correspondência com o mundo real</td><td>A linguagem é familiar ao usuário?</td></tr>
+                                    <tr><td>3</td><td>Controle e liberdade do usuário</td><td>O usuário pode desfazer ações facilmente?</td></tr>
+                                    <tr><td>4</td><td>Consistência e padrões</td><td>O sistema se comporta de forma previsível?</td></tr>
+                                    <tr><td>5</td><td>Prevenção de erros</td><td>O design evita que erros aconteçam?</td></tr>
+                                    <tr><td>6</td><td>Reconhecimento em vez de memorização</td><td>As opções estão visíveis no contexto certo?</td></tr>
+                                    <tr><td>7</td><td>Flexibilidade e eficiência de uso</td><td>Usuários experientes conseguem ser mais ágeis?</td></tr>
+                                    <tr><td>8</td><td>Estética e design minimalista</td><td>Há apenas o necessário na interface?</td></tr>
+                                    <tr><td>9</td><td>Reconhecimento e recuperação de erros</td><td>As mensagens de erro orientam a solução?</td></tr>
+                                    <tr><td>10</td><td>Ajuda e documentação</td><td>O suporte está acessível quando necessário?</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </article>
+            </section>
+
+        </main>
     </div>
 
- <nav>
-    <a href="../../index.html">Início</a>
-    <a href="../pages/intro.html">Documentação </a>
-    <a href="https://github.com/UnB-IHC/IHC_2026.1_Grupo10" target="_blank"> GitHub ↗ </a>
-</nav>
-</header>
+    <style>
+        /* ─── bloco de exemplo lado a lado ─── */
+        .nielsen-exemplo-bloco {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            margin: 24px 0 8px;
+        }
 
-<div class="docs-layout">
+        .nielsen-coluna {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
 
-    <aside class="sidebar">
+        /* ─── tag de rótulo ─── */
+        .nielsen-tag {
+            display: inline-block;
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            padding: 4px 12px;
+            border-radius: 20px;
+            width: fit-content;
+        }
 
-        <ul>
+        .nielsen-tag-bom {
+            background: #DCFCE7;
+            color: #166534;
+        }
 
-            <li><a href="../pages/intro.html">Introdução</a></li>
-            <li><a href="../pages/metodos-design.html">Métodos de Design</a></li>
-            <li><a href="../pages/personas.html">Personas</a></li>
-            <li><a href="../pages/fluxo-jornada.html">Fluxo vs. Jornada</a></li>
-            <li><a href="../pages/service-blueprint.html">Service Blueprint</a></li>
-            <li><a href="../pages/nielsen.html" class="active" >Heurísticas de Nielsen</a></li>
-            <li><a href="../pages/boas-praticas.html"> Boas Práticas UI/UX</a></li>
+        .nielsen-tag-ruim {
+            background: #FEE2E2;
+            color: #991B1B;
+        }
 
-            <ul>
-            <li><a href="../pages/analise.html">Análise Prática</a></li>
+        /* ─── mockup de janela ─── */
+        .nielsen-mockup {
+            background: #ffffff;
+            border: 1px solid #E5E7EB;
+            border-radius: 12px;
+            overflow: hidden;
+            flex: 1;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
 
-                <ul class = "sub-menu"> 
-                    <li><a href="../pages/analise-intro.html">Introdução</a></li>
-                    <li><a href="../pages/gestao.html">Gestão de Projetos</a></li>
-                    <li><a href="../pages/web.html">Desenvolvimento Web</a></li>
-                    <li><a href="../pages/design.html">Design</a></li>
-                    <li><a href="../pages/conteudo.html">Conteúdo</a></li>
-                    <li><a href="../pages/multimidia.html">Áudio, Vídeo e Multimídia</a></li>
-                    <li><a href="../pages/interacao.html">Interação, Tempo e Animações</a></li>
-                    <li><a href="../pages/validacao.html">Validação e Testes</a></li>
-                    <li><a href="../pages/analise-nielsen.html">Heurísticas de Nielsen</a></li>
-                    <li><a href="../pages/ferramentas.html">Ferramentas de Acessibilidade</a></li>
-                    <li><a href="../pages/progresso.html">Visão Geral do Progresso</a></li>
-                </ul>
-            </ul>
+        .mock-topbar {
+            background: #F3F4F6;
+            padding: 7px 12px;
+            display: flex;
+            gap: 6px;
+            border-bottom: 1px solid #E5E7EB;
+        }
 
-            <li><a href="../pages/referencias.html">Referências Bibliográficas</a></li> 
-            
-        </ul>
+        .mock-dot {
+            width: 9px;
+            height: 9px;
+            border-radius: 50%;
+            background: #D1D5DB;
+            display: inline-block;
+        }
 
-    </aside>
+        .mock-body {
+            padding: 16px;
+            font-size: 0.82rem;
+            color: #374151;
+        }
 
-    <main class="content">
+        .mock-body-cheio {
+            padding: 8px;
+        }
 
-        <div class="breadcrumb">
-            <a href="../../index.html" class="home">
-                <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
-                </svg>
-            </a>
-            <span class="sep">→</span>
-            <span class="current">Heurísticas de Nielsen</span>
-        </div>
-        <zero-md src="../../docs/nielsen.md"></zero-md>
-    </main>
+        .mock-titulo {
+            font-weight: 700;
+            font-size: 0.9rem;
+            margin-bottom: 12px;
+            color: #111827;
+        }
 
-</div>
+        /* ─── campos de formulário ─── */
+        .mock-campo {
+            margin-bottom: 8px;
+        }
+
+        .mock-campo-row {
+            display: flex;
+            gap: 8px;
+        }
+
+        .mock-label {
+            font-size: 0.72rem;
+            color: #6B7280;
+            margin-bottom: 3px;
+        }
+
+        .mock-label-row {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-bottom: 3px;
+        }
+
+        .mock-input {
+            background: #F9FAFB;
+            border: 1px solid #D1D5DB;
+            border-radius: 6px;
+            padding: 5px 8px;
+            font-size: 0.78rem;
+            color: #9CA3AF;
+            font-family: monospace;
+        }
+
+        .mock-input-filled {
+            color: #374151;
+        }
+
+        .mock-input-erro {
+            border-color: #EF4444;
+            background: #FEF2F2;
+            color: #374151;
+        }
+
+        .mock-field-error {
+            color: #DC2626;
+            font-size: 0.7rem;
+            margin-top: 2px;
+        }
+
+        .mock-hint {
+            color: #6B7280;
+            font-size: 0.7rem;
+            margin-top: 2px;
+            font-style: italic;
+        }
+
+        /* ─── erros e mensagens ─── */
+        .mock-erro-tecnico {
+            background: #FEF2F2;
+            border: 1px solid #FCA5A5;
+            border-radius: 6px;
+            color: #7F1D1D;
+            font-size: 0.7rem;
+            font-family: monospace;
+            padding: 7px 10px;
+            margin-top: 8px;
+            word-break: break-all;
+        }
+
+        .mock-erro-amigavel {
+            background: #FEF2F2;
+            border: 1px solid #FCA5A5;
+            border-radius: 6px;
+            color: #7F1D1D;
+            font-size: 0.75rem;
+            padding: 7px 10px;
+            margin-top: 8px;
+        }
+
+        .mock-erro-generico {
+            background: #FEF2F2;
+            border: 1px solid #FCA5A5;
+            border-radius: 6px;
+            color: #7F1D1D;
+            font-size: 0.75rem;
+            padding: 7px 10px;
+            margin-top: 8px;
+        }
+
+        .mock-link {
+            color: #2563EB;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        /* ─── progresso ─── */
+        .mock-progress-label {
+            font-size: 0.75rem;
+            color: #374151;
+            margin-bottom: 5px;
+        }
+
+        .mock-progress-track {
+            background: #E5E7EB;
+            border-radius: 99px;
+            height: 8px;
+            overflow: hidden;
+        }
+
+        .mock-progress-fill {
+            height: 100%;
+            background: #4BB6E5;
+            border-radius: 99px;
+            transition: width 0.3s;
+        }
+
+        .mock-status-ok {
+            font-size: 0.7rem;
+            color: #6B7280;
+            margin-top: 6px;
+        }
+
+        .mock-aviso-ruim {
+            font-size: 0.75rem;
+            color: #6B7280;
+            margin-top: 8px;
+        }
+
+        /* ─── arquivo ─── */
+        .mock-arquivo-box {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            background: #F3F4F6;
+            border: 1px solid #E5E7EB;
+            border-radius: 6px;
+            padding: 6px 10px;
+            margin-bottom: 10px;
+            font-size: 0.78rem;
+            color: #374151;
+        }
+
+        .mock-icone-arquivo {
+            font-size: 1rem;
+        }
+
+        .mock-arquivo-nome {
+            font-family: monospace;
+            font-size: 0.75rem;
+        }
+
+        .mock-btn-enviado-ruim {
+            background: #D1D5DB;
+            color: #9CA3AF;
+            border: none;
+            border-radius: 6px;
+            padding: 5px 12px;
+            font-size: 0.8rem;
+            cursor: not-allowed;
+        }
+
+        .mock-silencio {
+            height: 20px;
+        }
+
+        /* ─── toast / desfazer ─── */
+        .mock-toast {
+            background: #1F2937;
+            color: #F9FAFB;
+            border-radius: 8px;
+            font-size: 0.75rem;
+            padding: 7px 12px;
+            display: flex;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        .mock-toast-acao {
+            color: #4BB6E5;
+            font-weight: 700;
+            cursor: pointer;
+            margin-left: 4px;
+        }
+
+        /* ─── tarefas ─── */
+        .mock-task {
+            font-size: 0.78rem;
+            padding: 5px 0;
+            border-bottom: 1px solid #F3F4F6;
+            color: #374151;
+        }
+
+        .mock-task-riscada {
+            text-decoration: line-through;
+            color: #9CA3AF;
+        }
+
+        /* ─── modais ─── */
+        .mock-modal {
+            background: #ffffff;
+            border: 1px solid #E5E7EB;
+            border-radius: 8px;
+            padding: 10px 12px;
+            margin-bottom: 8px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+        }
+
+        .mock-modal-segundo {
+            margin-bottom: 0;
+        }
+
+        .mock-modal-titulo {
+            font-weight: 700;
+            font-size: 0.82rem;
+            color: #111827;
+            margin-bottom: 4px;
+        }
+
+        .mock-modal-texto {
+            font-size: 0.72rem;
+            color: #6B7280;
+            margin-bottom: 8px;
+        }
+
+        .mock-modal-btns {
+            display: flex;
+            gap: 6px;
+            justify-content: flex-end;
+        }
+
+        .mock-modal-btn-cancel {
+            background: transparent;
+            border: 1px solid #D1D5DB;
+            border-radius: 5px;
+            padding: 4px 10px;
+            font-size: 0.72rem;
+            cursor: pointer;
+            color: #374151;
+        }
+
+        .mock-modal-btn-ok {
+            background: #4BB6E5;
+            border: none;
+            border-radius: 5px;
+            padding: 4px 10px;
+            font-size: 0.72rem;
+            cursor: pointer;
+            color: white;
+            font-weight: 600;
+        }
+
+        .mock-btn-vermelho {
+            background: #EF4444 !important;
+        }
+
+        /* ─── calendário ─── */
+        .mock-calendario-mini {
+            border: 1px solid #E5E7EB;
+            border-radius: 8px;
+            overflow: hidden;
+            font-size: 0.7rem;
+            background: #fff;
+        }
+
+        .mock-cal-header {
+            background: #4BB6E5;
+            color: white;
+            text-align: center;
+            padding: 5px;
+            font-weight: 600;
+            font-size: 0.72rem;
+        }
+
+        .mock-cal-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 0;
+            padding: 4px;
+        }
+
+        .mock-cal-grid span {
+            text-align: center;
+            padding: 2px 0;
+            color: #6B7280;
+            font-size: 0.65rem;
+        }
+
+        .mock-cal-sel {
+            background: #4BB6E5;
+            color: white !important;
+            border-radius: 50%;
+            font-weight: 700;
+        }
+
+        /* ─── toolbar de editor ─── */
+        .mock-toolbar {
+            display: flex;
+            gap: 2px;
+            padding: 6px 8px;
+            background: #F9FAFB;
+            border-bottom: 1px solid #E5E7EB;
+            align-items: center;
+        }
+
+        .mock-tool-btn {
+            padding: 3px 7px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            cursor: pointer;
+            color: #374151;
+        }
+
+        .mock-tool-btn:hover {
+            background: #E5E7EB;
+        }
+
+        .mock-tool-ativo {
+            background: #DBEAFE;
+            color: #1D4ED8;
+        }
+
+        .mock-tool-sep {
+            width: 1px;
+            height: 16px;
+            background: #E5E7EB;
+            margin: 0 2px;
+        }
+
+        .mock-editor-area {
+            padding: 10px;
+            font-size: 0.8rem;
+            color: #374151;
+            min-height: 50px;
+        }
+
+        .mock-editor-sem-toolbar {
+            border-top: none;
+        }
+
+        .mock-editor-cursor {
+            display: inline;
+            animation: blink 1s infinite;
+            color: #4BB6E5;
+            font-weight: 700;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        /* ─── wizard de steps ─── */
+        .mock-wizard {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .mock-step {
+            font-size: 0.75rem;
+            padding: 5px 10px;
+            border-radius: 6px;
+            background: #F9FAFB;
+            border: 1px solid #E5E7EB;
+            color: #6B7280;
+        }
+
+        .mock-step-done {
+            background: #F0FDF4;
+            border-color: #BBF7D0;
+            color: #166534;
+        }
+
+        .mock-step-active {
+            background: #EFF6FF;
+            border-color: #BFDBFE;
+            color: #1D4ED8;
+            font-weight: 600;
+        }
+
+        /* ─── cards de opção ─── */
+        .mock-opcao-card {
+            border: 1px solid #E5E7EB;
+            border-radius: 8px;
+            padding: 8px 10px;
+            margin-bottom: 6px;
+            cursor: pointer;
+            background: #fff;
+        }
+
+        .mock-opcao-destaque {
+            border-color: #4BB6E5;
+            background: #EAF8FF;
+        }
+
+        .mock-opcao-titulo {
+            font-weight: 700;
+            font-size: 0.78rem;
+            color: #111827;
+        }
+
+        .mock-opcao-desc {
+            font-size: 0.7rem;
+            color: #6B7280;
+            margin-top: 2px;
+        }
+
+        /* ─── checkout ─── */
+        .mock-banner-promo {
+            background: #FEF08A;
+            color: #713F12;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-align: center;
+            padding: 4px;
+            margin-bottom: 6px;
+            border-radius: 4px;
+        }
+
+        .mock-nav-lateral {
+            font-size: 0.68rem;
+            color: #9CA3AF;
+            margin-bottom: 8px;
+        }
+
+        .mock-lateral-sugestao {
+            margin-top: 8px;
+            padding-top: 8px;
+            border-top: 1px dashed #E5E7EB;
+        }
+
+        .mock-sugestao-item {
+            font-size: 0.7rem;
+            color: #6B7280;
+            margin-top: 3px;
+        }
+
+        .mock-checkout-header {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 0.72rem;
+            margin-bottom: 4px;
+        }
+
+        .mock-checkout-passo {
+            color: #9CA3AF;
+        }
+
+        .mock-checkout-ok {
+            color: #16A34A;
+        }
+
+        .mock-checkout-ativo {
+            color: #1D4ED8;
+            font-weight: 700;
+        }
+
+        .mock-checkout-seta {
+            color: #D1D5DB;
+        }
+
+        .mock-btn-primary-full {
+            width: 100%;
+            background: #4BB6E5;
+            border: none;
+            border-radius: 8px;
+            color: white;
+            font-weight: 700;
+            font-size: 0.82rem;
+            padding: 9px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+
+        /* ─── help badge ─── */
+        .mock-help-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: #DBEAFE;
+            color: #1D4ED8;
+            font-size: 0.65rem;
+            font-weight: 700;
+            cursor: help;
+        }
+
+        /* ─── descrição sob o mockup ─── */
+        .nielsen-descricao {
+            font-size: 0.88rem !important;
+            color: #6B7280 !important;
+            line-height: 1.55 !important;
+            margin: 0 !important;
+            max-width: none !important;
+        }
+
+        /* ─── responsivo ─── */
+        @media (max-width: 768px) {
+            .nielsen-exemplo-bloco {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 
 </body>
 
