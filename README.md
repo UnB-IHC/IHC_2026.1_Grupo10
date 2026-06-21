@@ -1,12 +1,12 @@
-# A11y Pocket | G10
+# A11y G10
 
 ## Introdução
 
-O **A11y Pocket** nasce no contexto da disciplina de Interação Humano-Computador (IHC), ministrada pela professora Rejane Maria da Costa Figueiredo na Universidade de Brasília (UnB).
+O **A11y G10** nasce no contexto da disciplina de Interação Humano-Computador (IHC), ministrada pela professora Rejane Maria da Costa Figueiredo na Universidade de Brasília (UnB).
 
 Desenvolvido pelo Grupo 10, este projeto tem como objetivo reunir orientações essenciais sobre acessibilidade digital em um formato prático, direto e de fácil consulta. A proposta é disponibilizar um material que possa apoiar estudantes, desenvolvedores, designers, produtores de conteúdo e demais profissionais envolvidos na criação de produtos digitais.
 
-A construção do A11y Pocket foi baseada em referências reconhecidas da área de acessibilidade, incluindo as Diretrizes WCAG 2.2 (Web Content Accessibility Guidelines), a norma ABNT NBR 17225 e guias de boas práticas para acessibilidade digital.
+A construção do A11y G10 foi baseada em referências reconhecidas da área de acessibilidade, incluindo as Diretrizes WCAG 2.2 (Web Content Accessibility Guidelines), a norma ABNT NBR 17225 e guias de boas práticas para acessibilidade digital.
 
 Nosso objetivo é contribuir para a disseminação da cultura de acessibilidade, incentivando a criação de experiências digitais mais inclusivas, usáveis e acessíveis para todos.
 
