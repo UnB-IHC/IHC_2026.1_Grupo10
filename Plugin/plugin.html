@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" class="popup">
 
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="VerificAAA — Verificador de acessibilidade WCAG para extensão de navegador." />
-    <title>VerificAAA</title>
+    <meta name="description" content="A11y G10 — Verificador de acessibilidade WCAG para extensão de navegador." />
+    <title>A11y G10</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet" />
@@ -19,8 +19,8 @@
 
     <header role="banner">
         <div class="logo-cabecalho">
-            <img src="assets/logo.png" alt="Logo do VerificAAA" width="42" height="42" />
-            <h1 class="texto-logo">VerificAAA</h1>
+            <img src="assets/logo.png" alt="Logo do A11y G10" width="42" height="42" />
+            <h1 class="texto-logo">A11y G10</h1>
         </div>
     </header>
 
@@ -36,61 +36,63 @@
             <article class="container-progresso" aria-label="Progresso da verificação">
                 <div class="cabecalho-progresso">
                     <span>Critérios verificados</span>
-                    <span id="rotulo-progresso">0 / 0</span>
+                    <span id="rotulo-progresso">0 / 5</span>
                 </div>
                 <progress id="barra-progresso" value="0" max="100" aria-labelledby="rotulo-progresso"></progress>
             </article>
 
             <ul class="lista-verificacao" aria-label="Lista de critérios WCAG">
                 <li class="item-verificacao">
-                    <input type="checkbox" id="criterio-texto-alt" aria-describedby="criterio-texto-alt-rotulo" />
+                    <input type="checkbox" id="criterio-texto-alt" aria-describedby="criterio-texto-alt-rotulo" checked />
                     <label id="criterio-texto-alt-rotulo" for="criterio-texto-alt">
                         Textos alternativos em imagens (1.1.1)
                     </label>
                 </li>
                 <li class="item-verificacao">
-                    <input type="checkbox" id="criterio-contraste" aria-describedby="criterio-contraste-rotulo" />
+                    <input type="checkbox" id="criterio-contraste" aria-describedby="criterio-contraste-rotulo" checked />
                     <label id="criterio-contraste-rotulo" for="criterio-contraste">
                         Contraste mínimo de cores (1.4.3)
                     </label>
                 </li>
                 <li class="item-verificacao">
-                    <input type="checkbox" id="criterio-teclado" aria-describedby="criterio-teclado-rotulo" />
+                    <input type="checkbox" id="criterio-teclado" aria-describedby="criterio-teclado-rotulo" checked />
                     <label id="criterio-teclado-rotulo" for="criterio-teclado">
                         Navegação por teclado (2.1.1)
                     </label>
                 </li>
                 <li class="item-verificacao">
-                    <input type="checkbox" id="criterio-idioma" aria-describedby="criterio-idioma-rotulo" />
+                    <input type="checkbox" id="criterio-idioma" aria-describedby="criterio-idioma-rotulo" checked />
                     <label id="criterio-idioma-rotulo" for="criterio-idioma">
                         Idioma da página definido (3.1.1)
                     </label>
                 </li>
                 <li class="item-verificacao">
-                    <input type="checkbox" id="criterio-titulos" aria-describedby="criterio-titulos-rotulo" />
+                    <input type="checkbox" id="criterio-titulos" aria-describedby="criterio-titulos-rotulo" checked />
                     <label id="criterio-titulos-rotulo" for="criterio-titulos">
                         Hierarquia de títulos consistente (1.3.1)
                     </label>
                 </li>
             </ul>
 
-            <button class="botao-primario" type="button" aria-label="Iniciar análise de acessibilidade">
+            <button class="botao-primario" type="button" id="auditButton" aria-label="Iniciar análise de acessibilidade">
                 Analisar
             </button>
         </section>
 
         <section aria-labelledby="titulo-resultados">
             <h2 id="titulo-resultados">Resultados</h2>
-            <p id="placeholder-resultados">
-                Os resultados da análise serão exibidos aqui.
-            </p>
+            <div id="container-resultados-dinamicos">
+                <p id="placeholder-resultados">
+                    Os resultados da análise serão exibidos aqui.
+                </p>
+            </div>
         </section>
 
     </main>
 
     <footer role="contentinfo">
         <p>
-            <small>VerificAAA &copy; 2026 — IHC Grupo 10 / UnB</small>
+            <small>A11y G10 &copy; 2026 — IHC Grupo 10 / UnB</small>
         </p>
     </footer>
 
