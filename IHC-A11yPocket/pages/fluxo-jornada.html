@@ -82,7 +82,356 @@
             <span class="sep">→</span>
             <span class="current">Fluxo vs. Jornada</span>
         </div>
-        <zero-md src="../../docs/fluxo-jornada.md"></zero-md>
+        <h1>Guia de Fluxo e Jornada do Usuário</h1>
+
+<p>
+    Ao projetar produtos digitais, é essencial compreender não apenas quais telas serão exibidas,
+    mas também como o usuário percorre essas telas e como ele vivencia a experiência como um todo.
+    Para isso, dois artefatos são muito utilizados: o <strong>Fluxo de Usuário</strong> e o
+    <strong>Mapa da Jornada do Usuário</strong>.
+</p>
+
+<p>
+    Embora os dois conceitos estejam relacionados, eles não representam a mesma coisa. O fluxo
+    descreve o caminho passo a passo dentro da interface, enquanto a jornada apresenta uma visão
+    mais ampla da experiência do usuário, incluindo contexto, expectativas, dificuldades e sentimentos.
+</p>
+
+<hr>
+
+<section id="jornada">
+    <h2>1. O que é Jornada do Usuário?</h2>
+
+
+<p>
+    O mapa do usuário é uma representação da experiência completa de uma pessoa ao interagir
+    com um produto, serviço ou sistema. Ela considera o que acontece antes, durante e depois do
+    uso da interface.
+</p>
+
+<article>
+    <div class="card">
+        <h3>Conceito</h3>
+        <p>
+            A jornada mostra a história do usuário ao tentar alcançar um objetivo. Ela não se limita
+            aos cliques ou telas acessadas, pois também considera motivações, dúvidas, emoções,
+            frustrações, expectativas e oportunidades de melhoria.
+        </p>
+    </div>
+
+    <div class="card">
+        <h3>Objetivo</h3>
+        <p>
+            O objetivo principal da jornada é entender a experiência de forma ampla. Esse artefato
+            ajuda a equipe a identificar onde o usuário sente dificuldade, quais momentos geram
+            insegurança e quais etapas podem ser melhoradas para tornar a experiência mais clara,
+            eficiente e satisfatória.
+        </p>
+    </div>
+
+    <div class="card">
+        <h3>Aplicação</h3>
+        <p>
+            A jornada é útil em etapas de pesquisa, definição de problemas, construção de personas,
+            levantamento de requisitos e avaliação da experiência. Ela ajuda a equipe a enxergar
+            o produto a partir da perspectiva do usuário.
+        </p>
+    </div>
+</article>
+
+<h3>Elementos comuns de uma Jornada</h3>
+
+<ul>
+    <li><strong>Fases:</strong> etapas principais da experiência, como descoberta, acesso, uso e pós-uso.</li>
+    <li><strong>Ações:</strong> o que o usuário faz em cada etapa.</li>
+    <li><strong>Pensamentos:</strong> dúvidas, expectativas e interpretações do usuário.</li>
+    <li><strong>Sentimentos:</strong> emoções percebidas durante a experiência, como confiança, ansiedade, frustração ou alívio.</li>
+    <li><strong>Dificuldades:</strong> barreiras encontradas ao longo do processo.</li>
+    <li><strong>Oportunidades:</strong> melhorias que podem ser implementadas para aprimorar a experiência.</li>
+</ul>
+
+<div class="boa-pratica">
+    <strong class="selo">✔ Exemplo:</strong>
+    <span>
+        Uma pessoa precisa emitir a segunda via de um boleto. Ela percebe a necessidade, procura
+        o site correto, tenta fazer login, esquece a senha, busca ajuda, acessa a área de pagamentos,
+        gera o boleto e sente alívio ao concluir a tarefa.
+    </span>
+</div>
+
+
+</section>
+
+<hr>
+
+<section id="fluxo">
+    <h2>2. O que é Fluxo de Usuário?</h2>
+
+
+<p>
+    O fluxo de usuário representa o caminho percorrido dentro da interface para realizar uma tarefa.
+    Ele mostra a sequência de telas, ações, decisões e possíveis caminhos alternativos até a conclusão
+    de um objetivo.
+</p>
+
+<article>
+    <div class="card">
+        <h3>Conceito</h3>
+        <p>
+            O fluxo é uma representação mais objetiva e operacional da navegação. Ele permite visualizar
+            como o usuário se desloca pelo sistema, quais decisões precisa tomar e como a interface responde
+            a cada ação.
+        </p>
+    </div>
+
+    <div class="card">
+        <h3>Objetivo</h3>
+        <p>
+            O objetivo do fluxo é organizar o funcionamento da interface. Ele ajuda a identificar etapas
+            desnecessárias, caminhos confusos, pontos de erro e oportunidades de simplificação.
+        </p>
+    </div>
+
+    <div class="card">
+        <h3>Aplicação</h3>
+        <p>
+            O fluxo é utilizado no planejamento de telas, menus, formulários, protótipos e regras de
+            navegação. Também auxilia designers e desenvolvedores a entenderem como o sistema deve se
+            comportar em cada etapa.
+        </p>
+    </div>
+</article>
+
+<h3>Elementos comuns de um Fluxo</h3>
+
+<ul>
+    <li><strong>Ponto de entrada:</strong> onde o usuário inicia a tarefa.</li>
+    <li><strong>Telas ou páginas:</strong> interfaces percorridas durante o processo.</li>
+    <li><strong>Ações:</strong> cliques, preenchimentos, seleções e confirmações.</li>
+    <li><strong>Decisões:</strong> condições que alteram o caminho, como login válido ou inválido.</li>
+    <li><strong>Erros e alternativas:</strong> mensagens de erro, recuperação de senha ou caminhos secundários.</li>
+    <li><strong>Conclusão:</strong> etapa em que a tarefa é finalizada.</li>
+</ul>
+
+<div class="boa-pratica">
+    <strong class="selo">✔ Exemplo:</strong>
+    <span>
+        Página inicial → clicar em "Entrar" → informar e-mail e senha → validar dados →
+        acessar painel principal ou exibir mensagem de erro.
+    </span>
+</div>
+
+
+</section>
+
+<hr>
+
+<section id="comparacao">
+    <h2>3. Comparação entre Fluxo e Jornada</h2>
+
+
+<p>
+    A principal diferença entre fluxo e jornada está no nível de análise. O fluxo mostra o caminho
+    dentro da interface. A jornada mostra a experiência completa da pessoa ao tentar alcançar um objetivo.
+</p>
+
+<article>
+    <div class="card tabela-card">
+        <div class="tabela-responsiva">
+            <table class="tabela-comparacao">
+
+                <thead>
+                    <tr>
+                        <th scope="col">Aspecto</th>
+                        <th scope="col">Jornada do Usuário</th>
+                        <th scope="col">Fluxo de Usuário</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td><strong>Foco</strong></td>
+                        <td>Experiência completa do usuário.</td>
+                        <td>Caminho dentro da interface.</td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>Objetivo</strong></td>
+                        <td>Entender necessidades, emoções, dificuldades e oportunidades.</td>
+                        <td>Organizar telas, ações, decisões e navegação.</td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>Escopo</strong></td>
+                        <td>Mais amplo e estratégico.</td>
+                        <td>Mais específico e operacional.</td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>Conteúdo</strong></td>
+                        <td>Contexto, pensamentos, sentimentos, dores e expectativas.</td>
+                        <td>Telas, botões, formulários, validações e caminhos alternativos.</td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>Momento de uso</strong></td>
+                        <td>Pesquisa, descoberta e compreensão do problema.</td>
+                        <td>Prototipação, implementação e revisão da navegação.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</article>
+
+</section>
+
+<hr>
+
+<section id="quando-usar">
+    <h2>4. Quando usar cada artefato?</h2>
+
+
+<article>
+    <div class="card">
+        <h3>Use Jornada do Usuário quando...</h3>
+        <ul>
+            <li>for necessário compreender a experiência completa do usuário;</li>
+            <li>a equipe quiser identificar frustrações, expectativas e necessidades;</li>
+            <li>o produto ainda estiver em fase de pesquisa ou definição;</li>
+            <li>for importante entender o que acontece antes e depois do uso da interface.</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h3>Use Fluxo de Usuário quando...</h3>
+        <ul>
+            <li>for necessário definir o caminho que o usuário seguirá no sistema;</li>
+            <li>a equipe precisar planejar telas, menus, botões e formulários;</li>
+            <li>houver decisões ou validações que alteram o caminho do usuário;</li>
+            <li>o objetivo for simplificar uma tarefa específica dentro da interface.</li>
+        </ul>
+    </div>
+</article>
+
+<div class="boa-pratica">
+    <strong class="selo">✔ Boa Prática:</strong>
+    <span>
+        Comece pela jornada para entender o problema e depois desenhe o fluxo para estruturar
+        a solução dentro da interface.
+    </span>
+</div>
+
+<div class="evite">
+    <strong class="selo">✘ Evite:</strong>
+    <span>
+        Criar fluxos de tela sem compreender o contexto, as dificuldades e as expectativas dos usuários.
+    </span>
+</div>
+
+
+</section>
+
+<hr>
+
+<section id="exemplo-comparativo">
+    <h2>5. Exemplo Comparativo</h2>
+
+
+<p>
+    Imagine um estudante tentando se inscrever em um evento acadêmico pelo site da universidade.
+</p>
+
+<article>
+    <div class="card">
+        <h3>Como Jornada do Usuário</h3>
+        <p>
+            O estudante descobre o evento por uma mensagem da turma, acessa o site pelo celular,
+            procura informações sobre data e horário, fica em dúvida sobre o prazo de inscrição,
+            encontra o formulário, preenche os dados e espera uma confirmação clara. Durante essa
+            experiência, ele pode sentir interesse, insegurança, pressa ou alívio.
+        </p>
+    </div>
+
+    <div class="card">
+        <h3>Como Fluxo de Usuário</h3>
+        <p>
+            Página inicial → acessar seção de eventos → escolher evento → clicar em inscrição →
+            preencher formulário → confirmar dados → receber mensagem de inscrição concluída.
+        </p>
+    </div>
+</article>
+
+
+</section>
+
+<hr>
+
+<section id="erros-comuns">
+    <h2>6. Erros Comuns</h2>
+
+
+<article>
+    <div class="card evite">
+        <h3>✘ Confundir fluxo com jornada</h3>
+        <p>
+            Um fluxo mostra etapas dentro da interface. Uma jornada mostra a experiência completa.
+            Tratar os dois como se fossem a mesma coisa pode limitar a análise do problema.
+        </p>
+    </div>
+
+    <div class="card evite">
+        <h3>✘ Ignorar caminhos alternativos</h3>
+        <p>
+            Fluxos devem considerar erros, validações, recuperação de senha, cancelamentos e outros
+            caminhos possíveis. Um usuário nem sempre segue o caminho ideal planejado pela equipe.
+        </p>
+    </div>
+
+    <div class="card evite">
+        <h3>✘ Criar jornada sem dados reais</h3>
+        <p>
+            Jornadas baseadas apenas em suposições podem reforçar achismos da equipe. Sempre que possível,
+            devem ser construídas a partir de entrevistas, observações, testes ou dados reais de uso.
+        </p>
+    </div>
+</article>
+
+
+</section>
+
+<hr>
+
+<section id="referencias">
+    <h2>Referências Bibliográficas</h2>
+
+    <div class="referencias-bloco">
+        <p class="referencia-item">
+            KAPLAN, Kate. <strong>When and How to Create Customer Journey Maps</strong>.
+            <em>Nielsen Norman Group</em>, 31 jul. 2016. 
+            Disponível em: site da Nielsen Norman Group. Acesso em: 21 jun. 2026.
+        </p>
+
+        <p class="referencia-item">
+            GIBBONS, Sarah. <strong>Journey Mapping 101</strong>.
+            <em>Nielsen Norman Group</em>, 9 dez. 2018. 
+            Disponível em: site da Nielsen Norman Group. Acesso em: 21 jun. 2026.
+        </p>
+
+        <p class="referencia-item">
+            BABICH, Nick. <strong>Empathy Map, User Persona and User Flow</strong>.
+            <em>UX Planet</em>, 14 out. 2022. 
+            Acesso em: 21 jun. 2026.
+        </p>
+
+        <p class="referencia-item">
+            BARBOSA, Simone Diniz Junqueira et al.
+            <strong>Interação Humano-Computador e Experiência do Usuário</strong>.
+            Rio de Janeiro: Elsevier, 2021.
+        </p>
+    </div>
+</section>
+
     </main>
 
 </div>
