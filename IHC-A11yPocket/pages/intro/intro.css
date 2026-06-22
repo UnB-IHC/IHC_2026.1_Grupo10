@@ -1,0 +1,98 @@
+/* Container Geral dos Contribuidores */
+.container-contribuidores {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    margin-top: 30px;
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Alinhamento das linhas */
+.linha-contribuidores {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+}
+
+/* Forçando as linhas a manterem os blocos juntos no desktop */
+.linha-quatro, .linha-tres {
+    flex-wrap: nowrap;
+}
+
+/* Card Customizado como Link (Garante o degradê, tamanho e remove estilos padrão de link) */
+a.card.card-contribuidor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 24px 10px;
+    
+    /* Largura adaptativa */
+    width: calc(25% - 15px); 
+    max-width: 180px;
+    min-width: 140px;
+    
+    /* Degradê e bordas */
+    background: linear-gradient(145deg, #ffffff 0%, #f4f6f8 100%) !important; 
+    border-radius: 14px;
+    border: 1px solid rgba(0, 153, 255, 0.15); 
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06); 
+    
+    /* Reseta comportamento de link */
+    text-decoration: none !important;
+    cursor: pointer;
+    
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-sizing: border-box;
+}
+
+/* Efeito Hover ao passar o mouse */
+a.card.card-contribuidor:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 153, 255, 0.12);
+}
+
+/* Configuração da foto */
+.foto-contribuidor {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3.5px solid #0099ff; 
+    margin-bottom: 14px;
+    background-color: #f0f0f0;
+}
+
+/* Nome do integrante (mantém a cor escura mesmo sendo link) */
+a.card.card-contribuidor h3 {
+    font-size: 0.95rem;
+    margin: 0;
+    font-weight: 700;
+    color: #1a1a1a !important; /* Força a cor original sem virar azul de link */
+    line-height: 1.2;
+    text-decoration: none !important;
+}
+
+/* Escrito pequeno "Líder" */
+a.card.card-contribuidor .cargo {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    font-weight: 800;
+    color: #0099ff;
+    margin-top: 6px;
+}
+
+/* Responsividade para Celulares */
+@media (max-width: 768px) {
+    .linha-contribuidores {
+        flex-wrap: wrap;
+    }
+    a.card.card-contribuidor {
+        width: calc(50% - 10px);
+        max-width: 100%;
+    }
+}

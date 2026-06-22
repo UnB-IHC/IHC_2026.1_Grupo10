@@ -9,9 +9,11 @@
 
     <title>A11y G10</title>
 
-    <link rel="stylesheet" href="../css/style.css">
+    
 
-    <link rel="icon" href="../assets/logo.png" type="image/png">
+    <link rel="icon" href="../../assets/logo.png" type="image/png">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="boas-praticas.css">
 </head>
 
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -22,59 +24,95 @@
 
     <header class="navbar">
         <div class="logo-nav">
-            <img src="../assets/logo.png" alt="Logo A11y Pocket">
+            <img src="../../assets/logo.png" alt="Logo A11y Pocket">
             <span class="logo-text">A11y G10 </span>
         </div>
 
         <nav>
-            <a href="../../index.html">Início</a>
-            <a href="../pages/intro.html">Documentação </a>
+            <a href="../../../index.html">Início</a>
+            <a href="../intro/intro.html">Documentação </a>
             <a href="https://github.com/UnB-IHC/IHC_2026.1_Grupo10" target="_blank"> GitHub ↗ </a>
         </nav>
     </header>
 
     <div class="docs-layout">
 
-        <aside class="sidebar">
+            <aside class="sidebar">
 
-            <ul>
+        <ul>
 
-                <li><a href="../pages/intro.html">Introdução</a></li>
-                <li><a href="../pages/metodos-design.html">Métodos de Design</a></li>
-                <li><a href="../pages/personas.html">Personas</a></li>
-                <li><a href="../pages/fluxo-jornada.html">Fluxo vs. Jornada</a></li>
-                <li><a href="../pages/service-blueprint.html">Service Blueprint</a></li>
-                <li><a href="../pages/nielsen.html">Heurísticas de Nielsen</a></li>
-                <li><a href="../pages/boas-praticas.html" class="active"> Boas Práticas UI/UX</a></li>
+            <li><a href="../intro/intro.html">Introdução</a></li>
+            <li><a href="../metodo-design/metodo-design.html">Métodos de Design</a></li>
+            <li><a href="../personas/personas.html">Personas</a></li>
+            <li><a href="../fluxo-jornada/fluxo-jornada.html">Fluxo vs. Jornada</a></li>
+            <li><a href="../service-blueprint/service-blueprint.html">Service Blueprint</a></li>
+            <li><a href="../nielsen/nielsen.html">Heurísticas de Nielsen</a></li>
+            <li><a href="../boas-praticas/boas-praticas.html" class="active">Boas Práticas UI/UX</a></li>
 
-                <ul>
-                    <li><a href="../pages/analise.html">Análise Prática</a></li>
-
-                    <ul class="sub-menu">
-                        <li><a href="../pages/analise-intro.html">Introdução</a></li>
-                        <li><a href="../pages/gestao.html">Gestão de Projetos</a></li>
-                        <li><a href="../pages/web.html">Desenvolvimento Web</a></li>
-                        <li><a href="../pages/design.html">Design</a></li>
-                        <li><a href="../pages/conteudo.html">Conteúdo</a></li>
-                        <li><a href="../pages/multimidia.html">Áudio, Vídeo e Multimídia</a></li>
-                        <li><a href="../pages/interacao.html">Interação, Tempo e Animações</a></li>
-                        <li><a href="../pages/validacao.html">Validação e Testes</a></li>
-                        <li><a href="../pages/analise-nielsen.html">Heurísticas de Nielsen</a></li>
-                        <li><a href="../pages/ferramentas.html">Ferramentas de Acessibilidade</a></li>
-                        <li><a href="../pages/progresso.html">Visão Geral do Progresso</a></li>
-                    </ul>
+            <li class="sidebar-dropdown">
+                <div class="dropdown-trigger" id="toggle-analise">
+                    <span>Análise Prática</span>
+                    <span class="arrow-icon">▶</span>
+                </div>
+                <ul class="sub-menu" id="submenu-analise" style="display: none;"> 
+                    <li><a href="../analise-intro/analise-intro.html">Introdução</a></li>
+                    <li><a href="../gestao/gestao.html">Gestão de Projetos</a></li>
+                    <li><a href="../web/web.html">Desenvolvimento Web</a></li>
+                    <li><a href="../design/design.html">Design</a></li>
+                    <li><a href="../conteudo/conteudo.html">Conteúdo</a></li>
+                    <li><a href="../multimidia/multimidia.html">Áudio, Vídeo e Multimídia</a></li>
+                    <li><a href="../interacao/interacao.html">Interação, Tempo e Animações</a></li>
+                    <li><a href="../validacao/validacao.html">Validação e Testes</a></li>
+                    <li><a href="../analise-nielsen/analise-nielsen.html">Heurísticas de Nielsen</a></li>
+                    <li><a href="../ferramentas/ferramentas.html">Ferramentas de Acessibilidade</a></li>
+                    <li><a href="../progresso/progresso.html">Visão Geral do Progresso</a></li>
                 </ul>
+            </li>
+            <li><a href="../referencias/referencias.html">Referências Bibliográficas</a></li>
+        </ul>
 
-                <li><a href="../pages/referencias.html">Referências Bibliográficas</a></li>
-
-            </ul>
-
+        <script>
+                (function() {
+                    const trigger = document.getElementById('toggle-analise');
+                    const submenu = document.getElementById('submenu-analise');
+                    
+                    // Check if current page is in the submenu to keep it open by default
+                    const currentPath = window.location.pathname;
+                    const submenuLinks = submenu.querySelectorAll('a');
+                    let isSubpageActive = false;
+                    
+                    submenuLinks.forEach(link => {
+                        const linkPage = link.getAttribute('href').split('/').pop();
+                        const currentPage = window.location.pathname.split('/').pop();
+                        if (linkPage && currentPage && linkPage === currentPage) {
+                            isSubpageActive = true;
+                            link.classList.add('active');
+                        }
+                    });
+                    
+                    if (isSubpageActive) {
+                        submenu.style.display = 'block';
+                        trigger.classList.add('open', 'active-parent');
+                    }
+                    
+                    trigger.addEventListener('click', function() {
+                        const isOpen = trigger.classList.contains('open');
+                        if (isOpen) {
+                            submenu.style.display = 'none';
+                            trigger.classList.remove('open');
+                        } else {
+                            submenu.style.display = 'block';
+                            trigger.classList.add('open');
+                        }
+                    });
+                })();
+            </script>
         </aside>
 
         <main class="content">
 
             <div class="breadcrumb">
-                <a href="../../index.html" class="home">
+                <a href="../../../index.html" class="home">
                     <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
                     </svg>
