@@ -647,3 +647,55 @@ body {
 .tabela-comparacao tbody tr:nth-child(even) {
     background-color: #f8fbff;
 }
+
+/* ÍNDICE INTERNO */
+.indice-interno {
+    background-color: #ffffff;
+    border-left: 4px solid #2d9cdb;
+    border-radius: 14px;
+    padding: 24px;
+    margin: 32px 0;
+    box-shadow: 0 4px 14px rgba(15, 23, 42, 0.08);
+}
+
+.indice-interno h2 {
+    margin-top: 0;
+    margin-bottom: 18px;
+    color: #0f172a;
+}
+
+.indice-lista {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+    display: grid;
+    gap: 12px;
+}
+
+.indice-lista li {
+    margin: 0;
+}
+
+.indice-link {
+    display: block;
+    padding: 12px 16px;
+    border-radius: 10px;
+    background-color: #f0f9ff;
+    color: #0369a1;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.indice-link:hover,
+.indice-link:focus {
+    background-color: #dbeafe;
+    color: #075985;
+    transform: translateX(4px);
+    outline: 2px solid transparent;
+}
+
+.indice-link:focus-visible {
+    outline: 3px solid #0ea5e9;
+    outline-offset: 3px;
+}
