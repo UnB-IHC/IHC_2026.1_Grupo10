@@ -7,16 +7,14 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>A11y G10</title>
+<title>A11y G10 - Service Blueprint</title>
 
     <link rel="icon" href="../../assets/logo.png" type="image/png">
     <link rel="stylesheet" href="../../css/style.css">
-    
+    <link rel="stylesheet" href="service-blueprint.css">
 </head>
 
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-<script type="module" src="https://cdn.jsdelivr.net/gh/zerodevx/zero-md@2/dist/zero-md.min.js"></script>
 
 <body>
 
@@ -74,7 +72,6 @@
                     const trigger = document.getElementById('toggle-analise');
                     const submenu = document.getElementById('submenu-analise');
                     
-                    // Check if current page is in the submenu to keep it open by default
                     const currentPath = window.location.pathname;
                     const submenuLinks = submenu.querySelectorAll('a');
                     let isSubpageActive = false;
@@ -118,7 +115,382 @@
             <span class="sep">→</span>
             <span class="current">Service Blueprint</span>
         </div>
-        <zero-md src="../../../docs/service-blueprint.md"></zero-md>
+
+        <h1>Service Blueprint</h1>
+
+        <p>
+            Ao projetar serviços digitais, não basta mapear o que o usuário vê na tela. É preciso
+            compreender também o que acontece nos bastidores: quais processos internos sustentam a
+            experiência, quem são os envolvidos e quais sistemas entram em ação. Para isso, o
+            <strong>Service Blueprint</strong> (Mapa de Serviço) é uma das ferramentas mais utilizadas
+            no Design de Serviços e na Interação Humano-Computador.
+        </p>
+
+        <p>
+            Este guia apresenta o conceito de Service Blueprint, sua estrutura com as cinco camadas
+            e as linhas divisórias que separam as diferentes perspectivas do serviço.
+        </p>
+
+        <hr>
+
+        <section id="conceito">
+            <h2>1. O que é Service Blueprint?</h2>
+
+            <p>
+                O Service Blueprint é um diagrama que representa, de forma detalhada, todos os
+                componentes de um serviço — tanto os visíveis ao usuário quanto os processos internos
+                que o sustentam. Ele foi popularizado por Lynn Shostack na década de 1980 e continua
+                sendo referência no mapeamento de serviços digitais e presenciais.
+            </p>
+
+            <article>
+                <div class="card">
+                    <h3>Conceito</h3>
+                    <p>
+                        O blueprint funciona como um "raio-x" do serviço. Enquanto o mapa da jornada
+                        do usuário foca na experiência vivida pela pessoa, o Service Blueprint
+                        expande essa visão para incluir ações de funcionários, sistemas, processos
+                        internos e evidências físicas que compõem a entrega do serviço.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>Objetivo</h3>
+                    <p>
+                        O objetivo principal é alinhar a equipe sobre como o serviço realmente funciona,
+                        identificar falhas entre frontstage e backstage, revelar dependências ocultas
+                        e encontrar oportunidades de melhoria que não seriam visíveis apenas na
+                        perspectiva do usuário.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>Aplicação</h3>
+                    <p>
+                        O blueprint é utilizado em etapas de descoberta, redesenho de serviços,
+                        integração entre equipes (design, desenvolvimento, atendimento, operações)
+                        e validação de fluxos complexos — como emissão de documentos, suporte
+                        técnico, matrículas ou processos de pagamento.
+                    </p>
+                </div>
+            </article>
+
+            <div class="boa-pratica">
+                <strong class="selo">✔ Boa Prática:</strong>
+                <span>
+                    Construa o Service Blueprint a partir de uma jornada do usuário já mapeada.
+                    Isso garante que o foco permaneça na experiência real e não apenas nos processos internos.
+                </span>
+            </div>
+        </section>
+
+        <hr>
+
+        <section id="estrutura">
+            <h2>2. Estrutura do Service Blueprint</h2>
+
+            <p>
+                Um Service Blueprint é organizado em colunas (que representam as etapas do serviço)
+                e em linhas horizontais (que representam as camadas e as linhas divisórias).
+                As cinco camadas, de cima para baixo, são:
+            </p>
+
+            <div class="blueprint-diagrama" role="img" aria-label="Diagrama das cinco camadas e três linhas divisórias do Service Blueprint">
+                <div class="blueprint-camada camada-1">
+                    <h4>1. Evidências Físicas</h4>
+                    <p>Elementos tangíveis que o cliente percebe durante o serviço.</p>
+                </div>
+                <div class="blueprint-camada camada-2">
+                    <h4>2. Ações do Cliente</h4>
+                    <p>Passos que o usuário executa em cada etapa do serviço.</p>
+                </div>
+                <div class="blueprint-linha">— Linha de Interação — <span>separa cliente e frontstage</span></div>
+                <div class="blueprint-camada camada-3">
+                    <h4>3. Ações Frontstage</h4>
+                    <p>Atividades visíveis ao cliente, realizadas por pessoas ou interfaces.</p>
+                </div>
+                <div class="blueprint-linha">— Linha de Visibilidade — <span>separa frontstage e backstage</span></div>
+                <div class="blueprint-camada camada-4">
+                    <h4>4. Ações Backstage</h4>
+                    <p>Processos internos invisíveis ao cliente, mas essenciais ao serviço.</p>
+                </div>
+                <div class="blueprint-linha">— Linha de Interação Interna — <span>separa backstage e suporte</span></div>
+                <div class="blueprint-camada camada-5">
+                    <h4>5. Processos de Suporte</h4>
+                    <p>Sistemas, infraestrutura e recursos que sustentam todo o serviço.</p>
+                </div>
+            </div>
+
+            <h3>As cinco camadas em detalhe</h3>
+
+            <div class="camadas-grid">
+                <div class="card">
+                    <h3><span class="camada-numero" aria-hidden="true">1</span> Evidências Físicas</h3>
+                    <p>
+                        São os elementos concretos que o usuário enxerga, toca ou recebe durante
+                        a interação. Em serviços digitais, incluem o site, aplicativo, e-mails,
+                        comprovantes, notificações, documentos PDF e qualquer artefato tangível
+                        que reforce a percepção de qualidade do serviço.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3><span class="camada-numero" aria-hidden="true">2</span> Ações do Cliente</h3>
+                    <p>
+                        Descrevem o que o usuário faz em cada etapa: acessar o site, preencher
+                        um formulário, enviar documentos, aguardar confirmação ou entrar em contato
+                        com o suporte. Esta camada corresponde, em grande parte, ao mapa da jornada
+                        do usuário.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3><span class="camada-numero" aria-hidden="true">3</span> Ações Frontstage</h3>
+                    <p>
+                        Representam tudo que o cliente consegue ver ou perceber do outro lado da
+                        interação: respostas de chat, telas de confirmação, atendimento presencial,
+                        ligações telefônicas ou mensagens automáticas. Em produtos digitais, inclui
+                        interfaces, feedbacks visuais e interações com assistentes virtuais.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3><span class="camada-numero" aria-hidden="true">4</span> Ações Backstage</h3>
+                    <p>
+                        São processos internos que o cliente não vê, mas que precisam acontecer
+                        para o serviço funcionar: validação de dados, aprovação de solicitações,
+                        preparação de documentos, triagem de chamados ou sincronização entre sistemas.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3><span class="camada-numero" aria-hidden="true">5</span> Processos de Suporte</h3>
+                    <p>
+                        Englobam a infraestrutura que sustenta o serviço: bancos de dados, APIs,
+                        servidores, sistemas de pagamento, plataformas de e-mail, ferramentas de
+                        monitoramento e políticas internas. Sem essa camada, as ações frontstage
+                        e backstage não conseguem ser executadas.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <hr>
+
+        <section id="linhas-divisorias">
+            <h2>3. As linhas divisórias</h2>
+
+            <p>
+                Entre as camadas do blueprint existem três linhas horizontais que separam
+                diferentes perspectivas do serviço. Elas são fundamentais para entender onde
+                termina a experiência do cliente e começa o funcionamento interno.
+            </p>
+
+            <article>
+                <div class="card">
+                    <h3>Linha de Interação</h3>
+                    <p>
+                        Separa as <strong>Ações do Cliente</strong> das <strong>Ações Frontstage</strong>.
+                        Marca o ponto em que o usuário entra em contato direto com o serviço —
+                        seja por meio de uma interface, de um atendente ou de um canal de comunicação.
+                        Tudo acima dessa linha pertence ao universo do cliente; tudo abaixo,
+                        ao universo da organização.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>Linha de Visibilidade</h3>
+                    <p>
+                        Separa as <strong>Ações Frontstage</strong> das <strong>Ações Backstage</strong>.
+                        Define o limite entre o que o cliente consegue ver ou perceber e o que
+                        acontece nos bastidores. Por exemplo, o usuário vê a mensagem "Seu pedido
+                        foi confirmado" (frontstage), mas não vê a equipe que separa o produto no
+                        estoque (backstage).
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>Linha de Interação Interna</h3>
+                    <p>
+                        Separa as <strong>Ações Backstage</strong> dos <strong>Processos de Suporte</strong>.
+                        Indica onde os processos internos dependem de sistemas, infraestrutura ou
+                        outras áreas da organização. Por exemplo, a validação de um cadastro
+                        (backstage) pode depender de consulta a um banco de dados externo
+                        (processo de suporte).
+                    </p>
+                </div>
+            </article>
+        </section>
+
+        <hr>
+
+        <section id="comparacao">
+            <h2>4. Service Blueprint vs. Jornada do Usuário</h2>
+
+            <p>
+                Embora complementares, essas duas ferramentas possuem escopos diferentes.
+                A jornada foca na experiência do usuário; o blueprint expande essa visão
+                para incluir toda a operação do serviço.
+            </p>
+
+            <article>
+                <div class="card tabela-card">
+                    <div class="tabela-responsiva">
+                        <table class="tabela-comparacao">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Aspecto</th>
+                                    <th scope="col">Jornada do Usuário</th>
+                                    <th scope="col">Service Blueprint</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Foco</strong></td>
+                                    <td>Experiência vivida pelo usuário.</td>
+                                    <td>Funcionamento completo do serviço.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Escopo</strong></td>
+                                    <td>Ações, pensamentos e sentimentos do cliente.</td>
+                                    <td>Cliente, frontstage, backstage e suporte.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Perspectiva</strong></td>
+                                    <td>Externa — olhar do usuário.</td>
+                                    <td>Interna e externa — visão organizacional.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Quando usar</strong></td>
+                                    <td>Entender dores, emoções e oportunidades.</td>
+                                    <td>Alinhar equipes e redesenhar processos.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </article>
+
+            <div class="boa-pratica">
+                <strong class="selo">✔ Boa Prática:</strong>
+                <span>
+                    Use a jornada do usuário para compreender a experiência e, em seguida,
+                    construa o Service Blueprint para mapear como a organização entrega esse serviço por trás das telas.
+                </span>
+            </div>
+        </section>
+
+        <hr>
+
+        <section id="exemplo">
+            <h2>5. Exemplo prático</h2>
+
+            <p>
+                Considere um estudante que solicita a emissão de um histórico escolar
+                pelo portal da universidade:
+            </p>
+
+            <article>
+                <div class="card">
+                    <h3>Evidências Físicas</h3>
+                    <p>Portal web, e-mail de confirmação, documento PDF do histórico.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Ações do Cliente</h3>
+                    <p>Acessa o portal → faz login → solicita o histórico → aguarda → baixa o PDF.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Ações Frontstage</h3>
+                    <p>Interface exibe formulário, confirma recebimento e informa prazo de emissão.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Ações Backstage</h3>
+                    <p>Setor acadêmico valida dados, gera o documento e libera para download.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Processos de Suporte</h3>
+                    <p>Sistema acadêmico (SIGAA), servidor de e-mail, armazenamento de arquivos.</p>
+                </div>
+            </article>
+
+            <div class="evite">
+                <strong class="selo">✘ Evite:</strong>
+                <span>
+                    Mapear apenas as telas do sistema sem considerar os processos internos.
+                    Um blueprint incompleto pode ocultar gargalos que afetam diretamente a experiência do usuário.
+                </span>
+            </div>
+        </section>
+
+        <hr>
+
+        <section id="erros-comuns">
+            <h2>6. Erros comuns</h2>
+
+            <article>
+                <div class="card evite">
+                    <h3>✘ Confundir blueprint com fluxo de telas</h3>
+                    <p>
+                        Um fluxo de telas mostra a navegação dentro da interface. O Service Blueprint
+                        inclui processos humanos, sistemas e infraestrutura que existem além da interface.
+                    </p>
+                </div>
+
+                <div class="card evite">
+                    <h3>✘ Ignorar a linha de visibilidade</h3>
+                    <p>
+                        Sem distinguir frontstage de backstage, a equipe pode assumir que problemas
+                        de experiência se resolvem apenas na interface, quando a causa real está
+                        em processos internos mal definidos.
+                    </p>
+                </div>
+
+                <div class="card evite">
+                    <h3>✘ Criar blueprint sem envolver a equipe</h3>
+                    <p>
+                        O blueprint deve ser construído com participação de diferentes áreas
+                        (design, desenvolvimento, atendimento, operações). Um mapa feito por
+                        uma única pessoa tende a refletir visões incompletas do serviço.
+                    </p>
+                </div>
+            </article>
+        </section>
+
+        <hr>
+
+        <section id="referencias">
+            <h2>Referências Bibliográficas</h2>
+
+            <div class="referencias-bloco">
+                <p class="referencia-item">
+                    SHOSTACK, Lynn G. <strong>Designing Services That Deliver</strong>.
+                    <em>Harvard Business Review</em>, v. 62, n. 1, p. 133–139, 1984.
+                </p>
+
+                <p class="referencia-item">
+                    POLAINE, Andy; LØVLIE, Lavrans; REASON, Ben.
+                    <strong>Service Design: From Insight to Implementation</strong>.
+                    Brooklyn: Rosenfeld Media, 2013.
+                </p>
+
+                <p class="referencia-item">
+                    GIBBONS, Sarah. <strong>Service Blueprints: Definition</strong>.
+                    <em>Nielsen Norman Group</em>, 31 jul. 2017.
+                    Disponível em: site da Nielsen Norman Group. Acesso em: 22 jun. 2026.
+                </p>
+
+                <p class="referencia-item">
+                    BARBOSA, Simone Diniz Junqueira et al.
+                    <strong>Interação Humano-Computador e Experiência do Usuário</strong>.
+                    Rio de Janeiro: Elsevier, 2021.
+                </p>
+            </div>
+        </section>
+
     </main>
 
 </div>
