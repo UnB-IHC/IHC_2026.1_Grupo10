@@ -112,7 +112,7 @@
         <div class="breadcrumb">
             <a href="../../../index.html" class="home">
                 <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+                    <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
                 </svg>
             </a>
             <span class="sep">→</span>
@@ -120,7 +120,261 @@
             <span class="sep">→</span>
             <span class="current">Ferramentas de Acessibilidade</span>
         </div>
-        <zero-md src="../../../docs/ferramentas.md"></zero-md>
+
+        <h1>Ferramentas de Acessibilidade</h1>
+
+        <nav class="indice-interno" aria-label="Índice da página">
+            <h2>Índice</h2>
+
+            <ul class="indice-lista">
+                <li>
+                    <a href="#testes-automatizados" class="indice-link">
+                        Frameworks e Ferramentas de Testes Automatizados
+                    </a>
+                </li>
+                <li>
+                    <a href="#leitores-de-tela" class="indice-link">
+                        Leitores de Tela
+                    </a>
+                </li>
+                <li>
+                    <a href="#verificadores-visuais" class="indice-link">
+                        Verificadores Visuais e Contrast Checkers
+                    </a>
+                </li>
+                <li>
+                    <a href="#analise-conteudo-navegacao" class="indice-link">
+                        Ferramentas de Análise de Conteúdo e Navegação
+                    </a>
+                </li>
+                <li>
+                    <a href="#heuristicas-nielsen" class="indice-link">
+                        Heurísticas de Nielsen
+                    </a>
+                </li>
+                <li>
+                    <a href="#complementares" class="indice-link">
+                        Complementares
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <hr>
+
+        <section id="testes-automatizados">
+            <h2>Frameworks e Ferramentas de Testes Automatizados</h2>
+
+            <p>
+                As ferramentas de testes automatizados ajudam a identificar problemas recorrentes de acessibilidade, como ausência de textos alternativos, baixo contraste, problemas em formulários, uso inadequado de ARIA e falhas de estrutura semântica. Elas são úteis principalmente nas etapas iniciais de auditoria e durante o desenvolvimento, mas não substituem testes manuais, testes com teclado, leitores de tela e usuários reais.
+            </p>
+
+            <ul>
+                <li>
+                    <strong>WAVE – Web Accessibility Evaluation Tool:</strong>
+                    ferramenta visual de avaliação de acessibilidade que apresenta erros, alertas, estrutura da página, contraste e elementos semânticos diretamente sobre a interface analisada. É indicada para inspeções rápidas, revisões visuais e identificação inicial de barreiras em páginas web.
+                    <br>
+                    <a href="https://wave.webaim.org/" target="_blank" rel="noopener noreferrer">Acessar WAVE</a>
+                </li>
+
+                <li>
+                    <strong>axe DevTools:</strong>
+                    ferramenta baseada no motor axe-core, utilizada para identificar problemas técnicos de acessibilidade em interfaces HTML. É bastante útil para desenvolvedores, pois pode ser usada como extensão no navegador e também integrada a fluxos de teste automatizado durante o desenvolvimento.
+                    <br>
+                    <a href="https://www.deque.com/axe/devtools/" target="_blank" rel="noopener noreferrer">Acessar axe DevTools</a>
+                </li>
+
+                <li>
+                    <strong>Lighthouse:</strong>
+                    ferramenta integrada ao Chrome DevTools que realiza auditorias automáticas em páginas web, incluindo acessibilidade, desempenho, SEO e boas práticas. É indicada para avaliações rápidas e para acompanhar melhorias gerais de qualidade durante o desenvolvimento.
+                    <br>
+                    <a href="https://developer.chrome.com/docs/lighthouse" target="_blank" rel="noopener noreferrer">Acessar Lighthouse</a>
+                </li>
+
+                <li>
+                    <strong>ACHECKS:</strong>
+                    ferramenta de verificação de acessibilidade que permite analisar páginas, arquivos ou código HTML com base em critérios relacionados às diretrizes WCAG. É útil para obter uma visão técnica inicial sobre possíveis problemas de conformidade.
+                    <br>
+                    <a href="https://achecks.org/checker/index.php" target="_blank" rel="noopener noreferrer">Acessar ACHECKS</a>
+                </li>
+
+                <li>
+                    <strong>ASES – Avaliador e Simulador de Acessibilidade em Sítios:</strong>
+                    ferramenta do Governo Federal brasileiro voltada à avaliação automática de acessibilidade web conforme recomendações do eMAG. É especialmente relevante para projetos brasileiros, portais institucionais e avaliações que consideram diretrizes nacionais de acessibilidade digital.
+                    <br>
+                    <a href="https://asesweb.governoeletronico.gov.br/" target="_blank" rel="noopener noreferrer">Acessar ASES</a>
+                </li>
+            </ul>
+        </section>
+
+        <hr>
+
+        <section id="leitores-de-tela">
+            <h2>Leitores de Tela</h2>
+
+            <p>
+                Leitores de tela são tecnologias assistivas utilizadas principalmente por pessoas cegas ou com baixa visão para navegar em sistemas digitais. Eles convertem informações visuais em fala ou saída em braille, permitindo testar se títulos, links, botões, formulários, tabelas, mensagens de erro e fluxos de navegação são compreensíveis sem depender da visão.
+            </p>
+
+            <ul>
+                <li>
+                    <strong>JAWS – Job Access With Speech:</strong>
+                    leitor de tela para Windows amplamente utilizado em ambientes profissionais, educacionais e institucionais. É relevante em testes de compatibilidade, principalmente quando o público-alvo utiliza tecnologias assistivas tradicionais em computadores Windows.
+                    <br>
+                    <a href="https://www.freedomscientific.com/products/software/jaws/" target="_blank" rel="noopener noreferrer">Acessar JAWS</a>
+                </li>
+
+                <li>
+                    <strong>NVDA – NonVisual Desktop Access:</strong>
+                    leitor de tela gratuito e de código aberto para Windows. É uma das opções mais acessíveis para equipes de desenvolvimento e avaliação, sendo indicado para testar navegação por teclado, leitura de elementos interativos, formulários, mensagens de erro e estrutura de cabeçalhos.
+                    <br>
+                    <a href="https://www.nvaccess.org/" target="_blank" rel="noopener noreferrer">Acessar NVDA</a>
+                </li>
+
+                <li>
+                    <strong>VoiceOver:</strong>
+                    leitor de tela nativo dos dispositivos Apple, disponível em macOS, iPhone e iPad. É importante para testar a acessibilidade de interfaces em ambientes Apple, especialmente em aplicações responsivas e experiências mobile.
+                    <br>
+                    <a href="https://support.apple.com/guide/voiceover/welcome/mac" target="_blank" rel="noopener noreferrer">Acessar guia do VoiceOver</a>
+                </li>
+
+                <li>
+                    <strong>TalkBack:</strong>
+                    leitor de tela do Google incluído em dispositivos Android. É utilizado para navegação por gestos, retorno por voz e interação sem depender da visão, sendo essencial em testes de acessibilidade mobile no ecossistema Android.
+                    <br>
+                    <a href="https://support.google.com/accessibility/android/answer/6283677" target="_blank" rel="noopener noreferrer">Acessar guia do TalkBack</a>
+                </li>
+            </ul>
+        </section>
+
+        <hr>
+
+        <section id="verificadores-visuais">
+            <h2>Verificadores Visuais e Contrast Checkers</h2>
+
+            <p>
+                Verificadores visuais ajudam a avaliar contraste, legibilidade, dependência exclusiva de cor e percepção cromática. Essas ferramentas são úteis para designers e desenvolvedores verificarem se textos, botões, ícones, links e estados visuais permanecem compreensíveis para pessoas com baixa visão, daltonismo ou outras alterações na percepção de cores.
+            </p>
+
+            <ul>
+                <li>
+                    <strong>WebAIM Contrast Checker:</strong>
+                    ferramenta para verificar a razão de contraste entre cor de texto e cor de fundo. É indicada para validar combinações de cores em textos, botões, links e componentes visuais, ajudando a atender critérios de contraste previstos nas diretrizes de acessibilidade.
+                    <br>
+                    <a href="https://webaim.org/resources/contrastchecker/" target="_blank" rel="noopener noreferrer">Acessar WebAIM Contrast Checker</a>
+                </li>
+
+                <li>
+                    <strong>Color Oracle:</strong>
+                    simulador gratuito de daltonismo para Windows, Mac e Linux. Ele permite visualizar como uma interface pode ser percebida por pessoas com diferentes tipos de deficiência na percepção de cores, auxiliando na escolha de paletas mais inclusivas.
+                    <br>
+                    <a href="https://colororacle.org/" target="_blank" rel="noopener noreferrer">Acessar Color Oracle</a>
+                </li>
+
+                <li>
+                    <strong>WhoCanUse:</strong>
+                    ferramenta que mostra como combinações de cores podem afetar pessoas com diferentes condições visuais. É útil para compreender o impacto real de decisões de cor e para comunicar problemas de contraste de maneira mais didática.
+                    <br>
+                    <a href="https://www.whocanuse.com/" target="_blank" rel="noopener noreferrer">Acessar WhoCanUse</a>
+                </li>
+            </ul>
+        </section>
+
+        <hr>
+
+        <section id="analise-conteudo-navegacao">
+            <h2>Ferramentas de Análise de Conteúdo e Navegação</h2>
+
+            <p>
+                Ferramentas de análise de conteúdo e navegação auxiliam na auditoria estrutural da interface, na identificação de problemas de fluxo, na verificação de conformidade e na avaliação de páginas que exigem interação. Elas complementam os testes automatizados tradicionais, principalmente quando há formulários, menus, páginas protegidas, fluxos com várias etapas ou grande volume de conteúdo.
+            </p>
+
+            <ul>
+                <li>
+                    <strong>Accessibility Insights:</strong>
+                    ferramenta da Microsoft para avaliação de acessibilidade em páginas web e aplicações. Combina verificações automáticas com testes guiados, ajudando a identificar problemas comuns e a orientar a correção de barreiras durante o desenvolvimento.
+                    <br>
+                    <a href="https://accessibilityinsights.io/" target="_blank" rel="noopener noreferrer">Acessar Accessibility Insights</a>
+                </li>
+
+                <li>
+                    <strong>Siteimprove Accessibility Checker:</strong>
+                    extensão de navegador que permite avaliar páginas públicas, privadas ou protegidas por senha diretamente no navegador. É útil para identificar problemas de acessibilidade, visualizar recomendações e apoiar auditorias em páginas que não podem ser avaliadas por ferramentas externas.
+                    <br>
+                    <a href="https://www.siteimprove.com/why-siteimprove/integrations/browser-extensions/" target="_blank" rel="noopener noreferrer">Acessar Siteimprove Accessibility Checker</a>
+                </li>
+
+                <li>
+                    <strong>DYNO Mapper – Visual Sitemap Generator:</strong>
+                    ferramenta para criação de mapas visuais de sites e análise da estrutura de navegação. Pode auxiliar na compreensão da arquitetura da informação, identificação de rotas de acesso e organização de páginas em projetos maiores.
+                    <br>
+                    <a href="https://dynomapper.com/" target="_blank" rel="noopener noreferrer">Acessar DYNO Mapper</a>
+                </li>
+
+                <li>
+                    <strong>W3C WAI Easy Checks:</strong>
+                    conjunto de verificações iniciais para avaliar aspectos básicos de acessibilidade em uma página web, como título da página, texto alternativo, estrutura de cabeçalhos, contraste, redimensionamento e navegação por teclado. É uma boa referência para quem está começando uma avaliação manual.
+                    <br>
+                    <a href="https://www.w3.org/WAI/test-evaluate/easy-checks/" target="_blank" rel="noopener noreferrer">Acessar W3C WAI Easy Checks</a>
+                </li>
+            </ul>
+        </section>
+
+        <hr>
+
+        <section id="heuristicas-nielsen">
+            <h2>Heurísticas de Nielsen</h2>
+
+            <p>
+                A Avaliação Heurística de Nielsen é um método de inspeção de usabilidade baseado em dez princípios gerais para o design de interfaces. Embora não seja uma ferramenta automatizada de acessibilidade, ela contribui para identificar problemas que afetam a experiência do usuário, como falta de feedback, inconsistência, excesso de informação, dificuldade de recuperação de erros e baixa previsibilidade.
+            </p>
+
+            <p>
+                Quando combinadas com diretrizes de acessibilidade, as heurísticas ajudam a analisar se a interface é clara, consistente, compreensível, tolerante a erros e fácil de aprender. Por isso, funcionam como apoio complementar em avaliações realizadas por designers, desenvolvedores e avaliadores.
+            </p>
+
+            <ul>
+                <li>
+                    <strong>10 Heurísticas de Usabilidade para Design de Interface:</strong>
+                    referência da Nielsen Norman Group que apresenta princípios como visibilidade do status do sistema, correspondência com o mundo real, controle e liberdade do usuário, consistência, prevenção de erros e ajuda na recuperação de falhas.
+                    <br>
+                    <a href="https://www.nngroup.com/articles/ten-usability-heuristics/" target="_blank" rel="noopener noreferrer">Acessar Heurísticas de Nielsen</a>
+                </li>
+            </ul>
+        </section>
+
+        <hr>
+
+        <section id="complementares">
+            <h2>Complementares</h2>
+
+            <p>
+                Os materiais complementares apoiam o estudo, a implementação e o aprofundamento em acessibilidade digital. Eles podem ser usados para consultar exemplos de componentes acessíveis, aprender boas práticas, estudar padrões internacionais e orientar decisões de projeto.
+            </p>
+
+            <ul>
+                <li>
+                    <strong>Inclusive Components:</strong>
+                    material que apresenta componentes comuns de interface sob a perspectiva da inclusão. É útil para compreender como padrões como menus, botões, abas, tabelas e formulários podem ser projetados de forma mais robusta e acessível.
+                    <br>
+                    <a href="https://book.inclusive-components.design/" target="_blank" rel="noopener noreferrer">Acessar Inclusive Components</a>
+                </li>
+
+                <li>
+                    <strong>Deque University:</strong>
+                    plataforma de cursos e materiais sobre acessibilidade digital, com conteúdos voltados para web, documentos, dispositivos móveis, testes, desenvolvimento e boas práticas. É indicada para aprofundamento teórico e prático.
+                    <br>
+                    <a href="https://dequeuniversity.com/" target="_blank" rel="noopener noreferrer">Acessar Deque University</a>
+                </li>
+
+                <li>
+                    <strong>W3C Web Accessibility Initiative:</strong>
+                    referência internacional sobre acessibilidade na web, reunindo diretrizes, materiais de avaliação, fundamentos, tutoriais e recursos para tornar conteúdos digitais mais acessíveis.
+                    <br>
+                    <a href="https://www.w3.org/WAI/" target="_blank" rel="noopener noreferrer">Acessar W3C WAI</a>
+                </li>
+            </ul>
+        </section>
     </main>
 
 </div>
