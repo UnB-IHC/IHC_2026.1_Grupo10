@@ -28,50 +28,46 @@
 
     <div class="docs-layout">
 
-<aside class="sidebar">
+        <aside class="sidebar">
+            <ul>
+                <li><a href="../intro/intro.html">Introdução</a></li>
+                <li><a href="../metodo-design/metodo-design.html">Métodos de Design</a></li>
+                <li><a href="../personas/personas.html">Personas</a></li>
+                <li><a href="../fluxo-jornada/fluxo-jornada.html">Fluxo vs. Jornada</a></li>
+                <li><a href="../service-blueprint/service-blueprint.html">Service Blueprint</a></li>
+                <li><a href="../nielsen/nielsen.html" class="active">Heurísticas de Nielsen</a></li>
+                <li><a href="../boas-praticas/boas-praticas.html">Boas Práticas UI/UX</a></li>
 
-        <ul>
+                <li class="sidebar-dropdown">
+                    <div class="dropdown-trigger" id="toggle-analise">
+                        <span>Análise Prática</span>
+                        <span class="arrow-icon">▶</span>
+                    </div>
+                    <ul class="sub-menu" id="submenu-analise" style="display: none;">
+                        <li><a href="../analise-intro/analise-intro.html">Introdução</a></li>
+                        <li><a href="../gestao/gestao.html">Gestão de Projetos</a></li>
+                        <li><a href="../web/web.html">Desenvolvimento Web</a></li>
+                        <li><a href="../design/design.html">Design</a></li>
+                        <li><a href="../conteudo/conteudo.html">Conteúdo</a></li>
+                        <li><a href="../multimidia/multimidia.html">Áudio, Vídeo e Multimídia</a></li>
+                        <li><a href="../interacao/interacao.html">Interação, Tempo e Animações</a></li>
+                        <li><a href="../validacao/validacao.html">Validação e Testes</a></li>
+                        <li><a href="../analise-nielsen/analise-nielsen.html">Heurísticas de Nielsen</a></li>
+                        <li><a href="../ferramentas/ferramentas.html">Ferramentas de Acessibilidade</a></li>
+                        <li><a href="../progresso/progresso.html">Visão Geral do Progresso</a></li>
+                    </ul>
+                </li>
+                <li><a href="../referencias/referencias.html">Referências Bibliográficas</a></li>
+            </ul>
 
-            <li><a href="../intro/intro.html">Introdução</a></li>
-            <li><a href="../metodo-design/metodo-design.html">Métodos de Design</a></li>
-            <li><a href="../personas/personas.html">Personas</a></li>
-            <li><a href="../fluxo-jornada/fluxo-jornada.html">Fluxo vs. Jornada</a></li>
-            <li><a href="../service-blueprint/service-blueprint.html">Service Blueprint</a></li>
-            <li><a href="../nielsen/nielsen.html">Heurísticas de Nielsen</a></li>
-            <li><a href="../boas-praticas/boas-praticas.html">Boas Práticas UI/UX</a></li>
-
-            <li class="sidebar-dropdown">
-                <div class="dropdown-trigger" id="toggle-analise">
-                    <span>Análise Prática</span>
-                    <span class="arrow-icon">▶</span>
-                </div>
-                <ul class="sub-menu" id="submenu-analise" style="display: none;"> 
-                    <li><a href="../analise-intro/analise-intro.html">Introdução</a></li>
-                    <li><a href="../gestao/gestao.html">Gestão de Projetos</a></li>
-                    <li><a href="../web/web.html">Desenvolvimento Web</a></li>
-                    <li><a href="../design/design.html">Design</a></li>
-                    <li><a href="../conteudo/conteudo.html">Conteúdo</a></li>
-                    <li><a href="../multimidia/multimidia.html">Áudio, Vídeo e Multimídia</a></li>
-                    <li><a href="../interacao/interacao.html">Interação, Tempo e Animações</a></li>
-                    <li><a href="../validacao/validacao.html">Validação e Testes</a></li>
-                    <li><a href="../analise-nielsen/analise-nielsen.html class="active">Heurísticas de Nielsen</a></li>
-                    <li><a href="../ferramentas/ferramentas.html">Ferramentas de Acessibilidade</a></li>
-                    <li><a href="../progresso/progresso.html">Visão Geral do Progresso</a></li>
-                </ul>
-            </li>
-            <li><a href="../referencias/referencias.html">Referências Bibliográficas</a></li>
-        </ul>
-
-        <script>
+            <script>
                 (function() {
                     const trigger = document.getElementById('toggle-analise');
                     const submenu = document.getElementById('submenu-analise');
-                    
-                    // Check if current page is in the submenu to keep it open by default
-                    const currentPath = window.location.pathname;
+
                     const submenuLinks = submenu.querySelectorAll('a');
                     let isSubpageActive = false;
-                    
+
                     submenuLinks.forEach(link => {
                         const linkPage = link.getAttribute('href').split('/').pop();
                         const currentPage = window.location.pathname.split('/').pop();
@@ -80,12 +76,12 @@
                             link.classList.add('active');
                         }
                     });
-                    
+
                     if (isSubpageActive) {
                         submenu.style.display = 'block';
                         trigger.classList.add('open', 'active-parent');
                     }
-                    
+
                     trigger.addEventListener('click', function() {
                         const isOpen = trigger.classList.contains('open');
                         if (isOpen) {
@@ -124,9 +120,7 @@
 
             <hr>
 
-            <!-- ═══════════════════════════════════════════
-                 H1 — Visibilidade do status
-            ════════════════════════════════════════════ -->
+            <!-- H1 -->
             <section id="h1">
                 <h2>1. Visibilidade do Status do Sistema</h2>
                 <p>
@@ -155,7 +149,7 @@
                                     <span class="mock-arquivo-nome">relatorio_final.pdf</span>
                                 </div>
                                 <button class="mock-btn-enviado-ruim" disabled>Enviar</button>
-                                <div class="mock-silencio"><!-- nada acontece --></div>
+                                <div class="mock-silencio"></div>
                             </div>
                         </div>
                         <p class="nielsen-descricao">
@@ -194,9 +188,7 @@
 
             <hr>
 
-            <!-- ═══════════════════════════════════════════
-                 H2 — Correspondência com o mundo real
-            ════════════════════════════════════════════ -->
+            <!-- H2 -->
             <section id="h2">
                 <h2>2. Correspondência entre o Sistema e o Mundo Real</h2>
                 <p>
@@ -271,9 +263,7 @@
 
             <hr>
 
-            <!-- ═══════════════════════════════════════════
-                 H3 — Controle e liberdade do usuário
-            ════════════════════════════════════════════ -->
+            <!-- H3 -->
             <section id="h3">
                 <h2>3. Controle e Liberdade do Usuário</h2>
                 <p>
@@ -336,9 +326,7 @@
 
             <hr>
 
-            <!-- ═══════════════════════════════════════════
-                 H4 — Consistência e padrões
-            ════════════════════════════════════════════ -->
+            <!-- H4 -->
             <section id="h4">
                 <h2>4. Consistência e Padrões</h2>
                 <p>
@@ -420,9 +408,7 @@
 
             <hr>
 
-            <!-- ═══════════════════════════════════════════
-                 H5 — Prevenção de erros
-            ════════════════════════════════════════════ -->
+            <!-- H5 -->
             <section id="h5">
                 <h2>5. Prevenção de Erros</h2>
                 <p>
@@ -497,9 +483,7 @@
 
             <hr>
 
-            <!-- ═══════════════════════════════════════════
-                 H6 — Reconhecimento em vez de memorização
-            ════════════════════════════════════════════ -->
+            <!-- H6 -->
             <section id="h6">
                 <h2>6. Reconhecimento em vez de Memorização</h2>
                 <p>
@@ -576,9 +560,7 @@
 
             <hr>
 
-            <!-- ═══════════════════════════════════════════
-                 H7 — Flexibilidade e eficiência
-            ════════════════════════════════════════════ -->
+            <!-- H7 -->
             <section id="h7">
                 <h2>7. Flexibilidade e Eficiência de Uso</h2>
                 <p>
@@ -652,9 +634,7 @@
 
             <hr>
 
-            <!-- ═══════════════════════════════════════════
-                 H8 — Estética e design minimalista
-            ════════════════════════════════════════════ -->
+            <!-- H8 -->
             <section id="h8">
                 <h2>8. Estética e Design Minimalista</h2>
                 <p>
@@ -730,9 +710,7 @@
 
             <hr>
 
-            <!-- ═══════════════════════════════════════════
-                 H9 — Reconhecimento e recuperação de erros
-            ════════════════════════════════════════════ -->
+            <!-- H9 -->
             <section id="h9">
                 <h2>9. Ajude os Usuários a Reconhecer, Diagnosticar e Recuperar Erros</h2>
                 <p>
@@ -805,9 +783,7 @@
 
             <hr>
 
-            <!-- ═══════════════════════════════════════════
-                 H10 — Ajuda e documentação
-            ════════════════════════════════════════════ -->
+            <!-- H10 -->
             <section id="h10">
                 <h2>10. Ajuda e Documentação</h2>
                 <p>
@@ -941,61 +917,67 @@
         .nielsen-coluna {
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 0;
         }
 
-        /* ─── tag de rótulo ─── */
+        /* ─── tag de rótulo (topo colorido, igual ao exemplo-visual-label do style.css) ─── */
         .nielsen-tag {
-            display: inline-block;
-            font-size: 0.78rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 20px;
             font-weight: 700;
-            letter-spacing: 0.04em;
-            text-transform: uppercase;
-            padding: 4px 12px;
-            border-radius: 20px;
-            width: fit-content;
+            font-size: 0.95rem;
+            border-radius: 14px 14px 0 0;
         }
 
         .nielsen-tag-bom {
-            background: #DCFCE7;
-            color: #166534;
+            background: #ECFDF5;
+            color: #047857;
         }
 
         .nielsen-tag-ruim {
-            background: #FEE2E2;
-            color: #991B1B;
+            background: #FEF2F2;
+            color: #B91C1C;
         }
 
         /* ─── mockup de janela ─── */
         .nielsen-mockup {
-            background: #ffffff;
-            border: 1px solid #E5E7EB;
-            border-radius: 12px;
-            overflow: hidden;
+            background: #F9FAFB;
+            background-image:
+                linear-gradient(#EEF2F6 1px, transparent 1px),
+                linear-gradient(90deg, #EEF2F6 1px, transparent 1px);
+            background-size: 18px 18px;
             flex: 1;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-        }
-
-        .mock-topbar {
-            background: #F3F4F6;
-            padding: 7px 12px;
             display: flex;
-            gap: 6px;
-            border-bottom: 1px solid #E5E7EB;
+            align-items: center;
+            justify-content: center;
+            padding: 24px 16px;
+            min-height: 120px;
         }
 
-        .mock-dot {
-            width: 9px;
-            height: 9px;
-            border-radius: 50%;
-            background: #D1D5DB;
-            display: inline-block;
+        /* wrapper da coluna inteira com borda colorida ao redor */
+        .nielsen-coluna:has(.nielsen-tag-bom) {
+            border: 1px solid #A7F3D0;
+            border-radius: 14px;
+            overflow: hidden;
+        }
+
+        .nielsen-coluna:has(.nielsen-tag-ruim) {
+            border: 1px solid #FECACA;
+            border-radius: 14px;
+            overflow: hidden;
         }
 
         .mock-body {
+            background: #ffffff;
+            border: 1px solid #E5E7EB;
+            border-radius: 10px;
             padding: 16px;
             font-size: 0.82rem;
             color: #374151;
+            width: 100%;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
         }
 
         .mock-body-cheio {
@@ -1007,6 +989,25 @@
             font-size: 0.9rem;
             margin-bottom: 12px;
             color: #111827;
+        }
+
+        /* ─── descrição sob o mockup ─── */
+        .nielsen-descricao {
+            padding: 14px 20px 18px;
+            font-size: 0.92rem !important;
+            color: #4B5563 !important;
+            line-height: 1.6 !important;
+            border-top: 1px solid #F3F4F6;
+            margin: 0 !important;
+            max-width: none !important;
+        }
+
+        .nielsen-coluna:has(.nielsen-tag-bom) .nielsen-descricao {
+            background: #ffffff;
+        }
+
+        .nielsen-coluna:has(.nielsen-tag-ruim) .nielsen-descricao {
+            background: #ffffff;
         }
 
         /* ─── campos de formulário ─── */
@@ -1042,9 +1043,7 @@
             font-family: monospace;
         }
 
-        .mock-input-filled {
-            color: #374151;
-        }
+        .mock-input-filled { color: #374151; }
 
         .mock-input-erro {
             border-color: #EF4444;
@@ -1078,17 +1077,7 @@
             word-break: break-all;
         }
 
-        .mock-erro-amigavel {
-            background: #FEF2F2;
-            border: 1px solid #FCA5A5;
-            border-radius: 6px;
-            color: #7F1D1D;
-            font-size: 0.75rem;
-            padding: 7px 10px;
-            margin-top: 8px;
-        }
-
-        .mock-erro-generico {
+        .mock-erro-amigavel, .mock-erro-generico {
             background: #FEF2F2;
             border: 1px solid #FCA5A5;
             border-radius: 6px;
@@ -1122,7 +1111,6 @@
             height: 100%;
             background: #4BB6E5;
             border-radius: 99px;
-            transition: width 0.3s;
         }
 
         .mock-status-ok {
@@ -1151,9 +1139,7 @@
             color: #374151;
         }
 
-        .mock-icone-arquivo {
-            font-size: 1rem;
-        }
+        .mock-icone-arquivo { font-size: 1rem; }
 
         .mock-arquivo-nome {
             font-family: monospace;
@@ -1170,11 +1156,9 @@
             cursor: not-allowed;
         }
 
-        .mock-silencio {
-            height: 20px;
-        }
+        .mock-silencio { height: 20px; }
 
-        /* ─── toast / desfazer ─── */
+        /* ─── toast ─── */
         .mock-toast {
             background: #1F2937;
             color: #F9FAFB;
@@ -1216,9 +1200,7 @@
             box-shadow: 0 1px 4px rgba(0,0,0,0.08);
         }
 
-        .mock-modal-segundo {
-            margin-bottom: 0;
-        }
+        .mock-modal-segundo { margin-bottom: 0; }
 
         .mock-modal-titulo {
             font-weight: 700;
@@ -1260,9 +1242,7 @@
             font-weight: 600;
         }
 
-        .mock-btn-vermelho {
-            background: #EF4444 !important;
-        }
+        .mock-btn-vermelho { background: #EF4444 !important; }
 
         /* ─── calendário ─── */
         .mock-calendario-mini {
@@ -1285,7 +1265,6 @@
         .mock-cal-grid {
             display: grid;
             grid-template-columns: repeat(7, 1fr);
-            gap: 0;
             padding: 4px;
         }
 
@@ -1321,9 +1300,7 @@
             color: #374151;
         }
 
-        .mock-tool-btn:hover {
-            background: #E5E7EB;
-        }
+        .mock-tool-btn:hover { background: #E5E7EB; }
 
         .mock-tool-ativo {
             background: #DBEAFE;
@@ -1344,10 +1321,6 @@
             min-height: 50px;
         }
 
-        .mock-editor-sem-toolbar {
-            border-top: none;
-        }
-
         .mock-editor-cursor {
             display: inline;
             animation: blink 1s infinite;
@@ -1360,7 +1333,7 @@
             50% { opacity: 0; }
         }
 
-        /* ─── wizard de steps ─── */
+        /* ─── wizard ─── */
         .mock-wizard {
             display: flex;
             flex-direction: column;
@@ -1454,22 +1427,10 @@
             margin-bottom: 4px;
         }
 
-        .mock-checkout-passo {
-            color: #9CA3AF;
-        }
-
-        .mock-checkout-ok {
-            color: #16A34A;
-        }
-
-        .mock-checkout-ativo {
-            color: #1D4ED8;
-            font-weight: 700;
-        }
-
-        .mock-checkout-seta {
-            color: #D1D5DB;
-        }
+        .mock-checkout-passo { color: #9CA3AF; }
+        .mock-checkout-ok { color: #16A34A; }
+        .mock-checkout-ativo { color: #1D4ED8; font-weight: 700; }
+        .mock-checkout-seta { color: #D1D5DB; }
 
         .mock-btn-primary-full {
             width: 100%;
@@ -1497,15 +1458,6 @@
             font-size: 0.65rem;
             font-weight: 700;
             cursor: help;
-        }
-
-        /* ─── descrição sob o mockup ─── */
-        .nielsen-descricao {
-            font-size: 0.88rem !important;
-            color: #6B7280 !important;
-            line-height: 1.55 !important;
-            margin: 0 !important;
-            max-width: none !important;
         }
 
         /* ─── responsivo ─── */
