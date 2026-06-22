@@ -1,0 +1,114 @@
+.score-card {
+    background: white;
+    border: 1px solid #E5E7EB;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 12px rgba(17, 24, 39, 0.05);
+    text-align: center;
+    transition: all 0.3s ease;
+    animation: fadeIn 0.4s ease-out;
+}
+.score-card.success-score {
+    border-color: #A7F3D0;
+    background: #ECFDF5;
+}
+.score-card.error-score {
+    border-color: #FECACA;
+    background: #FEF2F2;
+}
+.score-value {
+    font-size: 2.2rem;
+    font-weight: 800;
+    line-height: 1;
+    margin-bottom: 8px;
+}
+.success-score .score-value {
+    color: #059669;
+}
+.error-score .score-value {
+    color: #DC2626;
+}
+.score-text {
+    font-size: 0.95rem;
+    color: #4B5563;
+    font-weight: 600;
+}
+.results-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    animation: fadeIn 0.5s ease-out;
+}
+.result-item {
+    background: white;
+    border-radius: 10px;
+    padding: 14px 16px;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    border: 1px solid #E5E7EB;
+    border-left: 5px solid;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    transition: transform 0.2s ease;
+}
+.result-item:hover {
+    transform: translateX(3px);
+}
+.result-item.error {
+    border-left-color: #EF4444;
+    background: #FFF5F5;
+    border-color: #FEE2E2;
+}
+.result-item.success {
+    border-left-color: #10B981;
+    background: #F0FDF4;
+    border-color: #DCFCE7;
+}
+.result-title {
+    font-weight: 700;
+    color: #111827;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+.result-message {
+    color: #374151;
+}
+.loading-results {
+    text-align: center;
+    padding: 30px;
+    color: #6B7280;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+.spinner {
+    width: 28px;
+    height: 28px;
+    border: 3px solid #E5E7EB;
+    border-top-color: var(--primary);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.item-verificacao.analyzing {
+    background: rgba(75, 182, 229, 0.12) !important;
+    animation: pulse 1s infinite alternate;
+}
+@keyframes pulse {
+    from { opacity: 0.6; }
+    to { opacity: 1; }
+}

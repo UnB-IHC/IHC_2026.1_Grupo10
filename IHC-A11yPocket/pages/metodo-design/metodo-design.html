@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A11y G10 - Métodos de Design</title>
+
+    <link rel="icon" href="../../assets/logo.png" type="image/png">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="metodo-design.css">
+</head>
+
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<body>
+
+<header class="navbar">
+    <div class="logo-nav">
+        <img src="../../assets/logo.png" alt="Logo A11y Pocket">
+        <span class="logo-text">A11y G10 </span>
+    </div>
+
+    <nav>
+        <a href="../../../index.html">Início</a>
+        <a href="../intro/intro.html">Documentação </a>
+        <a href="https://github.com/UnB-IHC/IHC_2026.1_Grupo10" target="_blank"> GitHub ↗ </a>
+    </nav>
+</header>
+
+<div class="docs-layout">
+
+        <aside class="sidebar">
+
+        <ul>
+
+            <li><a href="../intro/intro.html">Introdução</a></li>
+            <li><a href="../metodo-design/metodo-design.html" class="active">Métodos de Design</a></li>
+            <li><a href="../personas/personas.html">Personas</a></li>
+            <li><a href="../fluxo-jornada/fluxo-jornada.html">Fluxo vs. Jornada</a></li>
+            <li><a href="../service-blueprint/service-blueprint.html">Service Blueprint</a></li>
+            <li><a href="../nielsen/nielsen.html">Heurísticas de Nielsen</a></li>
+            <li><a href="../boas-praticas/boas-praticas.html">Boas Práticas UI/UX</a></li>
+
+            <li class="sidebar-dropdown">
+                <div class="dropdown-trigger" id="toggle-analise">
+                    <span>Análise Prática</span>
+                    <span class="arrow-icon">▶</span>
+                </div>
+                <ul class="sub-menu" id="submenu-analise" style="display: none;"> 
+                    <li><a href="../analise-intro/analise-intro.html">Introdução</a></li>
+                    <li><a href="../gestao/gestao.html">Gestão de Projetos</a></li>
+                    <li><a href="../web/web.html">Desenvolvimento Web</a></li>
+                    <li><a href="../design/design.html">Design</a></li>
+                    <li><a href="../conteudo/conteudo.html">Conteúdo</a></li>
+                    <li><a href="../multimidia/multimidia.html">Áudio, Vídeo e Multimídia</a></li>
+                    <li><a href="../interacao/interacao.html">Interação, Tempo e Animações</a></li>
+                    <li><a href="../validacao/validacao.html">Validação e Testes</a></li>
+                    <li><a href="../analise-nielsen/analise-nielsen.html">Heurísticas de Nielsen</a></li>
+                    <li><a href="../ferramentas/ferramentas.html">Ferramentas de Acessibilidade</a></li>
+                    <li><a href="../progresso/progresso.html">Visão Geral do Progresso</a></li>
+                </ul>
+            </li>
+            <li><a href="../referencias/referencias.html">Referências Bibliográficas</a></li>
+        </ul>
+
+        <script>
+                (function() {
+                    const trigger = document.getElementById('toggle-analise');
+                    const submenu = document.getElementById('submenu-analise');
+                    
+                    // Check if current page is in the submenu to keep it open by default
+                    const currentPath = window.location.pathname;
+                    const submenuLinks = submenu.querySelectorAll('a');
+                    let isSubpageActive = false;
+                    
+                    submenuLinks.forEach(link => {
+                        const linkPage = link.getAttribute('href').split('/').pop();
+                        const currentPage = window.location.pathname.split('/').pop();
+                        if (linkPage && currentPage && linkPage === currentPage) {
+                            isSubpageActive = true;
+                            link.classList.add('active');
+                        }
+                    });
+                    
+                    if (isSubpageActive) {
+                        submenu.style.display = 'block';
+                        trigger.classList.add('open', 'active-parent');
+                    }
+                    
+                    trigger.addEventListener('click', function() {
+                        const isOpen = trigger.classList.contains('open');
+                        if (isOpen) {
+                            submenu.style.display = 'none';
+                            trigger.classList.remove('open');
+                        } else {
+                            submenu.style.display = 'block';
+                            trigger.classList.add('open');
+                        }
+                    });
+                })();
+            </script>
+        </aside>
+
+    <main class="content">
+        <div class="breadcrumb">
+            <a href="../../../index.html" class="home">
+                <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+                </svg>
+            </a>
+            <span class="sep">→</span>
+            <span class="current">Métodos de Design</span>
+        </div>
+
+        <h1>Empatia, Codesign e Mapeamento</h1>
+        <p>
+            Para criar soluções que realmente funcionem, precisamos ir além dos requisitos técnicos. Este guia resume a mentalidade necessária para o Design Centrado no Usuário.
+        </p>
+
+        <hr>
+
+        <section id="empatia">
+            <h2>1. Empatia (A Base de Tudo)</h2>
+            <p>
+                Empatia em design não é apenas "ser legal". É a capacidade técnica de deixar de lado suas próprias suposições para entender as necessidades, dores e contexto de outra pessoa.
+            </p>
+
+            <div class="card boa-pratica">
+                <h3>✔ Diferença Crítica</h3>
+                <ul>
+                    <li><strong>Simpatia:</strong> "Sinto muito que você tenha esse problema." (Distanciamento).</li>
+                    <li><strong>Empatia:</strong> "Eu entendo como você se sente e por que isso é um problema." (Conexão).</li>
+                </ul>
+            </div>
+
+            <article>
+                <h3>Como praticar no projeto?</h3>
+                <ul>
+                    <li><strong>Não julgue:</strong> Se o usuário não consegue usar o botão, o erro é do design, não dele.</li>
+                    <li><strong>Imersão:</strong> Tente usar o sistema nas mesmas condições que o usuário (ex: usar leitor de tela, internet lenta).</li>
+                    <li><strong>Escuta Ativa:</strong> Nas entrevistas, ouça mais do que fale. Pergunte "Por quê?" repetidamente.</li>
+                </ul>
+            </article>
+        </section>
+
+        <hr>
+
+        <section id="codesign">
+            <h2>2. Codesign (Design Participativo)</h2>
+            <p>
+                Codesign é a mudança de mentalidade de desenhar <strong>PARA</strong> o usuário, para desenhar <strong>COM</strong> o usuário.
+            </p>
+            <p>
+                Em vez de tratar as pessoas apenas como objetos de pesquisa passivos, trazemos elas para a mesa de criação.
+            </p>
+
+            <article>
+                <h3>Técnicas de Codesign</h3>
+                <ul>
+                    <li><strong>Card Sorting:</strong> Peça para os usuários organizarem os menus do site com cartões de papel. Isso revela como <em>eles</em> estruturam a informação mentalmente.</li>
+                    <li><strong>Workshops de Criação:</strong> Dê papel e caneta para o usuário desenhar como ele imagina a solução ideal (mesmo que seja feio, a ideia é o que vale).</li>
+                    <li><strong>Validar Rascunhos:</strong> Mostre rabiscos iniciais, não telas prontas. Isso encoraja o usuário a criticar e dar ideias sem medo de "estragar" o trabalho final.</li>
+                </ul>
+            </article>
+        </section>
+
+        <hr>
+
+        <section id="mapeamento">
+            <h2>3. Métodos de Mapeamento (Mapping Methods)</h2>
+            <p>
+                Mapear é o ato de tornar visível o invisível. Transformamos dados complexos e experiências abstratas em diagramas que a equipe toda entende.
+            </p>
+
+            <article>
+                <h3>Principais Mapas (Resumo)</h3>
+                <div class="card tabela-card">
+                    <div class="tabela-responsiva">
+                        <table class="tabela-comparacao">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Tipo de Mapa</th>
+                                    <th scope="col">O que ele mostra?</th>
+                                    <th scope="col">Quando usar?</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Mapa de Empatia</strong></td>
+                                    <td>O que o usuário <strong>Diz, Faz, Pensa e Sente</strong>.</td>
+                                    <td>No início, para sintetizar entrevistas e criar Personas.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Mapa de Stakeholders</strong></td>
+                                    <td>Quem são todas as pessoas envolvidas (internas e externas).</td>
+                                    <td>Para entender quem influencia ou é afetado pelo projeto.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Jornada do Usuário</strong></td>
+                                    <td>A experiência cronológica do usuário (Macro).</td>
+                                    <td><a href="../fluxo-jornada/fluxo-jornada.html">Veja nosso guia detalhado aqui</a>.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Service Blueprint</strong></td>
+                                    <td>Os bastidores operacionais do serviço.</td>
+                                    <td><a href="../service-blueprint/service-blueprint.html">Veja nosso guia detalhado aqui</a>.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </article>
+
+            <div class="boa-pratica">
+                <strong class="selo">✔ Visão Estratégica:</strong>
+                <span>Mapas não são entregáveis finais para "ficar bonito na parede". Eles são <strong>ferramentas de trabalho</strong> vivas que devem ser atualizadas conforme descobrimos coisas novas.</span>
+            </div>
+        </section>
+
+        <hr>
+
+        <section id="referencias">
+            <h2>Referências Bibliográficas</h2>
+            <blockquote>
+                <p>STICKDORN, M.; SCHNEIDER, J. <strong>This is Service Design Thinking</strong>: Basics, Tools, Cases. Wiley, 2011.</p>
+                <p>BROWN, Tim. <strong>Change by Design</strong>: How Design Thinking Transforms Organizations and Inspires Innovation. Harper Business, 2009.</p>
+                <p>IDEO. <strong>The Field Guide to Human-Centered Design</strong>. 2015.</p>
+            </blockquote>
+        </section>
+    </main>
+</div>
+
+</body>
+</html>
