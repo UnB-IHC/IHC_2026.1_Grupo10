@@ -111,76 +111,120 @@
 
     <main class="content">
 
-        <div class="breadcrumb">
-            <a href="../../../index.html" class="home">
-                <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+    <div class="breadcrumb">
+        <a href="../../../index.html" class="home">
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
-                </svg>
-            </a>
-            <span class="sep">→</span>
-            <a class="breadcrumb-text" href="../analise/analise.html">Análise Prática</a>
-            <span class="sep">→</span>
-            <span class="current">Validação e Testes</span>
+            </svg>
+        </a>
+        <span class="sep">→</span>
+        <a class="breadcrumb-text" href="../analise/analise.html">Análise Prática</a>
+        <span class="sep">→</span>
+        <span class="current">Validação e Testes</span>
+    </div>
+
+    <h1>G. Validação e Testes</h1>
+
+    <div class="progress-container">
+        <div class="progress-header">
+            <strong style="color: #0369a1; font-size: 1.2rem;">Progresso da Seção</strong>
+            <strong id="percentual" style="color: #0ea5e9; font-size: 1.4rem; font-weight: 800;">0%</strong>
         </div>
-        <h1>G. Validação e Testes</h1>
-
-        <div class="progress-container">
-            <div class="progress-header">
-                <strong style="color: #0369a1; font-size: 1.2rem;">Progresso da Seção</strong>
-                <strong id="percentual" style="color: #0ea5e9; font-size: 1.4rem; font-weight: 800;">0%</strong>
-            </div>
-            <div style="width: 100%; background-color: #E5E7EB; border-radius: 10px; height: 14px; overflow: hidden;">
-                <div id="barra-progresso" style="width: 0%; background-color: #0ea5e9; height: 100%; transition: width 0.4s ease;"></div>
-            </div>
+        <div style="width: 100%; background-color: #E5E7EB; border-radius: 10px; height: 14px; overflow: hidden;">
+            <div id="barra-progresso" style="width: 0%; background-color: #0ea5e9; height: 100%; transition: width 0.4s ease;"></div>
         </div>
+    </div>
 
-        <h2>G.1. Exemplo de Subseção 1</h2>
-        
-        <ul class="checklist-list">
-            <li>
-                <label class="checklist-item">
-                    <input type="checkbox"> 
-                    <span>Exemplo 1</span>
-                </label>
-            </li>
-            <li>
-                <label class="checklist-item">
-                    <input type="checkbox"> 
-                    <span>Exemplo 2</span>
-                </label>
-            </li>
-            <li>
-                <label class="checklist-item">
-                    <input type="checkbox"> 
-                    <span>Exemplo 3</span>
-                </label>
-            </li>
-        </ul>
+    <h2>G.1. Validação Automática e Responsiva</h2>
 
-        <hr>
+    <ul class="checklist-list">
+        <li>
+            <label class="checklist-item">
+                <input type="checkbox"> 
+                <span>O projeto foi submetido e avaliado através de ferramentas de validação automática de acessibilidade (ex: Lighthouse, Axe, ASES). [19]</span>
+            </label>
+        </li>
+        <li>
+            <label class="checklist-item">
+                <input type="checkbox"> 
+                <span>Todos os erros críticos identificados pela validação automática foram devidamente corrigidos e revalidados. [19]</span>
+            </label>
+        </li>
+        <li>
+            <label class="checklist-item">
+                <input type="checkbox"> 
+                <span>A interface foi testada em diferentes orientações (vertical e horizontal) e tamanhos de tela (desktop, tablet e mobile). [13] [15] [NBR]</span>
+            </label>
+        </li>
+        <li>
+            <label class="checklist-item">
+                <input type="checkbox"> 
+                <span>Foi validado que o conteúdo permanece funcional, legível e sem perda de informações sob o zoom de até 200%. [15]</span>
+            </label>
+        </li>
+    </ul>
 
-        <h2>G.2. Exemplo de Subseção 2</h2>
-        
-        <ul class="checklist-list">
-            <li>
-                <label class="checklist-item">
-                    <input type="checkbox"> 
-                    <span>Exemplo 4</span>
-                </label>
-            </li>
-            <li>
-                <label class="checklist-item">
-                    <input type="checkbox"> 
-                    <span>Exemplo 5</span>
-                </label>
-            </li>
-            <li>
-                <label class="checklist-item">
-                    <input type="checkbox"> 
-                    <span>Exemplo 6</span>
-                </label>
-            </li>
-        </ul>
+    <hr>
+
+    <h2>G.2. Testes de Teclado e Leitores de Tela</h2>
+
+    <ul class="checklist-list">
+        <li>
+            <label class="checklist-item">
+                <input type="checkbox"> 
+                <span>Todas as funcionalidades, componentes operáveis e modais foram testados integralmente sem o uso do mouse. [12]</span>
+            </label>
+        </li>
+        <li>
+            <label class="checklist-item">
+                <input type="checkbox"> 
+                <span>A ordem lógica do foco do teclado e a visibilidade do indicador de foco foram validadas em toda a interface. [6] [12]</span>
+            </label>
+        </li>
+        <li>
+            <label class="checklist-item">
+                <input type="checkbox"> 
+                <span>Foi verificado que o teclado não cai em armadilhas de foco (como ficar preso em modais sem conseguir sair via tecla ESC ou fechar). [12] [NBR]</span>
+            </label>
+        </li>
+        <li>
+            <label class="checklist-item">
+                <input type="checkbox"> 
+                <span>O sistema foi testado com leitores de tela (ex: NVDA, JAWS, VoiceOver), garantindo que títulos, formulários, tabelas e estados de erro sejam anunciados e compreendidos perfeitamente. [19]</span>
+            </label>
+        </li>
+        <li>
+            <label class="checklist-item">
+                <input type="checkbox"> 
+                <span>Verificou-se que todos os botões, ícones clicáveis e links possuem nomes acessíveis e descrições claras que funcionam de maneira isolada. [4] [16]</span>
+            </label>
+        </li>
+    </ul>
+
+    <hr>
+
+    <h2>G.3. Testes com Usuários reais</h2>
+
+    <ul class="checklist-list">
+        <li>
+            <label class="checklist-item">
+                <input type="checkbox"> 
+                <span>Usuários reais, incluindo obrigatoriamente pessoas com deficiências (visuais, físicas, auditivas e neurodivergentes), participaram dos testes práticos da aplicação. [18] [NBR]</span>
+            </label>
+        </li>
+        <li>
+            <label class="checklist-item">
+                <input type="checkbox"> 
+                <span>Os problemas de usabilidade e barreiras de acessibilidade encontrados nos testes manuais foram documentados. [18] [NBR]</span>
+            </label>
+        </li>
+        <li>
+            <label class="checklist-item">
+                <input type="checkbox"> 
+                <span>As melhorias e ajustes de acessibilidade identificados nos testes com usuários foram implementados na versão final. [18] [NBR]</span>
+            </label>
+        </li>
+    </ul>
 </main>
 
 </div>
