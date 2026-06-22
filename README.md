@@ -76,3 +76,11 @@ Nosso objetivo é contribuir para a disseminação da cultura de acessibilidade,
         <b>Yasmim Santos</b>
       </a>
     </td>
+    <td align="center">
+      <a href="https://github.com/thetrulyvoid">
+        <img src="https://github.com/thetrulyvoid.png" width="120"><br>
+        <b>Arthur Martins</b>
+      </a>
+    </td>
+  </tr>
+</table>
