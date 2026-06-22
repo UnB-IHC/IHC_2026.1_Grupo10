@@ -131,6 +131,16 @@
             background-color: #E5E7EB;
             margin: 40px 0;
         }
+        @media (max-width: 480px) {
+            .progress-circle.large { width: 120px; height: 120px; }
+            .progress-circle:not(.large) { width: 90px; height: 90px; }
+            .progress-circle.large circle { stroke-width: 10; }
+            .progress-circle:not(.large) circle { stroke-width: 7; }
+            .progress-circle.large .percentage-text { font-size: 1.6rem; }
+            .progress-circle:not(.large) .percentage-text { font-size: 1rem; }
+            .categories-grid { gap: 16px; }
+            .category-card { padding: 18px; }
+        }
     </style>
     <link rel="stylesheet" href="../../css/style.css">
     
