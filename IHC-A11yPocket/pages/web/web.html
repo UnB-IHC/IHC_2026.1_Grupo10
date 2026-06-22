@@ -134,53 +134,115 @@
             </div>
         </div>
 
-        <h2>B.1. Exemplo de Subseção 1</h2>
-        
+        <h2>B.1. Estrutura Semântica e HTML</h2>
+
         <ul class="checklist-list">
             <li>
                 <label class="checklist-item">
-                    <input type="checkbox"> 
-                    <span>Exemplo 1</span>
+                    <input type="checkbox">
+                    <span>O código HTML é válido e bem formado, sem erros de parse que possam comprometer a interpretação por tecnologias assistivas. [14] [NBR]</span>
                 </label>
             </li>
             <li>
                 <label class="checklist-item">
-                    <input type="checkbox"> 
-                    <span>Exemplo 2</span>
+                    <input type="checkbox">
+                    <span>Elementos HTML são utilizados de acordo com sua semântica nativa (ex.: <code>&lt;button&gt;</code> para ações, <code>&lt;nav&gt;</code> para navegação, <code>&lt;main&gt;</code> para conteúdo principal). [4] [NBR]</span>
                 </label>
             </li>
             <li>
                 <label class="checklist-item">
-                    <input type="checkbox"> 
-                    <span>Exemplo 3</span>
+                    <input type="checkbox">
+                    <span>A hierarquia de cabeçalhos (<code>h1</code>–<code>h6</code>) é sequencial e reflete a estrutura lógica da página, sem saltos de nível. [16] [NBR]</span>
+                </label>
+            </li>
+            <li>
+                <label class="checklist-item">
+                    <input type="checkbox">
+                    <span>Atributos ARIA (<code>role</code>, <code>aria-label</code>, <code>aria-expanded</code> etc.) são utilizados apenas para complementar a semântica nativa quando necessário, sem conflitar com o papel HTML do elemento. [4] [NBR]</span>
+                </label>
+            </li>
+            <li>
+                <label class="checklist-item">
+                    <input type="checkbox">
+                    <span>A ordem de leitura do DOM corresponde à ordem visual do conteúdo, garantindo que leitores de tela percorram os elementos em sequência lógica. [4] [Bibliografia]</span>
                 </label>
             </li>
         </ul>
 
         <hr>
 
-        <h2>B.2. Exemplo de Subseção 2</h2>
-        
+        <h2>B.2. Navegação e Interação por Teclado</h2>
+
         <ul class="checklist-list">
             <li>
                 <label class="checklist-item">
-                    <input type="checkbox"> 
-                    <span>Exemplo 4</span>
+                    <input type="checkbox">
+                    <span>Toda funcionalidade da interface é operável apenas pelo teclado, sem exigir o uso de mouse ou gestos de toque específicos. [12] [NBR]</span>
                 </label>
             </li>
             <li>
                 <label class="checklist-item">
-                    <input type="checkbox"> 
-                    <span>Exemplo 5</span>
+                    <input type="checkbox">
+                    <span>O indicador de foco do teclado é sempre visível e possui contraste perceptível em relação ao fundo. [6] [NBR]</span>
                 </label>
             </li>
             <li>
                 <label class="checklist-item">
-                    <input type="checkbox"> 
-                    <span>Exemplo 6</span>
+                    <input type="checkbox">
+                    <span>Existe um mecanismo de "pular para o conteúdo principal" (skip link) que permite ignorar blocos de navegação repetidos entre páginas. [7] [NBR]</span>
+                </label>
+            </li>
+            <li>
+                <label class="checklist-item">
+                    <input type="checkbox">
+                    <span>Componentes interativos (modais, menus suspensos, abas) gerenciam corretamente o foco: aprisionam-no quando abertos e devolvem-no ao elemento originador ao fechar. [12] [NBR]</span>
+                </label>
+            </li>
+            <li>
+                <label class="checklist-item">
+                    <input type="checkbox">
+                    <span>Links que abrem novas abas ou janelas informam esse comportamento ao usuário antes da ativação. [8] [Bibliografia]</span>
+                </label>
+            </li>
+            <li>
+                <label class="checklist-item">
+                    <input type="checkbox">
+                    <span>A mudança de contexto (navegação, envio de formulário, carregamento de conteúdo) não ocorre automaticamente apenas por foco ou entrada de dados, sem ação explícita do usuário. [9] [NBR]</span>
                 </label>
             </li>
         </ul>
+
+        <hr>
+
+        <h2>B.3. Formulários, Responsividade e Compatibilidade</h2>
+
+        <ul class="checklist-list">
+            <li>
+                <label class="checklist-item">
+                    <input type="checkbox">
+                    <span>Campos de formulário possuem o atributo <code>autocomplete</code> configurado com o valor semântico correto para dados pessoais (ex.: <code>name</code>, <code>email</code>, <code>tel</code>). [10] [NBR]</span>
+                </label>
+            </li>
+            <li>
+                <label class="checklist-item">
+                    <input type="checkbox">
+                    <span>O layout se adapta corretamente a 320 px de largura sem perda de conteúdo ou necessidade de rolagem horizontal. [15] [NBR]</span>
+                </label>
+            </li>
+            <li>
+                <label class="checklist-item">
+                    <input type="checkbox">
+                    <span>O conteúdo não está bloqueado em uma orientação específica (retrato ou paisagem), salvo quando a orientação for essencial para a funcionalidade. [13] [NBR]</span>
+                </label>
+            </li>
+            <li>
+                <label class="checklist-item">
+                    <input type="checkbox">
+                    <span>Elementos interativos (botões, links, campos) possuem área de toque de pelo menos 24×24 px, preferencialmente 44×44 px. [17] [18]</span>
+                </label>
+            </li>
+        </ul>
+
 </main>
 
 </div>
@@ -269,8 +331,6 @@
       }
     }
   });
-  
-  // Carrega progresso
   carregarProgresso();
 </script>
 
