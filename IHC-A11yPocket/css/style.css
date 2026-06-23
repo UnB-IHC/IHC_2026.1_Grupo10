@@ -398,6 +398,130 @@ body {
     margin-bottom: 24px;
 }
 
+/* --------------------------
+   Responsividade (fixes for issue #33)
+   - Adjust navbar, hero, sidebar and content paddings/sizes
+   - Use relative units and make images flexible to avoid horizontal overflow
+---------------------------*/
+
+/* Ensure images scale down */
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+}
+
+@media (max-width: 1024px) {
+    .navbar {
+        padding: 0 20px;
+    }
+
+    .hero {
+        padding: 60px 6%;
+    }
+
+    .hero-title {
+        font-size: 3rem;
+    }
+
+    .hero-image img {
+        width: 300px;
+        max-width: 40vw;
+    }
+
+    .sidebar {
+        width: 280px;
+    }
+
+    .content {
+        padding: 40px 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Stack docs layout vertically on smaller screens */
+    .docs-layout {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        padding: 20px;
+        top: 0;
+        overflow: visible;
+    }
+
+    .content {
+        padding: 20px 16px;
+    }
+
+    /* Allow nav items to wrap instead of overflowing */
+    .navbar nav {
+        gap: 12px;
+        flex-wrap: wrap;
+    }
+
+    .hero {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 40px 6%;
+        gap: 20px;
+    }
+
+    .hero-title {
+        font-size: 2.4rem;
+    }
+
+    .hero-image img {
+        width: 70%;
+        max-width: 300px;
+    }
+
+    /* Avoid forcing a max-width that creates horizontal scroll */
+    .content > * {
+        max-width: 100%;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        padding: 0 6px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .btn-primary, .btn-secondary {
+        padding: 12px 18px;
+    }
+
+    .navbar {
+        padding: 0 12px;
+    }
+
+    .logo-nav span {
+        font-size: 1rem;
+    }
+
+    .sidebar {
+        padding: 12px;
+    }
+
+    .content {
+        padding: 16px;
+    }
+
+    .hero-image img {
+        width: 100%;
+        height: auto;
+    }
+
+    .hero-description {
+        font-size: 1rem;
+    }
+}
+
 .content section>article {
     margin-top: 8px;
 }
