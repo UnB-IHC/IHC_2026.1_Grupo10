@@ -398,6 +398,109 @@ body {
     margin-bottom: 24px;
 }
 
+/* RESPONSIVIDADE: ajustes para telas menores (mobile) */
+@media (max-width: 768px) {
+    /* Evita scroll horizontal inesperado */
+    html, body {
+        overflow-x: hidden;
+    }
+
+    /* Navbar: reduzir paddings e empilhar itens se necessário */
+    .navbar {
+        padding: 0 16px;
+        height: 64px;
+    }
+    .navbar nav {
+        display: none; /* esconder menu principal em mobile simples; o projeto pode adicionar um botão hamburger via JS quando necessário */
+    }
+
+    /* HERO: empilhar e escalar fontes/elementos responsivamente */
+    .hero {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 40px 6%;
+        gap: 24px;
+        min-height: auto;
+    }
+
+    .hero-text {
+        max-width: 100%;
+    }
+
+    /* Usar valores responsivos para títulos e descrições */
+    .hero-title {
+        font-size: clamp(1.8rem, 8vw, 4rem);
+        line-height: 1.05;
+    }
+
+    .hero-description {
+        font-size: clamp(1rem, 3.8vw, 1.25rem);
+        margin-top: 20px;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .hero-image img {
+        width: 100%;
+        max-width: 360px;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+    }
+
+    /* DOCUMENTAÇÃO: trocar layout de coluna para empilhado (sidebar acima do conteúdo) */
+    .docs-layout {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .sidebar {
+        width: 100%;
+        position: static;
+        height: auto;
+        top: auto;
+        padding: 20px;
+        overflow: visible;
+        border-bottom: 1px solid #e5e7eb;
+    }
+
+    /* Caso prefira esconder a sidebar por completo em telas muito pequenas,
+       descomente a linha abaixo; por enquanto mantemos a sidebar acima do conteúdo.
+    .sidebar { display: none; } */
+
+    .sidebar-logo {
+        width: 70px;
+        margin-bottom: 12px;
+    }
+
+    /* Ajustes do conteúdo principal para não ficar espremido */
+    .content {
+        padding: 24px 6%;
+    }
+
+    .content > * {
+        max-width: 100%;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+
+    .content h1 { font-size: clamp(1.6rem, 6vw, 2.6rem); }
+    .content p { font-size: clamp(1rem, 3.6vw, 1.1rem); }
+
+    /* Dropdown na sidebar: garantir que não quebre o fluxo */
+    .dropdown-trigger,
+    .sidebar a,
+    .sub-menu li {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+}
+
 /* --------------------------
    Responsividade (fixes for issue #33)
    - Adjust navbar, hero, sidebar and content paddings/sizes
