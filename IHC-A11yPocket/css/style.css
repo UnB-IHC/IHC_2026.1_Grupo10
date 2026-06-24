@@ -13,6 +13,16 @@
     box-sizing: border-box;
 }
 
+/* Base: sidebar-toggle hidden by default (desktop) */
+.sidebar-toggle {
+    display: none;
+    background: var(--primary);
+    color: #ffffff;
+    border: 1px solid var(--primary-dark);
+    box-shadow: 0 6px 14px rgba(2,6,23,0.06);
+    border-radius: 8px;
+}
+
 body {
     font-family: 'Outfit', sans-serif;
     background: var(--background);
@@ -453,20 +463,74 @@ body {
         margin: 0 auto;
     }
 
-    /* DOCUMENTAÇÃO: trocar layout de coluna para empilhado (sidebar acima do conteúdo) */
+    /* DOCUMENTAÇÃO (mobile): esconder sidebar por padrão e usar toggle */
     .docs-layout {
+        /* manter o conteúdo principal full-width; sidebar se torna overlay quando aberto */
         flex-direction: column;
         gap: 0;
+        position: relative;
     }
 
+    /* Sidebar escondida por padrão em mobile; será mostrada via classe `sidebar-open` no body */
     .sidebar {
-        width: 100%;
-        position: static;
-        height: auto;
-        top: auto;
+        display: none;
+        width: 85%;
+        max-width: 360px;
+        position: fixed;
+        left: 0;
+        top: 80px;
+        height: calc(100% - 80px);
         padding: 20px;
-        overflow: visible;
-        border-bottom: 1px solid #e5e7eb;
+        background: #ffffff;
+        box-shadow: 0 10px 30px rgba(2,6,23,0.12);
+        overflow-y: auto;
+        transform: translateX(-110%);
+        transition: transform 0.28s ease;
+        z-index: 1100;
+    }
+
+    /* When the body has the controlling class, show the sidebar */
+    body.sidebar-open .sidebar {
+        display: block;
+        transform: translateX(0);
+    }
+
+    /* Overlay that appears behind the sidebar when open */
+    .overlay {
+        display: none;
+    }
+    body.sidebar-open .overlay {
+        display: block;
+        position: fixed;
+        left: 0;
+        top: 80px;
+        right: 0;
+        bottom: 0;
+        background: rgba(0,0,0,0.35);
+        z-index: 1050;
+    }
+
+    /* Toggle/hamburger button in the top-left of the viewport */
+    .sidebar-toggle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        left: 16px;
+        top: 20px;
+        width: 44px;
+        height: 44px;
+        background: var(--primary);
+        color: #ffffff;
+        border: 1px solid var(--primary-dark);
+        border-radius: 8px;
+        z-index: 1200;
+        box-shadow: 0 6px 14px rgba(2,6,23,0.06);
+        cursor: pointer;
+        font-size: 1.1rem;
+    }
+    .sidebar-toggle:focus {
+        outline: 3px solid rgba(75,182,229,0.25);
     }
 
     /* Caso prefira esconder a sidebar por completo em telas muito pequenas,
@@ -537,6 +601,25 @@ body {
 
     .content {
         padding: 40px 30px;
+    }
+
+    /* Show toggle integrated in header on tablet / small desktop */
+    .sidebar-toggle {
+        display: inline-flex;
+        position: absolute;
+        left: 16px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 44px;
+        height: 44px;
+        background: var(--primary);
+        color: #ffffff;
+        border: 1px solid var(--primary-dark);
+        border-radius: 8px;
+        z-index: 1200;
+        box-shadow: 0 6px 14px rgba(2,6,23,0.06);
+        cursor: pointer;
+        font-size: 1.1rem;
     }
 }
 
@@ -783,6 +866,31 @@ body {
 .card.evite {
     flex-direction: column;
     padding: 24px 28px;
+}
+
+/* Override final para centralizar a imagem do hero apenas em mobile (<=768px) */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        align-items: center !important;
+        text-align: center !important;
+    }
+
+    .hero-image {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        margin-top: 12px;
+    }
+
+    .hero-image img {
+        display: block;
+        margin: 0 auto;
+        width: 100%;
+        max-width: 360px;
+        height: auto;
+    }
 }
 
 .card.boa-pratica {
