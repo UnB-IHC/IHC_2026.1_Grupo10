@@ -48,3 +48,71 @@ window.addEventListener("scroll", () => {
     });
 })();
 
+// Sidebar toggle (mobile): cria botão hamburger e overlay dinamicamente
+(function () {
+    const sidebar = document.querySelector('.sidebar');
+    if (!sidebar) return;
+
+    // Criar overlay
+    const overlay = document.createElement('div');
+    overlay.className = 'overlay';
+    overlay.tabIndex = -1;
+    document.body.appendChild(overlay);
+
+    // Criar botão toggle e inserir no navbar se existir, senão no body
+    const toggle = document.createElement('button');
+    toggle.className = 'sidebar-toggle';
+    toggle.setAttribute('aria-label', 'Abrir menu de navegação');
+    toggle.setAttribute('aria-controls', 'sidebar');
+    toggle.setAttribute('aria-expanded', 'false');
+    toggle.innerHTML = '&#9776;'; // hamburger
+
+    const navbar = document.querySelector('.navbar');
+    if (navbar) navbar.appendChild(toggle);
+    else document.body.appendChild(toggle);
+
+    // Marca a sidebar com id para aria-controls (se já não tiver)
+    if (!sidebar.id) sidebar.id = 'sidebar';
+
+    function openSidebar() {
+        document.body.classList.add('sidebar-open');
+        toggle.setAttribute('aria-expanded', 'true');
+        // move focus to first link in sidebar
+        const firstLink = sidebar.querySelector('a, button');
+        if (firstLink) firstLink.focus();
+    }
+
+    function closeSidebar() {
+        document.body.classList.remove('sidebar-open');
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.focus();
+    }
+
+    toggle.addEventListener('click', function (e) {
+        if (document.body.classList.contains('sidebar-open')) {
+            closeSidebar();
+        } else {
+            openSidebar();
+        }
+    });
+
+    overlay.addEventListener('click', function () {
+        closeSidebar();
+    });
+
+    // Close on Escape
+    window.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && document.body.classList.contains('sidebar-open')) {
+            closeSidebar();
+        }
+    });
+
+    // Close sidebar on navigation (click on sidebar link) to improve UX on mobile
+    sidebar.addEventListener('click', function (e) {
+        const link = e.target.closest('a');
+        if (link && window.innerWidth <= 768) {
+            closeSidebar();
+        }
+    });
+})();
+
