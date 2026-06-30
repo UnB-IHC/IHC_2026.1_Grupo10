@@ -30,6 +30,28 @@ Nosso objetivo é contribuir para a disseminação da cultura de acessibilidade,
 
 ---
 
+# Como executar o projeto
+
+1. Clone o repositório:
+
+```bash
+git clone https://github.com/UnB-IHC/IHC_2026.1_Grupo10.git
+```
+
+2. Entre na pasta do projeto:
+
+```bash
+cd IHC_2026.1_Grupo10
+```
+
+3. Abra o arquivo `index.html` em seu navegador ou utilize uma extensão como **Live Server** no VS Code.
+
+Também é possível acessar diretamente pela versão publicada no GitHub Pages:
+
+https://unb-ihc.github.io/IHC_2026.1_Grupo10/
+
+---
+
 ## Contribuidores
 
 <table>
