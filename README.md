@@ -30,7 +30,7 @@ Nosso objetivo é contribuir para a disseminação da cultura de acessibilidade,
 
 ---
 
-# Como executar o projeto
+## Como executar o projeto
 
 1. Clone o repositório:
 
