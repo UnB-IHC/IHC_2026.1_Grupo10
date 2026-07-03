@@ -133,13 +133,13 @@
         <ul class="checklist-list">
             <li>
                 <label class="checklist-item">
-                    <input type="checkbox"> 
+                    <input type="checkbox" checked> 
                     <span>A acessibilidade foi definida como requisito obrigatório do projeto desde seu início.</span>
                 </label>
             </li>
             <li>
                 <label class="checklist-item">
-                    <input type="checkbox"> 
+                    <input type="checkbox" checked> 
                     <span>Os objetivos de acessibilidade foram documentados e compartilhados com toda a equipe.</span>
                 </label>
             </li>
@@ -151,13 +151,13 @@
             </li>
             <li>
                 <label class="checklist-item">
-                    <input type="checkbox"> 
+                    <input type="checkbox" checked> 
                     <span>A acessibilidade é considerada em todas as etapas do ciclo de desenvolvimento.</span>
                 </label>
             </li>
             <li>
                 <label class="checklist-item">
-                    <input type="checkbox"> 
+                    <input type="checkbox" checked> 
                     <span>O projeto prevê orçamento e tempo para implementação e validação da acessibilidade.</span>
                 </label>
             </li>
@@ -176,7 +176,7 @@
         <ul class="checklist-list">
             <li>
                 <label class="checklist-item">
-                    <input type="checkbox"> 
+                    <input type="checkbox" checked> 
                     <span>Pessoas com Deficiência Visual (cegueira, baixa visão, daltonismo ou deficiência cromática)</span>
                 </label>
             </li>
@@ -200,7 +200,7 @@
             </li>
             <li>
                 <label class="checklist-item">
-                    <input type="checkbox"> 
+                    <input type="checkbox" checked> 
                     <span>Pessoas Neurodiversas (dificuldades de diferentes graus para ver, escutar, falar, compreender e interagir socialmente)</span>
                 </label>
             </li>
@@ -236,13 +236,13 @@
             </li>
             <li>
                 <label class="checklist-item">
-                    <input type="checkbox"> 
+                    <input type="checkbox" checked> 
                     <span>Pessoas com Baixo Letramento Digital (usuários com pouca familiaridade com tecnologia, interfaces ou navegação digital)</span>
                 </label>
             </li>
             <li>
                 <label class="checklist-item">
-                    <input type="checkbox"> 
+                    <input type="checkbox" checked> 
                     <span>Pessoas Idosas, mesmo sem deficiência diagnosticada (usuários com possíveis limitações leves de visão, audição, cognição ou motricidade fina)</span>
                 </label>
             </li>
@@ -299,22 +299,35 @@
     }));
   }
 
+  const AUDIT_SEED = 'tg02-docs-v1';
+
   // Mantemos compatibilidade com a função global que pode ser chamada de fora
   function carregarProgresso() {
-    const savedState = JSON.parse(localStorage.getItem(pageKey) || '{}');
     const checkboxes = document.querySelectorAll('.checklist-item input[type="checkbox"]');
-    checkboxes.forEach((box, index) => {
-      if (savedState[index] !== undefined) {
-        box.checked = savedState[index];
-        const label = box.closest('.checklist-item');
-        if (label) {
-          if (box.checked) {
-            label.style.color = '#0369a1';
-            label.style.fontWeight = '500';
-          } else {
-            label.style.color = '#374151';
-            label.style.fontWeight = '400';
-          }
+    const seedKey = pageKey + '_seed';
+    const savedState = JSON.parse(localStorage.getItem(pageKey) || '{}');
+
+    // Aplica o estado do HTML (checks do TG02) uma vez; depois respeita o localStorage
+    if (localStorage.getItem(seedKey) !== AUDIT_SEED) {
+      localStorage.setItem(seedKey, AUDIT_SEED);
+      salvarProgresso();
+    } else {
+      checkboxes.forEach((box, index) => {
+        if (savedState[index] !== undefined) {
+          box.checked = savedState[index];
+        }
+      });
+    }
+
+    checkboxes.forEach((box) => {
+      const label = box.closest('.checklist-item');
+      if (label) {
+        if (box.checked) {
+          label.style.color = '#0369a1';
+          label.style.fontWeight = '500';
+        } else {
+          label.style.color = '#374151';
+          label.style.fontWeight = '400';
         }
       }
     });

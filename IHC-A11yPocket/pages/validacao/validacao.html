@@ -158,7 +158,7 @@
         </li>
         <li>
             <label class="checklist-item">
-                <input type="checkbox"> 
+                <input type="checkbox" checked> 
                 <span>Foi validado que o conteúdo permanece funcional, legível e sem perda de informações sob o zoom de até 200%. [15]</span>
             </label>
         </li>
@@ -171,13 +171,13 @@
     <ul class="checklist-list">
         <li>
             <label class="checklist-item">
-                <input type="checkbox"> 
+                <input type="checkbox" checked> 
                 <span>Todas as funcionalidades, componentes operáveis e modais foram testados integralmente sem o uso do mouse. [12]</span>
             </label>
         </li>
         <li>
             <label class="checklist-item">
-                <input type="checkbox"> 
+                <input type="checkbox" checked> 
                 <span>A ordem lógica do foco do teclado e a visibilidade do indicador de foco foram validadas em toda a interface. [6] [12]</span>
             </label>
         </li>
@@ -189,7 +189,7 @@
         </li>
         <li>
             <label class="checklist-item">
-                <input type="checkbox"> 
+                <input type="checkbox" checked> 
                 <span>O sistema foi testado com leitores de tela (ex: NVDA, JAWS, VoiceOver), garantindo que títulos, formulários, tabelas e estados de erro sejam anunciados e compreendidos perfeitamente. [19]</span>
             </label>
         </li>
@@ -247,22 +247,35 @@
     }));
   }
 
+  const AUDIT_SEED = 'tg02-docs-v1';
+
   // Mantemos compatibilidade com a função global que pode ser chamada de fora
   function carregarProgresso() {
-    const savedState = JSON.parse(localStorage.getItem(pageKey) || '{}');
     const checkboxes = document.querySelectorAll('.checklist-item input[type="checkbox"]');
-    checkboxes.forEach((box, index) => {
-      if (savedState[index] !== undefined) {
-        box.checked = savedState[index];
-        const label = box.closest('.checklist-item');
-        if (label) {
-          if (box.checked) {
-            label.style.color = '#0369a1';
-            label.style.fontWeight = '500';
-          } else {
-            label.style.color = '#374151';
-            label.style.fontWeight = '400';
-          }
+    const seedKey = pageKey + '_seed';
+    const savedState = JSON.parse(localStorage.getItem(pageKey) || '{}');
+
+    // Aplica o estado do HTML (checks do TG02) uma vez; depois respeita o localStorage
+    if (localStorage.getItem(seedKey) !== AUDIT_SEED) {
+      localStorage.setItem(seedKey, AUDIT_SEED);
+      salvarProgresso();
+    } else {
+      checkboxes.forEach((box, index) => {
+        if (savedState[index] !== undefined) {
+          box.checked = savedState[index];
+        }
+      });
+    }
+
+    checkboxes.forEach((box) => {
+      const label = box.closest('.checklist-item');
+      if (label) {
+        if (box.checked) {
+          label.style.color = '#0369a1';
+          label.style.fontWeight = '500';
+        } else {
+          label.style.color = '#374151';
+          label.style.fontWeight = '400';
         }
       }
     });
