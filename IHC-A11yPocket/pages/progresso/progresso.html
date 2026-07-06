@@ -366,6 +366,33 @@
 </div>
 
 <script>
+  const DASHBOARD_SEED = 'tg02-docs-v4';
+
+  const TG02_CHECKLIST_SEED = {
+    gestao: { total: 23, state: {"0":true,"1":true,"2":false,"3":true,"4":true,"5":false,"6":true,"7":false,"8":false,"9":false,"10":true,"11":false,"12":false,"13":false,"14":false,"15":false,"16":true,"17":true,"18":false,"19":false,"20":false,"21":false,"22":false} },
+    web: { total: 15, state: {"0":true,"1":true,"2":true,"3":false,"4":true,"5":false,"6":true,"7":false,"8":false,"9":true,"10":true,"11":false,"12":false,"13":true,"14":true} },
+    design: { total: 22, state: {"0":true,"1":true,"2":true,"3":true,"4":true,"5":false,"6":true,"7":false,"8":false,"9":true,"10":true,"11":true,"12":true,"13":true,"14":true,"15":true,"16":true,"17":false,"18":true,"19":true,"20":true,"21":true} },
+    conteudo: { total: 18, state: {"0":false,"1":true,"2":true,"3":true,"4":true,"5":true,"6":true,"7":true,"8":true,"9":false,"10":true,"11":true,"12":true,"13":true,"14":true,"15":true,"16":false,"17":true} },
+    multimidia: { total: 16, state: {"0":true,"1":true,"2":true,"3":true,"4":true,"5":true,"6":true,"7":true,"8":true,"9":true,"10":true,"11":true,"12":true,"13":true,"14":true,"15":true} },
+    interacao: { total: 12, state: {"0":true,"1":true,"2":true,"3":true,"4":true,"5":true,"6":true,"7":true,"8":true,"9":false,"10":false,"11":false} },
+    validacao: { total: 12, state: {"0":false,"1":false,"2":false,"3":true,"4":true,"5":true,"6":false,"7":true,"8":false,"9":false,"10":false,"11":false} },
+    'analise-nielsen': { total: 30, state: {"0":true,"1":true,"2":false,"3":true,"4":false,"5":false,"6":false,"7":true,"8":true,"9":true,"10":false,"11":false,"12":true,"13":true,"14":false,"15":false,"16":true,"17":true,"18":true,"19":true,"20":false,"21":false,"22":false,"23":true,"24":true,"25":true,"26":false,"27":true,"28":true,"29":false} }
+  };
+
+  function seedTg02Progress() {
+    if (localStorage.getItem('a11y_pocket_dashboard_seed') === DASHBOARD_SEED) return;
+
+    for (const [file, data] of Object.entries(TG02_CHECKLIST_SEED)) {
+      const pageKey = 'a11y_pocket_' + file;
+      const checked = Object.values(data.state).filter(Boolean).length;
+      localStorage.setItem(pageKey, JSON.stringify(data.state));
+      localStorage.setItem(pageKey + '_info', JSON.stringify({ checked, total: data.total }));
+      localStorage.setItem(pageKey + '_seed', DASHBOARD_SEED);
+    }
+
+    localStorage.setItem('a11y_pocket_dashboard_seed', DASHBOARD_SEED);
+  }
+
   const pages = {
     gestao: { files: ['gestao'], total: 23 },
     web: { files: ['web'], total: 15 },
@@ -398,6 +425,8 @@
   }
 
   function carregarDashboard() {
+    seedTg02Progress();
+
     let totalChecked = 0;
     let totalCount = 0;
 

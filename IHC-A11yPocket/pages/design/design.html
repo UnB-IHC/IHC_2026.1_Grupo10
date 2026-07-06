@@ -139,31 +139,31 @@
         <ul class="checklist-list">
             <li>
                 <label class="checklist-item">
-                    <input type="checkbox"> 
+                    <input type="checkbox" checked> 
                     <span>Usa design responsivo para que a interface se ajuste ao usuário (tamanho da tela, orientação, zoom). [13] [15] [NBR]</span>
                 </label>
             </li>
             <li>
                 <label class="checklist-item">
-                    <input type="checkbox"> 
+                    <input type="checkbox" checked> 
                     <span>O conteúdo adapta-se a diferentes telas. [13] [15] [NBR]</span>
                 </label>
             </li>
             <li>
                 <label class="checklist-item">
-                    <input type="checkbox"> 
+                    <input type="checkbox" checked> 
                     <span>Não há necessidade de rolagem horizontal ao aplicar zoom ou acessar por telas menores. [15] [NBR]</span>
                 </label>
             </li>
             <li>
                 <label class="checklist-item">
-                    <input type="checkbox"> 
+                    <input type="checkbox" checked> 
                     <span>O conteúdo permanece compreensível em dispositivos móveis. [13] [15] [NBR]</span>
                 </label>
             </li>
             <li>
                 <label class="checklist-item">
-                    <input type="checkbox"> 
+                    <input type="checkbox" checked> 
                     <span>A interface mantém consistência visual entre diferentes dispositivos. [13] [NBR]</span>
                 </label>
             </li>
@@ -175,7 +175,7 @@
             </li>
             <li>
                 <label class="checklist-item">
-                    <input type="checkbox"> 
+                    <input type="checkbox" checked> 
                     <span>Cria uma hierarquia visual clara, usando títulos, espaçamentos e fontes para guiar o usuário. [16] [18]</span>
                 </label>
             </li>
@@ -200,19 +200,19 @@
             </li>
             <li>
                 <label class="checklist-item">
-                    <input type="checkbox"> 
+                    <input type="checkbox" checked> 
                     <span>Garante contraste de cores para informações essenciais contidas em imagens, gráficos, ícones e componentes de interface. [18] [NBR]</span>
                 </label>
             </li>
              <li>
                 <label class="checklist-item">
-                    <input type="checkbox"> 
+                    <input type="checkbox" checked> 
                     <span>Links podem ser identificados visualmente sem depender apenas da cor (por exemplo, uso de sublinhado). [5] [NBR]</span>
                 </label>
             </li>
             <li>
                 <label class="checklist-item">
-                    <input type="checkbox"> 
+                    <input type="checkbox" checked> 
                     <span>Estados de erro e feedbacks do sistema não dependem apenas da mudança de cor para serem compreendidos. [5] [NBR]</span>
                 </label>
             </li>
@@ -223,31 +223,31 @@
         <ul class="checklist-list">
             <li>
                 <label class="checklist-item">
-                    <input type="checkbox"> 
+                    <input type="checkbox" checked> 
                     <span>Usa fontes fluidas e de fácil entendimento, priorizando uma tipografia legível (evitar fontes rebuscadas ou manuscritas). [18] [NBR]</span>
                 </label>
             </li>
             <li>
                 <label class="checklist-item">
-                    <input type="checkbox"> 
+                    <input type="checkbox" checked> 
                     <span>Tamanho mínimo recomendado é de 18pt (ou 14pt em negrito) para boa legibilidade na interface. [18] [NBR]</span>
                 </label>
             </li>
             <li>
                 <label class="checklist-item">
-                    <input type="checkbox"> 
+                    <input type="checkbox" checked> 
                     <span>Evita o alinhamento justificado em blocos de texto, preferindo o alinhamento à esquerda. [18] [NBR]</span>
                 </label>
             </li>
             <li>
                 <label class="checklist-item">
-                    <input type="checkbox"> 
+                    <input type="checkbox" checked> 
                     <span>O espaçamento entre linhas, parágrafos e letras favorece a leitura confortável do usuário. [15] [18] [NBR]</span>
                 </label>
             </li>
             <li>
                 <label class="checklist-item">
-                    <input type="checkbox"> 
+                    <input type="checkbox" checked> 
                     <span>O texto pode ser ampliado de forma flexível sem que haja perda de conteúdo ou quebra de layout. [15]</span>
                 </label>
             </li>
@@ -263,25 +263,25 @@
             </li>
             <li>
                 <label class="checklist-item">
-                    <input type="checkbox"> 
+                    <input type="checkbox" checked> 
                     <span>Garante espaço suficiente entre elementos interativos para evitar cliques ou toques acidentais. [17] [NBR]</span>
                 </label>
             </li>
             <li>
                 <label class="checklist-item">
-                    <input type="checkbox"> 
+                    <input type="checkbox" checked> 
                     <span>Ícones possuem significado claro, universal ou de fácil assimilação pelo usuário. [18] [NBR]</span>
                 </label>
             </li>
             <li>
                 <label class="checklist-item">
-                    <input type="checkbox"> 
+                    <input type="checkbox" checked> 
                     <span>Ícones importantes para a navegação ou ações possuem rótulos visíveis ou contexto textual associado. [4] [16] [NBR]</span>
                 </label>
             </li>
             <li>
                 <label class="checklist-item">
-                    <input type="checkbox"> 
+                    <input type="checkbox" checked> 
                     <span>Elementos importantes ou de destaque na página possuem destaque visual suficiente em relação ao restante do layout. [18] [NBR]</span>
                 </label>
             </li>
@@ -308,22 +308,34 @@
     }));
   }
 
+  const AUDIT_SEED = 'tg02-docs-v4';
+
   // Mantemos compatibilidade com a função global que pode ser chamada de fora
   function carregarProgresso() {
-    const savedState = JSON.parse(localStorage.getItem(pageKey) || '{}');
     const checkboxes = document.querySelectorAll('.checklist-item input[type="checkbox"]');
-    checkboxes.forEach((box, index) => {
-      if (savedState[index] !== undefined) {
-        box.checked = savedState[index];
-        const label = box.closest('.checklist-item');
-        if (label) {
-          if (box.checked) {
-            label.style.color = '#0369a1';
-            label.style.fontWeight = '500';
-          } else {
-            label.style.color = '#374151';
-            label.style.fontWeight = '400';
-          }
+    const seedKey = pageKey + '_seed';
+    const savedState = JSON.parse(localStorage.getItem(pageKey) || '{}');
+
+    if (localStorage.getItem(seedKey) !== AUDIT_SEED) {
+      localStorage.setItem(seedKey, AUDIT_SEED);
+      salvarProgresso();
+    } else {
+      checkboxes.forEach((box, index) => {
+        if (savedState[index] !== undefined) {
+          box.checked = savedState[index];
+        }
+      });
+    }
+
+    checkboxes.forEach((box) => {
+      const label = box.closest('.checklist-item');
+      if (label) {
+        if (box.checked) {
+          label.style.color = '#0369a1';
+          label.style.fontWeight = '500';
+        } else {
+          label.style.color = '#374151';
+          label.style.fontWeight = '400';
         }
       }
     });

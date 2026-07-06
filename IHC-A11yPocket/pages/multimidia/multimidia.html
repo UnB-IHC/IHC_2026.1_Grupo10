@@ -139,37 +139,37 @@
        <ul class="checklist-list">
            <li>
                <label class="checklist-item">
-                   <input type="checkbox">
+                   <input type="checkbox" checked>
                    <span>Todos os vídeos gravados possuem legendas sincronizadas (Open Caption ou Closed Caption). [2]</span>
                </label>
            </li>
            <li>
                <label class="checklist-item">
-                   <input type="checkbox">
+                   <input type="checkbox" checked>
                    <span>As legendas identificam falas, efeitos sonoros de fundo, risos, mudanças de entonação e sons relevantes. [2]</span>
                </label>
            </li>
            <li>
                <label class="checklist-item">
-                   <input type="checkbox">
+                   <input type="checkbox" checked>
                    <span>As legendas possuem contraste adequado e permanecem legíveis em diferentes tamanhos de tela. [15] [18] [NBR]</span>
                </label>
            </li>
            <li>
                <label class="checklist-item">
-                   <input type="checkbox">
+                   <input type="checkbox" checked>
                    <span>Conteúdos exclusivamente em áudio (como Podcasts) possuem transcrição textual completa equivalente. [1] [18] [NBR]</span>
                </label>
            </li>
            <li>
                <label class="checklist-item">
-                   <input type="checkbox">
+                   <input type="checkbox" checked>
                    <span>A transcrição de áudio inclui a identificação de quem fala, descrição de sons ambientes e efeitos sonoros relevantes. [1]</span>
                </label>
            </li>
            <li>
                <label class="checklist-item">
-                   <input type="checkbox">
+                   <input type="checkbox" checked>
                    <span>Disponibiliza o roteiro ou transcrição do vídeo em formato de texto acessível. [1]</span>
                </label>
            </li>
@@ -180,31 +180,31 @@
        <ul class="checklist-list">
            <li>
                <label class="checklist-item">
-                   <input type="checkbox">
+                   <input type="checkbox" checked>
                    <span>Vídeos com informações visuais relevantes possuem audiodescrição sincronizada ou uma alternativa textual equivalente. [18] [NBR]</span>
                </label>
            </li>
            <li>
                <label class="checklist-item">
-                   <input type="checkbox">
+                   <input type="checkbox" checked>
                    <span>A audiodescrição comunica as ações, expressões faciais, cenários e tons emocionais necessários para a compreensão. [18] [NBR]</span>
                </label>
            </li>
            <li>
                <label class="checklist-item">
-                   <input type="checkbox">
+                   <input type="checkbox" checked>
                    <span>Adiciona a prática de autodescrição no início do roteiro dos vídeos (antes da fala principal), descrevendo quem fala de forma coerente com o propósito do conteúdo. [18]</span>
                </label>
            </li>
            <li>
                <label class="checklist-item">
-                   <input type="checkbox">
+                   <input type="checkbox" checked>
                    <span>Conteúdos institucionais ou educacionais disponibilizam janela de interpretação em Libras. [18] [NBR]</span>
                </label>
            </li>
            <li>
                <label class="checklist-item">
-                   <input type="checkbox">
+                   <input type="checkbox" checked>
                    <span>Para podcasts estruturados em páginas web, avalia-se o uso de formato em vídeo ou avatares de interpretação para Libras. [18] [NBR]</span>
                </label>
            </li>
@@ -215,31 +215,31 @@
        <ul class="checklist-list">
            <li>
                <label class="checklist-item">
-                   <input type="checkbox">
+                   <input type="checkbox" checked>
                    <span>O usuário possui total controle sobre as mídias: permite pausar, parar, ocultar ou retomar qualquer reprodução. [11]</span>
                </label>
            </li>
            <li>
                <label class="checklist-item">
-                   <input type="checkbox">
+                   <input type="checkbox" checked>
                    <span>O autoplay (reprodução automática) para vídeos e áudios está desabilitado por padrão, e o conteúdo nunca inicia com áudio ativo. [11]</span>
                </label>
            </li>
            <li>
                <label class="checklist-item">
-                   <input type="checkbox">
+                   <input type="checkbox" checked>
                    <span>O usuário pode controlar o volume da mídia de forma independente do volume geral do sistema operacional. [11]</span>
                </label>
            </li>
            <li>
                <label class="checklist-item">
-                   <input type="checkbox">
+                   <input type="checkbox" checked>
                    <span>Todos os controles de mídia são totalmente operáveis por teclado. [12]</span>
                </label>
            </li>
            <li>
                <label class="checklist-item">
-                   <input type="checkbox">
+                   <input type="checkbox" checked>
                    <span>Os botões e entradas dos controles possuem tipos válidos (type="button") e identificação/rótulos adequados para leitores de tela. [4]</span>
                </label>
            </li>
@@ -268,22 +268,34 @@
     }));
   }
 
+  const AUDIT_SEED = 'tg02-docs-v4';
+
   // Mantemos compatibilidade com a função global que pode ser chamada de fora
   function carregarProgresso() {
-    const savedState = JSON.parse(localStorage.getItem(pageKey) || '{}');
     const checkboxes = document.querySelectorAll('.checklist-item input[type="checkbox"]');
-    checkboxes.forEach((box, index) => {
-      if (savedState[index] !== undefined) {
-        box.checked = savedState[index];
-        const label = box.closest('.checklist-item');
-        if (label) {
-          if (box.checked) {
-            label.style.color = '#0369a1';
-            label.style.fontWeight = '500';
-          } else {
-            label.style.color = '#374151';
-            label.style.fontWeight = '400';
-          }
+    const seedKey = pageKey + '_seed';
+    const savedState = JSON.parse(localStorage.getItem(pageKey) || '{}');
+
+    if (localStorage.getItem(seedKey) !== AUDIT_SEED) {
+      localStorage.setItem(seedKey, AUDIT_SEED);
+      salvarProgresso();
+    } else {
+      checkboxes.forEach((box, index) => {
+        if (savedState[index] !== undefined) {
+          box.checked = savedState[index];
+        }
+      });
+    }
+
+    checkboxes.forEach((box) => {
+      const label = box.closest('.checklist-item');
+      if (label) {
+        if (box.checked) {
+          label.style.color = '#0369a1';
+          label.style.fontWeight = '500';
+        } else {
+          label.style.color = '#374151';
+          label.style.fontWeight = '400';
         }
       }
     });

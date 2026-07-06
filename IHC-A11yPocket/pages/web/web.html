@@ -139,19 +139,19 @@
         <ul class="checklist-list">
             <li>
                 <label class="checklist-item">
-                    <input type="checkbox">
+                    <input type="checkbox" checked>
                     <span>O código HTML é válido e bem formado, sem erros de parse que possam comprometer a interpretação por tecnologias assistivas. [14] [NBR]</span>
                 </label>
             </li>
             <li>
                 <label class="checklist-item">
-                    <input type="checkbox">
+                    <input type="checkbox" checked>
                     <span>Elementos HTML são utilizados de acordo com sua semântica nativa (ex.: <code>&lt;button&gt;</code> para ações, <code>&lt;nav&gt;</code> para navegação, <code>&lt;main&gt;</code> para conteúdo principal). [4] [NBR]</span>
                 </label>
             </li>
             <li>
                 <label class="checklist-item">
-                    <input type="checkbox">
+                    <input type="checkbox" checked>
                     <span>A hierarquia de cabeçalhos (<code>h1</code>–<code>h6</code>) é sequencial e reflete a estrutura lógica da página, sem saltos de nível. [16] [NBR]</span>
                 </label>
             </li>
@@ -163,7 +163,7 @@
             </li>
             <li>
                 <label class="checklist-item">
-                    <input type="checkbox">
+                    <input type="checkbox" checked>
                     <span>A ordem de leitura do DOM corresponde à ordem visual do conteúdo, garantindo que leitores de tela percorram os elementos em sequência lógica. [4] [Bibliografia]</span>
                 </label>
             </li>
@@ -182,7 +182,7 @@
             </li>
             <li>
                 <label class="checklist-item">
-                    <input type="checkbox">
+                    <input type="checkbox" checked>
                     <span>O indicador de foco do teclado é sempre visível e possui contraste perceptível em relação ao fundo. [6] [NBR]</span>
                 </label>
             </li>
@@ -200,13 +200,13 @@
             </li>
             <li>
                 <label class="checklist-item">
-                    <input type="checkbox">
+                    <input type="checkbox" checked>
                     <span>Links que abrem novas abas ou janelas informam esse comportamento ao usuário antes da ativação. [8] [Bibliografia]</span>
                 </label>
             </li>
             <li>
                 <label class="checklist-item">
-                    <input type="checkbox">
+                    <input type="checkbox" checked>
                     <span>A mudança de contexto (navegação, envio de formulário, carregamento de conteúdo) não ocorre automaticamente apenas por foco ou entrada de dados, sem ação explícita do usuário. [9] [NBR]</span>
                 </label>
             </li>
@@ -231,13 +231,13 @@
             </li>
             <li>
                 <label class="checklist-item">
-                    <input type="checkbox">
+                    <input type="checkbox" checked>
                     <span>O conteúdo não está bloqueado em uma orientação específica (retrato ou paisagem), salvo quando a orientação for essencial para a funcionalidade. [13] [NBR]</span>
                 </label>
             </li>
             <li>
                 <label class="checklist-item">
-                    <input type="checkbox">
+                    <input type="checkbox" checked>
                     <span>Elementos interativos (botões, links, campos) possuem área de toque de pelo menos 24×24 px, preferencialmente 44×44 px. [17] [18]</span>
                 </label>
             </li>
@@ -265,22 +265,34 @@
     }));
   }
 
+  const AUDIT_SEED = 'tg02-docs-v4';
+
   // Mantemos compatibilidade com a função global que pode ser chamada de fora
   function carregarProgresso() {
-    const savedState = JSON.parse(localStorage.getItem(pageKey) || '{}');
     const checkboxes = document.querySelectorAll('.checklist-item input[type="checkbox"]');
-    checkboxes.forEach((box, index) => {
-      if (savedState[index] !== undefined) {
-        box.checked = savedState[index];
-        const label = box.closest('.checklist-item');
-        if (label) {
-          if (box.checked) {
-            label.style.color = '#0369a1';
-            label.style.fontWeight = '500';
-          } else {
-            label.style.color = '#374151';
-            label.style.fontWeight = '400';
-          }
+    const seedKey = pageKey + '_seed';
+    const savedState = JSON.parse(localStorage.getItem(pageKey) || '{}');
+
+    if (localStorage.getItem(seedKey) !== AUDIT_SEED) {
+      localStorage.setItem(seedKey, AUDIT_SEED);
+      salvarProgresso();
+    } else {
+      checkboxes.forEach((box, index) => {
+        if (savedState[index] !== undefined) {
+          box.checked = savedState[index];
+        }
+      });
+    }
+
+    checkboxes.forEach((box) => {
+      const label = box.closest('.checklist-item');
+      if (label) {
+        if (box.checked) {
+          label.style.color = '#0369a1';
+          label.style.fontWeight = '500';
+        } else {
+          label.style.color = '#374151';
+          label.style.fontWeight = '400';
         }
       }
     });

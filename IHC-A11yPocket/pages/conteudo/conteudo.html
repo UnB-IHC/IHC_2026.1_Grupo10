@@ -143,25 +143,25 @@
             </li>
             <li>
                 <label class="checklist-item">
-                    <input type="checkbox">
+                    <input type="checkbox" checked>
                     <span>Frases longas e parágrafos extensos são evitados em favor de construções curtas e de fácil leitura. [18] </span>
                 </label>
             </li>
             <li>
                 <label class="checklist-item">
-                    <input type="checkbox">
+                    <input type="checkbox" checked>
                     <span>Termos técnicos, siglas e estrangeirismos possuem explicação na primeira ocorrência do texto. [18] [NBR]</span>
                 </label>
             </li>
             <li>
                 <label class="checklist-item">
-                    <input type="checkbox">
+                    <input type="checkbox" checked>
                     <span>Abreviações possuem o significado expandido disponível, seja no corpo do texto, seja por meio de elementos como <code>&lt;abbr&gt;</code>. [18] [NBR]</span>
                 </label>
             </li>
             <li>
                 <label class="checklist-item">
-                    <input type="checkbox">
+                    <input type="checkbox" checked>
                     <span>Números, datas, valores monetários e unidades de medida são escritos em formato consistente e compreensível. [18] </span>
                 </label>
             </li>
@@ -174,25 +174,25 @@
         <ul class="checklist-list">
             <li>
                 <label class="checklist-item">
-                    <input type="checkbox">
+                    <input type="checkbox" checked>
                     <span>O conteúdo é organizado em blocos curtos, com uso de subtítulos para facilitar a leitura e o escaneamento visual. [16] [18]</span>
                 </label>
             </li>
             <li>
                 <label class="checklist-item">
-                    <input type="checkbox">
+                    <input type="checkbox" checked>
                     <span>Listas são utilizadas para enumerar itens, em vez de descrevê-los em texto corrido. [4] [18]</span>
                 </label>
             </li>
             <li>
                 <label class="checklist-item">
-                    <input type="checkbox">
+                    <input type="checkbox" checked>
                     <span>A relação entre títulos, subtítulos e o conteúdo a que se referem é semanticamente identificável, e não apenas visual. [4] [NBR]</span>
                 </label>
             </li>
             <li>
                 <label class="checklist-item">
-                    <input type="checkbox">
+                    <input type="checkbox" checked>
                     <span>Tabelas de dados possuem cabeçalhos associados programaticamente às respectivas colunas e linhas. [4] [NBR]</span>
                 </label>
             </li>
@@ -211,25 +211,25 @@
         <ul class="checklist-list">
             <li>
                 <label class="checklist-item">
-                    <input type="checkbox">
+                    <input type="checkbox" checked>
                     <span>O texto dos links descreve claramente seu destino ou função, evitando expressões genéricas como "clique aqui". [16] </span>
                 </label>
             </li>
             <li>
                 <label class="checklist-item">
-                    <input type="checkbox">
+                    <input type="checkbox" checked>
                     <span>Instruções de uso não dependem exclusivamente de características sensoriais, como forma, cor ou posição. [5] [NBR]</span>
                 </label>
             </li>
             <li>
                 <label class="checklist-item">
-                    <input type="checkbox">
+                    <input type="checkbox" checked>
                     <span>Mensagens de erro e de confirmação são redigidas com linguagem específica e orientada à ação do usuário. [18] </span>
                 </label>
             </li>
             <li>
                 <label class="checklist-item">
-                    <input type="checkbox">
+                    <input type="checkbox" checked>
                     <span>Rótulos de campos, botões e seções descrevem corretamente seu propósito dentro do contexto da página. [16] [NBR]</span>
                 </label>
             </li>
@@ -242,13 +242,13 @@
         <ul class="checklist-list">
             <li>
                 <label class="checklist-item">
-                    <input type="checkbox">
+                    <input type="checkbox" checked>
                     <span>O idioma principal da página é declarado corretamente no código (<code>lang</code>). [14] [NBR]</span>
                 </label>
             </li>
             <li>
                 <label class="checklist-item">
-                    <input type="checkbox">
+                    <input type="checkbox" checked>
                     <span>Trechos de conteúdo redigidos em idioma diferente do principal possuem o idioma identificado individualmente. [14] [NBR]</span>
                 </label>
             </li>
@@ -260,7 +260,7 @@
             </li>
             <li>
                 <label class="checklist-item">
-                    <input type="checkbox">
+                    <input type="checkbox" checked>
                     <span>Conteúdo publicado em formato de documento (PDF, planilha) mantém a mesma estrutura semântica do conteúdo em HTML. [4] [19]</span>
                 </label>
             </li>
@@ -288,21 +288,34 @@
     }));
   }
 
+  const AUDIT_SEED = 'tg02-docs-v4';
+
+  // Mantemos compatibilidade com a função global que pode ser chamada de fora
   function carregarProgresso() {
-    const savedState = JSON.parse(localStorage.getItem(pageKey) || '{}');
     const checkboxes = document.querySelectorAll('.checklist-item input[type="checkbox"]');
-    checkboxes.forEach((box, index) => {
-      if (savedState[index] !== undefined) {
-        box.checked = savedState[index];
-        const label = box.closest('.checklist-item');
-        if (label) {
-          if (box.checked) {
-            label.style.color = '#0369a1';
-            label.style.fontWeight = '500';
-          } else {
-            label.style.color = '#374151';
-            label.style.fontWeight = '400';
-          }
+    const seedKey = pageKey + '_seed';
+    const savedState = JSON.parse(localStorage.getItem(pageKey) || '{}');
+
+    if (localStorage.getItem(seedKey) !== AUDIT_SEED) {
+      localStorage.setItem(seedKey, AUDIT_SEED);
+      salvarProgresso();
+    } else {
+      checkboxes.forEach((box, index) => {
+        if (savedState[index] !== undefined) {
+          box.checked = savedState[index];
+        }
+      });
+    }
+
+    checkboxes.forEach((box) => {
+      const label = box.closest('.checklist-item');
+      if (label) {
+        if (box.checked) {
+          label.style.color = '#0369a1';
+          label.style.fontWeight = '500';
+        } else {
+          label.style.color = '#374151';
+          label.style.fontWeight = '400';
         }
       }
     });
