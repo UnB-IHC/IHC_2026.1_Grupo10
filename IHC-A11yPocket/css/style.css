@@ -419,6 +419,7 @@ body {
     .navbar {
         padding: 0 16px;
         height: 64px;
+        justify-content: center;
     }
     .navbar nav {
         display: none; /* esconder menu principal em mobile simples; o projeto pode adicionar um botão hamburger via JS quando necessário */
@@ -471,20 +472,25 @@ body {
         position: relative;
     }
 
+    /* Lock background scroll when sidebar is open */
+    body.sidebar-open {
+        overflow: hidden;
+    }
+
     /* Sidebar escondida por padrão em mobile; será mostrada via classe `sidebar-open` no body */
     .sidebar {
         display: none;
         width: 85%;
         max-width: 360px;
         position: fixed;
-        left: 0;
-        top: 80px;
-        height: calc(100% - 80px);
+        right: 0;
+        top: 64px;
+        height: calc(100% - 64px);
         padding: 20px;
         background: #ffffff;
-        box-shadow: 0 10px 30px rgba(2,6,23,0.12);
+        box-shadow: -10px 10px 30px rgba(2,6,23,0.12);
         overflow-y: auto;
-        transform: translateX(-110%);
+        transform: translateX(110%);
         transition: transform 0.28s ease;
         z-index: 1100;
     }
@@ -503,20 +509,20 @@ body {
         display: block;
         position: fixed;
         left: 0;
-        top: 80px;
+        top: 64px;
         right: 0;
         bottom: 0;
         background: rgba(0,0,0,0.35);
         z-index: 1050;
     }
 
-    /* Toggle/hamburger button in the top-left of the viewport */
+    /* Toggle/hamburger button in the top-right of the viewport */
     .sidebar-toggle {
         display: inline-flex;
         align-items: center;
         justify-content: center;
         position: fixed;
-        left: 16px;
+        right: 16px;
         top: 20px;
         width: 44px;
         height: 44px;
@@ -603,24 +609,7 @@ body {
         padding: 40px 30px;
     }
 
-    /* Show toggle integrated in header on tablet / small desktop */
-    .sidebar-toggle {
-        display: inline-flex;
-        position: absolute;
-        left: 16px;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 44px;
-        height: 44px;
-        background: var(--primary);
-        color: #ffffff;
-        border: 1px solid var(--primary-dark);
-        border-radius: 8px;
-        z-index: 1200;
-        box-shadow: 0 6px 14px rgba(2,6,23,0.06);
-        cursor: pointer;
-        font-size: 1.1rem;
-    }
+
 }
 
 @media (max-width: 768px) {
@@ -630,12 +619,9 @@ body {
     }
 
     .sidebar {
-        position: relative;
-        width: 100%;
-        height: auto;
-        padding: 20px;
-        top: 0;
-        overflow: visible;
+        /* Garante que a largura e comportamento de gaveta móvel sobrescrevam a regra de tablet */
+        width: 85%;
+        max-width: 360px;
     }
 
     .content {
@@ -888,7 +874,7 @@ body {
         display: block;
         margin: 0 auto;
         width: 100%;
-        max-width: 360px;
+        max-width: min(360px, 100%);
         height: auto;
     }
 }
